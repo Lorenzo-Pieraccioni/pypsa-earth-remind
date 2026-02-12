@@ -172,9 +172,7 @@ def prepare_GGIT_data(GGIT_gas_pipeline):
     df = df[df["Status"].isin(snakemake.params.gas_config["network_data_GGIT_status"])]
 
     # Convert the WKT column to a GeoDataFrame
-    df = gpd.GeoDataFrame(
-        df, geometry=gpd.GeoSeries.from_wkt(df["WKTFormat"], on_invalid="warn")
-    )
+    df = gpd.GeoDataFrame(df, geometry=gpd.GeoSeries.from_wkt(df["WKTFormat"], on_invalid="warn"))
 
     df = df[df.geometry.is_valid & ~df.geometry.is_empty]
 
@@ -204,9 +202,7 @@ def prepare_GGIT_data(GGIT_gas_pipeline):
     df.loc[df["CapacityBcm/y"] == "--", "capacity [MW]"] = df.loc[
         df["CapacityBcm/y"] == "--", "diameter_mm"
     ].apply(lambda d: diameter_to_capacity(int(d)))
-    df["diameter_mm"] = pd.to_numeric(
-        df["diameter_mm"], errors="coerce", downcast="integer"
-    )
+    df["diameter_mm"] = pd.to_numeric(df["diameter_mm"], errors="coerce", downcast="integer")
     df.loc[pd.isna(df["CapacityBcm/y"]), "capacity [MW]"] = df.loc[
         pd.isna(df["CapacityBcm/y"]), "diameter_mm"
     ].apply(lambda d: diameter_to_capacity(d))
@@ -288,8 +284,7 @@ def prepare_IGGIELGN_data(
     # lines which have way too discrepant line lengths
     # get assigned haversine length * length factor
     df["length_haversine"] = df.apply(
-        lambda p: length_factor
-        * haversine_pts([p.point0.x, p.point0.y], [p.point1.x, p.point1.y]),
+        lambda p: length_factor * haversine_pts([p.point0.x, p.point0.y], [p.point1.x, p.point1.y]),
         axis=1,
     )
     ratio = df.eval("length / length_haversine")
@@ -402,9 +397,7 @@ def filter_gadm(
 
     # debug output to file
     if output_nonstd_to_csv and not geodf_non_std.empty:
-        geodf_non_std.to_csv(
-            f"resources/non_standard_gadm{layer}_{cc}_raw.csv", index=False
-        )
+        geodf_non_std.to_csv(f"resources/non_standard_gadm{layer}_{cc}_raw.csv", index=False)
 
     return geodf
 
@@ -449,9 +442,7 @@ def get_GADM_layer(
             cur_layer_id = len(list_layers) - 1
 
         # read gpkg file
-        geodf_temp = gpd.read_file(
-            file_gpkg, layer="ADM_ADM_" + str(cur_layer_id)
-        ).to_crs(geo_crs)
+        geodf_temp = gpd.read_file(file_gpkg, layer="ADM_ADM_" + str(cur_layer_id)).to_crs(geo_crs)
 
         geodf_temp = filter_gadm(
             geodf=geodf_temp,
@@ -518,9 +509,7 @@ def gadm(
     # )
     # df_gadm.set_index("GADM_ID", inplace=True)
     # df_gadm["geometry"] = df_gadm["geometry"].map(_simplify_polys)
-    df_gadm.geometry = df_gadm.geometry.apply(
-        lambda r: make_valid(r) if not r.is_valid else r
-    )
+    df_gadm.geometry = df_gadm.geometry.apply(lambda r: make_valid(r) if not r.is_valid else r)
     df_gadm = df_gadm[df_gadm.geometry.is_valid & ~df_gadm.geometry.is_empty]
 
     return df_gadm
@@ -543,7 +532,7 @@ def load_bus_region(onshore_path, pipelines):
     if snakemake.params.alternative_clustering:
         countries_list = snakemake.params.countries_list
         layer_id = snakemake.params.layer_id
-        update = snakemake.params.update
+        update = snakemake.params.update_
         out_logging = snakemake.params.out_logging
         year = snakemake.params.year
         nprocesses = snakemake.params.nprocesses
@@ -586,9 +575,7 @@ def get_states_in_order(pipeline, bus_regions_onshore):
         interpolated_points = [
             pipeline.interpolate(i) for i in range(0, int(pipeline.length), step_size)
         ]
-        interpolated_points.append(
-            pipeline.interpolate(pipeline.length)
-        )  # Add the last point
+        interpolated_points.append(pipeline.interpolate(pipeline.length))  # Add the last point
 
     elif pipeline.geom_type == "MultiLineString":
         interpolated_points = []
@@ -599,9 +586,7 @@ def get_states_in_order(pipeline, bus_regions_onshore):
             interpolated_points_line = [
                 line.interpolate(i) for i in range(0, int(line.length), step_size)
             ]
-            interpolated_points_line.append(
-                line.interpolate(line.length)
-            )  # Add the last point
+            interpolated_points_line.append(line.interpolate(line.length))  # Add the last point
             interpolated_points.extend(interpolated_points_line)
 
     # Check each interpolated point against the state geometries
@@ -639,9 +624,7 @@ def parse_states(pipelines, bus_regions_onshore):
 
 def cluster_gas_network(pipelines, bus_regions_onshore, length_factor):
     # drop innerstatal pipelines
-    pipelines_interstate = pipelines.drop(
-        pipelines.loc[pipelines.amount_states_passed < 2].index
-    )
+    pipelines_interstate = pipelines.drop(pipelines.loc[pipelines.amount_states_passed < 2].index)
 
     # Convert CRS to EPSG:3857 so we can measure distances
     pipelines_interstate = pipelines_interstate.to_crs(epsg=3857)  # 3857
@@ -655,16 +638,12 @@ def cluster_gas_network(pipelines, bus_regions_onshore, length_factor):
 
     if snakemake.params.gas_config["network_data"] == "IGGIELGN":
         pipelines_per_state = (
-            pipelines_interstate.rename(
-                {"p_nom": "capacity [MW]", "name": "ProjectID"}, axis=1
-            )
+            pipelines_interstate.rename({"p_nom": "capacity [MW]", "name": "ProjectID"}, axis=1)
             .loc[:, column_set]
             .reset_index(drop=True)
         )
     elif snakemake.params.gas_config["network_data"] == "GGIT":
-        pipelines_per_state = pipelines_interstate.loc[:, column_set].reset_index(
-            drop=True
-        )
+        pipelines_per_state = pipelines_interstate.loc[:, column_set].reset_index(drop=True)
 
     # Explode the column containing lists of tuples
     df_exploded = pipelines_per_state.explode("nodes").reset_index(drop=True)
@@ -698,9 +677,7 @@ def cluster_gas_network(pipelines, bus_regions_onshore, length_factor):
     # df_exploded = df_exploded.loc[:, ['bus0', 'bus1', 'length']] # 'capacity'
 
     # Group by buses to get average length and sum of capacites of all pipelines between any two states on the route.
-    grouped = df_grouped.groupby(["bus0", "bus1"], as_index=False).agg(
-        {"capacity": "sum"}
-    )
+    grouped = df_grouped.groupby(["bus0", "bus1"], as_index=False).agg({"capacity": "sum"})
     states1 = bus_regions_onshore.copy()
     states1 = states1.set_index("gadm_id")
 
@@ -915,9 +892,7 @@ if not snakemake.params.custom_gas_network:
         # TODO: plotting should be a extra rule!
         # plot_gas_network(pipelines, country_borders, bus_regions_onshore)
 
-        pipelines = cluster_gas_network(
-            pipelines, bus_regions_onshore, length_factor=1.25
-        )
+        pipelines = cluster_gas_network(pipelines, bus_regions_onshore, length_factor=1.25)
 
         # Conversion of GADM id to from 3 to 2-digit
         # pipelines["bus0"] = pipelines["bus0"].apply(

@@ -11,7 +11,9 @@ sys.path.append("./scripts")
 
 from shutil import copyfile, move
 
-from snakemake.remote.HTTP import RemoteProvider as HTTPRemoteProvider
+# ====== set up snakemake providers =======
+storage:
+    provider="http",
 
 from _helpers import (
     create_country_list,
@@ -28,8 +30,6 @@ from retrieve_databundle_light import (
 )
 from pathlib import Path
 
-
-HTTP = HTTPRemoteProvider()
 
 copy_default_files()
 
@@ -445,8 +445,8 @@ if config["enable"].get("retrieve_cost_data", True):
         params:
             version=config["costs"]["technology_data_version"],
         input:
-            HTTP.remote(
-                f"raw.githubusercontent.com/PyPSA/technology-data/{config['costs']['technology_data_version']}/outputs/{cost_directory}"
+            storage.http(
+                f"https://raw.githubusercontent.com/PyPSA/technology-data/{config['costs']['technology_data_version']}/outputs/{cost_directory}"
                 + "costs_{year}.csv",
                 keep_local=True,
             ),
@@ -1077,7 +1077,7 @@ if not config["custom_data"]["gas_network"]:
             alternative_clustering=config["cluster_options"]["alternative_clustering"],
             countries_list=config["countries"],
             layer_id=config["build_shape_options"]["gadm_layer_id"],
-            update=config["build_shape_options"]["update_file"],
+            update_=config["build_shape_options"]["update_file"],
             out_logging=config["build_shape_options"]["out_logging"],
             year=config["build_shape_options"]["year"],
             nprocesses=config["build_shape_options"]["nprocesses"],

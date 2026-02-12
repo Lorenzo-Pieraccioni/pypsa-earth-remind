@@ -31,6 +31,7 @@ dependencies:
 - snakemake-interface-report-plugins
 - snakemake-interface-scheduler-plugins
 - snakemake-interface-storage-plugins
+- snakemake-storage-plugin-http
 - memory_profiler
 - ruamel.yaml<=0.17.26
 - pytables
