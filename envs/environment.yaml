@@ -21,7 +21,16 @@ dependencies:
 - xlrd
 - openpyxl
 - seaborn
-- snakemake-minimal<8
+- snakemake-minimal
+- snakemake-executor-plugin-cluster-generic
+- snakemake-executor-plugin-slurm
+- snakemake-executor-plugin-slurm-jobstep
+- snakemake-interface-common
+- snakemake-interface-executor-plugins
+- snakemake-interface-logger-plugins
+- snakemake-interface-report-plugins
+- snakemake-interface-scheduler-plugins
+- snakemake-interface-storage-plugins
 - memory_profiler
 - ruamel.yaml<=0.17.26
 - pytables
