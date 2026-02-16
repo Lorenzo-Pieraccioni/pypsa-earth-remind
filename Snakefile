@@ -21,7 +21,7 @@ from _helpers import (
     check_config_version,
     copy_default_files,
     BASE_DIR,
-    branch,  # Remove if Snakemake >= 8.3.0
+    branch,
 )
 from build_demand_profiles import get_load_paths_gegis
 from retrieve_databundle_light import (
@@ -85,13 +85,12 @@ wildcard_constraints:
 
 if config["custom_rules"] is not []:
     for rule in config["custom_rules"]:
-
         include: rule
 
 
 rule clean:
     run:
-        try:
+        try:    
             shell("snakemake -j 1 solve_all_networks --delete-all-output")
         except:
             shell("snakemake -j 1 solve_all_networks_monte --delete-all-output")
@@ -145,7 +144,7 @@ rule plot_all_summaries:
 if config["enable"].get("retrieve_databundle", True):
 
     bundles_to_download = get_best_bundles_in_snakemake(config)
-
+    logger.info(bundles_to_download)
     rule retrieve_databundle_light:
         params:
             bundles_to_download=bundles_to_download,

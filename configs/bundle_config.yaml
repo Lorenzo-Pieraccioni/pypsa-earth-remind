@@ -101,8 +101,7 @@ databundles:
     unzip: true
     output:
     - data/hydrobasins/hybas_world.shp
-
-  # tutorial bundle specific for Nigeria and Benin only
+    
   bundle_cutouts_tutorial_NGBJ:
     countries: [NG, BJ]
     tutorial: true
@@ -115,31 +114,6 @@ databundles:
     disable_by_opt:
       build_cutout: [all]
 
-  # tutorial bundle specific for Botswana only
-  bundle_cutouts_tutorial_BW:
-    countries: [BW]
-    tutorial: true
-    category: cutouts
-    destination: "cutouts"
-    urls:
-      zenodo: https://sandbox.zenodo.org/records/323571/files/bundle_cutouts_tutorial_BW.zip?download=1
-      gdrive: https://drive.google.com/file/d/1DDQAtnIDM0FNC3vCldfHeH__IpTbyIJt/view?usp=drive_link
-    output: [cutouts/cutout-2013-era5-tutorial.nc]
-    disable_by_opt:
-      build_cutout: [all]
-
-  # tutorial bundle specific for Morocco only
-  bundle_cutouts_tutorial_MA:
-    countries: [MA]
-    tutorial: true
-    category: cutouts
-    destination: "cutouts"
-    urls:
-      zenodo: https://sandbox.zenodo.org/records/323571/files/bundle_cutouts_tutorial_MA.zip?download=1
-      gdrive: https://drive.google.com/file/d/1j5v2f4E756jmDMa707QvdNJq3xM4bYUk/view?usp=drive_link
-    output: [cutouts/cutout-2013-era5-tutorial.nc]
-    disable_by_opt:
-      build_cutout: [all]
 
   # Cutout of Kazakhstan for CI test of pypsa-kz-data repo, only 5 MB
   bundle_cutouts_test_KZ:
@@ -214,24 +188,6 @@ databundles:
       gdrive: https://drive.google.com/file/d/1H-Y7p8UgnbEzJgo9qPc54BpDXS8loX7Y/view?usp=drive_link
     output:
     - data/natura/natura.tiff
-
-  # # data bundle of the data folder for the african continent
-  # bundle_landclassification:
-  #   countries: [Earth]
-  #   category: copernicus
-  #   destination: "data/copernicus"
-  #   urls:
-  #     direct: https://zenodo.org/record/3939050/files/PROBAV_LC100_global_v3.0.1_2019-nrt_Discrete-Classification-map_EPSG-4326.tif
-  #   output: [data/copernicus/PROBAV_LC100_global_v3.0.1_2019-nrt_Discrete-Classification-map_EPSG-4326.tif]
-
-  # bundle_gebco:
-  #   countries: [Earth]
-  #   category: gebco
-  #   destination: "data/gebco"
-  #   urls:
-  #     direct: https://www.bodc.ac.uk/data/open_download/gebco/gebco_2021/zip/
-  #   unzip: True
-  #   output: [data/gebco/GEBCO_2021_TID.nc]
 
   # bundle_eez:
   #   countries: [Earth]
