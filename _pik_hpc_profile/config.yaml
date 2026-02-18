@@ -1,0 +1,165 @@
+# A cluster profile for the PIK HPC
+# Profile allows to activeate the gurobi license via an ssh tunnel and solve pypsa
+# adapted from https://github.com/jdblischak/smk-simple-slurm/ 
+# & jhemmp https://github.com/aodenweller/pypsa-eur/blob/remind_develop_pypsa_v0.10.0/cluster_config/config.yaml
+# PIK-2024
+
+# define the executor
+executor: cluster-generic
+jobs: 500
+
+# configure smk
+restart-times: 1
+max-jobs-per-second: 10
+max-status-checks-per-second: 1
+# local-threads: 1
+latency-wait: 60
+retries: 3
+keep-going: False
+rerun-incomplete: True
+printshellcmds: True
+# scheduler: greedy
+# use-conda: True
+rerun-trigger:
+- code
+- input
+- mtime
+- params
+verbose: false
+
+# define the cluster submission command (slurm wrapper)
+# email command --mail-user for master rule (email on end | fail)
+cluster-generic-submit-cmd:
+  mkdir -p logs_slurm/{rule} &&
+  sbatch
+    --partition={resources.partition}
+    --qos={resources.qos}
+    --cpus-per-task={resources.threads}
+    --mem={resources.mem_mb}
+    --job-name={rule}-{wildcards}-smk
+    --output=logs_slurm/{rule}/%j-{rule}-{wildcards}.out
+    --parsable
+    --export=PATH,LD_LIBRARY_PATH,GUROBI_HOME,HOME
+# cluster-generic-status-cmd: "python config/pik_hpc_profile/status-check.py"
+cluster-generic-cancel-cmd: scancel
+# --error=logs_slurm/{rule}/%j-{rule}-{wildcards}.out
+
+# now define the resources
+default-resources:
+  partition: priority
+  qos: priority
+  mem_mb: 16000
+  time : 10
+  threads: 4
+
+set-resources:
+  base_network:
+    mem_mb: 20000
+    time: 30
+  cluster_network:
+    mem_mb: 20000
+    time: 30
+  build_bus_regions:
+    mem_mb: 32000
+    time: 30
+  build_powerplants:
+    mem_mb: 32000
+    time: 30
+  solve_network:
+    mem_mb: 90000
+    time : 80
+    threads: 6
+  build_cutout:
+    time: 9000
+    threads: 4
+    partition: io
+    qos: io
+    mem_mb: 20000
+  build_shapes:
+    time: 600
+    threads: 8
+    mem_mb: 16000
+  build_demand_profiles:
+    time: 600
+    threads: 8
+    mem_mb: 16000
+  build_availability_matrix:
+    threads: 8
+    mem_mb: 30000
+    time: 300
+  build_renewable_potential:
+    time: 300
+    threads: 4
+    mem_mb: 20000
+  build_renewable_profiles:
+    time: 300
+    threads: 4
+    mem_mb: 30000
+  plot_network:
+    mem_mb: 8000
+    threads: 2
+  retrieve_databundle_light:
+    time: 600
+    threads: 1
+    partition: io # login
+    qos: io
+  retrieve_cost_data:
+    time: 300
+    threads: 1
+    partition: io # login
+    qos: io
+  retrieve_Grass_raster:
+    time: 300
+    threads: 1
+    partition: io
+    qos: io
+  retrieve_Bare_raster:
+    time: 300
+    threads: 1
+    partition: io
+    qos: io
+  retrieve_powerplants:
+    time: 300
+    threads: 2
+    partition: io
+    qos: io
+  retrieve_bathymetry_raster:
+    time: 300
+    threads: 1
+    partition: io
+    qos: io
+  retrieve_Shrubland_raster:
+    time: 300
+    threads: 1
+    partition: io
+    qos: io
+  retrieve_cutout:
+    time: 300
+    threads: 1
+    partition: io
+    qos: io
+
+
+# GROUPS
+
+groups: 
+  prep_capacities: prepare_baseyear_capacities
+  build_load_profiles: build_load
+  prepare_networks: prep_network
+  add_existing_baseyear: prep_network2
+  make_summary: summary
+  retrieve_cutout: retrieve
+  retrieve_region_shapes: retrieve
+  retrieve_rasters: retrieve 
+  retrieve_Build_up_raster: retrieve
+  retrieve_Grass_raster: retrieve
+  retrieve_Bare_raster: retrieve
+  fetch_region_shapes: retrieve
+group-components:
+  plot: 3
+  build_load: 3
+  prep_network: 3
+  prep_network2: 3
+  retrieve: 1 # io queue
+  summary: 3
+  prep_capacities: 3

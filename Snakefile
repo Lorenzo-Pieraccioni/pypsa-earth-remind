@@ -33,6 +33,8 @@ from pathlib import Path
 
 copy_default_files()
 
+# this fails when submitted to slurm - unclear why
+localrules: build_shapes
 
 configfile: "config.default.yaml"
 configfile: "configs/bundle_config.yaml"

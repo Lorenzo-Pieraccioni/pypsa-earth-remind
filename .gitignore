@@ -33,7 +33,7 @@ dag.svg
 gurobi.log
 gadm_shapes.geojson
 doc/*.vscode/settings.json
-
+logs_slurm/**
 # Untracked folders (and files within)
 bak
 benchmarks/
