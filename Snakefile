@@ -144,7 +144,7 @@ rule plot_all_summaries:
 if config["enable"].get("retrieve_databundle", True):
 
     bundles_to_download = get_best_bundles_in_snakemake(config)
-    logger.info(bundles_to_download)
+    logger.info(f"best bundles: {bundles_to_download}")
     rule retrieve_databundle_light:
         params:
             bundles_to_download=bundles_to_download,
