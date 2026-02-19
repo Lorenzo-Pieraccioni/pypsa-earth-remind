@@ -14,6 +14,7 @@ import subprocess
 import sys
 import time
 import zipfile
+import logging
 from datetime import datetime, timedelta
 from pathlib import Path
 from dataclasses import dataclass, field
@@ -484,8 +485,9 @@ def mock_snakemake(
         ResourceSettings,
         StorageSettings,
         WorkflowSettings,
-
+        OutputSettings,
     )
+    from snakemake.logging import LoggerManager, logger
 
     # horrible hack
     curr_path = os.getcwd()
@@ -521,6 +523,7 @@ def mock_snakemake(
             config_settings=config_settings,
             resource_settings=resource_settings,
             workflow_settings=workflow_settings,
+            logger_manager=LoggerManager(logger, OutputSettings()),
             storage_settings=storage_settings,
             dag_settings=dag_settings,
             storage_provider_settings={
