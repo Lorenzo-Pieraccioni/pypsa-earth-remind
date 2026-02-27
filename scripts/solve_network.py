@@ -86,7 +86,7 @@ import numpy as np
 import pandas as pd
 import pypsa
 import xarray as xr
-from _helpers import configure_logging, create_logger
+from _helpers import configure_logging, create_logger, setup_gurobi_tunnel_and_env
 from linopy import merge
 from pypsa.descriptors import get_switchable_as_dense as get_as_dense
 from pypsa.optimization.abstract import optimize_transmission_expansion_iteratively
@@ -1162,6 +1162,16 @@ if __name__ == "__main__":
 
     opts = snakemake.wildcards.opts.split("-")
     solve_opts = snakemake.config["solving"]["options"]
+
+    # deal with the gurobi license activation, which requires a tunnel to the login nodes
+    solver_config = snakemake.config["solving"]["solver"]
+    gurobi_tnl_cfg = solver_config.get("gurobi_hpc_tunnel", None)
+    logger.info(f"Solver config {solver_config} and license cfg {gurobi_tnl_cfg}")
+    if (solver_config["name"] == "gurobi") & (gurobi_tnl_cfg is not None):
+        tunnel = setup_gurobi_tunnel_and_env(gurobi_tnl_cfg, logger=logger)
+        logger.info(tunnel)
+    else:
+        tunnel = None
 
     is_sector_coupled = "sopts" in snakemake.wildcards.keys()
 

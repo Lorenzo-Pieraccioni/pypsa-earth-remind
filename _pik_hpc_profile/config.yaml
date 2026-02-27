@@ -48,13 +48,16 @@ cluster-generic-cancel-cmd: scancel
 default-resources:
   partition: priority
   qos: priority
-  mem_mb: 16000
+  mem_mb: 32000
   time : 10
   threads: 4
 
 set-resources:
   base_network:
     mem_mb: 20000
+    time: 30
+  simplify_network:
+    mem_mb: 32000
     time: 30
   cluster_network:
     mem_mb: 20000
@@ -83,10 +86,6 @@ set-resources:
     time: 600
     threads: 8
     mem_mb: 16000
-  build_availability_matrix:
-    threads: 8
-    mem_mb: 30000
-    time: 300
   build_renewable_potential:
     time: 300
     threads: 4
@@ -108,12 +107,7 @@ set-resources:
     threads: 1
     partition: io # login
     qos: io
-  retrieve_Grass_raster:
-    time: 300
-    threads: 1
-    partition: io
-    qos: io
-  retrieve_Bare_raster:
+  download_global_buildings:
     time: 300
     threads: 1
     partition: io
@@ -123,17 +117,12 @@ set-resources:
     threads: 2
     partition: io
     qos: io
-  retrieve_bathymetry_raster:
-    time: 300
-    threads: 1
-    partition: io
-    qos: io
-  retrieve_Shrubland_raster:
-    time: 300
-    threads: 1
-    partition: io
-    qos: io
   retrieve_cutout:
+    time: 300
+    threads: 1
+    partition: io
+    qos: io
+  download_osm_data:
     time: 300
     threads: 1
     partition: io
@@ -141,25 +130,17 @@ set-resources:
 
 
 # GROUPS
-
 groups: 
-  prep_capacities: prepare_baseyear_capacities
-  build_load_profiles: build_load
-  prepare_networks: prep_network
-  add_existing_baseyear: prep_network2
-  make_summary: summary
+  retrieve_databundle_light: retrieve
   retrieve_cutout: retrieve
-  retrieve_region_shapes: retrieve
-  retrieve_rasters: retrieve 
-  retrieve_Build_up_raster: retrieve
-  retrieve_Grass_raster: retrieve
-  retrieve_Bare_raster: retrieve
-  fetch_region_shapes: retrieve
+  retrieve_cost_data: retrieve
+  download_osm_data: retrieve
+  retrieve_powerplants: retrieve
+  download_global_buildings: retrieve
 group-components:
   plot: 3
   build_load: 3
   prep_network: 3
-  prep_network2: 3
   retrieve: 1 # io queue
   summary: 3
   prep_capacities: 3

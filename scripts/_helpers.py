@@ -49,6 +49,8 @@ BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 # absolute path to config.default.yaml
 CONFIG_DEFAULT_PATH = os.path.join(BASE_DIR, "config.default.yaml")
 
+DEFAULT_TUNNEL_PORT = 1080
+LOGIN_NODE = "03"
 
 def check_config_version(config, fp_config=CONFIG_DEFAULT_PATH):
     """
@@ -1909,3 +1911,132 @@ def sanitize_locations(n):
             n.buses.country.ne("") & n.buses.country.notnull(),
             n.buses.location.map(n.buses.country),
         )
+
+
+# ============== HPC helpers ==================
+
+
+def setup_gurobi_tunnel_and_env(
+    tunnel_config: dict, logger: logging.Logger = None, attempts=4
+) -> subprocess.Popen:
+    """A utility function to set up the Gurobi environment variables and establish an
+    SSH tunnel on HPCs. Otherwise the license check will fail if the compute nodes do
+     not have internet access or a token server isn't set up
+
+    Args:
+        config (dict): the snakemake pypsa-china configuration
+        logger (logging.Logger, optional): Logger. Defaults to None.
+        attempts (int, optional): ssh connection attemps. Defaults to 4.
+    """
+    if not tunnel_config.get("use_tunnel", False):
+        return
+    logger.info("setting up tunnel")
+    user = os.getenv("USER")  # User is pulled from the environment
+    port = tunnel_config.get("tunnel_port", DEFAULT_TUNNEL_PORT)
+    login_node = tunnel_config.get("login_node", LOGIN_NODE)
+    timeout = tunnel_config.get("timeout_s", 60)
+
+    # bash commands for tunnel: reduce pipe err severity (too high from snakemake)
+    pipe_err = "set -o pipefail; "
+    ssh_command = f"ssh -vvv -fN -D {port} -o ConnectTimeout={timeout} {user}@login{login_node}"
+    logger.info(f"Attempting ssh tunnel to login node {login_node}")
+    # Run SSH in the background to establish the tunnel
+    socks_proc = subprocess.Popen(
+        pipe_err + ssh_command,
+        shell=True,
+        stderr=subprocess.PIPE,
+        stdout=subprocess.PIPE,
+    )
+
+    try:
+        stdout, stderr = socks_proc.communicate(timeout=timeout + 2)
+        err = stderr.decode()
+        logger.info(f"ssh err returns {str(err)}")
+        logger.info(f"ssh stdout returns {str(stdout)}")
+        if err.find("Permission") != -1 or err.find("Could not resolve hostname") != -1:
+            socks_proc.kill()
+        else:
+            logger.info("Gurobi Environment variables & tunnel set up successfully at attempt {i}.")
+    except subprocess.TimeoutExpired:
+        logger.error("SSH tunnel communication timed out.")
+
+    os.environ["https_proxy"] = f"socks5://127.0.0.1:{port}"
+    os.environ["SSL_CERT_FILE"] = tunnel_config.get(
+        "ssl_cert", "/p/projects/rd3mod/ssl/ca-bundle.pem_2022-02-08"
+    )
+    os.environ["GRB_CAFILE"] = tunnel_config.get(
+        "grb_cafile", "/p/projects/rd3mod/ssl/ca-bundle.pem_2022-02-08"
+    )
+
+    # Set up Gurobi environment variables
+    # TODO soft code
+    os.environ["GUROBI_HOME"] = tunnel_config.get(
+        "gurobi_home", "/p/projects/rd3mod/gurobi1103/linux64"
+    )
+    os.environ["PATH"] += f":{os.environ['GUROBI_HOME']}/bin"
+    if "LD_LIBRARY_PATH" in os.environ:
+        os.environ["LD_LIBRARY_PATH"] += f":{os.environ['GUROBI_HOME']}/lib"
+    os.environ["GRB_LICENSE_FILE"] = tunnel_config.get(
+        "license_path", "/p/projects/rd3mod/gurobi_rc/gurobi.lic"
+    )
+    os.environ["GRB_CURLVERBOSE"] = tunnel_config.get("verbose", "1")
+    os.environ["GRB_SERVER_TIMEOUT"] = tunnel_config.get("timeout", "10")
+
+    return socks_proc
+
+
+def _check_gurobi_license_subprocess() -> bool:
+    """
+    Subprocess function to check Gurobi license availability.
+    This function will start the Gurobi environment to verify if a license is available.
+
+    Returns:
+        bool: True if the license check succeeded, False otherwise.
+    """
+    import gurobipy
+    try:
+        env = gurobipy.Env(empty=True)
+        env.start()  # Start the Gurobi environment (this will attempt to acquire the license)
+        logger.info("Gurobi license is available.")
+        env.dispose()  # Dispose of the environment after use
+        return True
+    except gurobipy.GurobiError as e:
+        logger.error(f"Error checking Gurobi license: {e}")
+        return False
+
+# =========== HPC helpers ==========
+def check_gurobi_license(attempts=1, timeout=10) -> bool:
+    """
+    Checks the availability of the Gurobi license in a subprocess with timeout.
+
+    Args:
+        attempts (int): Number of attempts.
+        timeout (int): Time to wait before retrying (in seconds).
+
+    Returns:
+        bool: True if the license is available, False if the check times out.
+    """
+    logger.info("Checking Gurobi license availability...")
+
+    for _ in range(attempts):
+        # Create a multiprocessing Process to check license
+        process = multiprocessing.Process(target=_check_gurobi_license_subprocess)
+        process.start()
+
+        process.join(timeout=timeout)  # Wait for the process to finish or timeout
+
+        if process.is_alive():
+            # If the process is still alive after the timeout, terminate it
+            process.terminate()
+            process.join()  # Ensure it is properly joined to clean up
+            logger.warning("License check timeout. Retrying...")
+        else:
+            # If the process completed, check the result
+            if process.exitcode == 0:
+                # License was available
+                return True
+            else:
+                # License was not available
+                logger.warning("License not available during subprocess check. Retrying...")
+
+    return False

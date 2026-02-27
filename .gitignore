@@ -28,7 +28,7 @@
 *~
 
 # Specific untracked files
-config.yaml
+configs/config.yaml
 dag.svg
 gurobi.log
 gadm_shapes.geojson

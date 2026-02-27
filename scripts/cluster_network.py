@@ -138,6 +138,8 @@ from _helpers import (
     nearest_shape,
     update_config_dictionary,
     update_p_nom_max,
+    mock_snakemake, 
+    setup_gurobi_tunnel_and_env,
 )
 from add_electricity import load_costs
 from build_shapes import add_gdp_data, add_population_data
@@ -612,6 +614,17 @@ if __name__ == "__main__":
             "cluster_network", network="elec", simpl="", clusters="20flex"
         )
     configure_logging(snakemake)
+
+
+    # deal with the gurobi license activation, which requires a tunnel to the login nodes
+    solver_config = snakemake.config["solving"]["solver"]
+    gurobi_tnl_cfg = solver_config.get("gurobi_hpc_tunnel", None)
+    logger.info(f"Solver config {solver_config} and license cfg {gurobi_tnl_cfg}")
+    if (solver_config["name"] == "gurobi") & (gurobi_tnl_cfg is not None):
+        tunnel = setup_gurobi_tunnel_and_env(gurobi_tnl_cfg, logger=logger)
+        logger.info(tunnel)
+    else:
+        tunnel = None
 
     inputs, outputs, config = snakemake.input, snakemake.output, snakemake.config
 
