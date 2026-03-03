@@ -21,9 +21,9 @@ dependencies:
 - xlrd
 - openpyxl
 - seaborn
-- snakemake-minimal
+- snakemake-minimal>=9.0
+- snakemake-storage-plugin-http
 - snakemake-executor-plugin-cluster-generic
-- snakemake-executor-plugin-slurm
 - snakemake-executor-plugin-slurm-jobstep
 - snakemake-interface-common
 - snakemake-interface-executor-plugins
@@ -31,14 +31,13 @@ dependencies:
 - snakemake-interface-report-plugins
 - snakemake-interface-scheduler-plugins
 - snakemake-interface-storage-plugins
-- snakemake-storage-plugin-http
 - memory_profiler
 - ruamel.yaml<=0.17.26
 - pytables
 - pyscipopt
 - lxml
 - numpy<2
-- pandas
+- pandas<3
 - geopandas>=1
 - fiona>=1.10
 - xarray>=2023.11.0, <=2025.01.2
