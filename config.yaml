@@ -1,6 +1,15 @@
 # Write down config entries differing from config.default.yaml
-
 run: {}
+
+snapshots:
+  start: "2013-01-01"
+  end: "2014-01-01"
+  inclusive: "left"
+
+load_options:
+  weather_year: 2013
+  prediction_year: 2020
+
 solving:
   solver:
     gurobi_hpc_tunnel:
