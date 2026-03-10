@@ -1,0 +1,16 @@
+# Write down config entries differing from config.default.yaml
+
+run: {}
+solving:
+  solver:
+    gurobi_hpc_tunnel:
+      use_tunnel: True
+      tunnel_port: 27000
+      timeout_s: 15
+      login_node: "03"
+      gurobi_home: "/p/projects/rd3mod/gurobi1103/linux64"
+      license_path: "/p/projects/rd3mod/gurobi_rc/gurobi.lic"
+      verbose: "1"
+      timeout: "10"
+      ssl_cert: "/p/projects/rd3mod/ssl/ca-bundle.pem_2022-02-08"
+      grb_cafile: "/p/projects/rd3mod/ssl/ca-bundle.pem_2022-02-08"

@@ -1232,12 +1232,9 @@ def add_population_data(
                 # Acquire the lock before accessing df_gadm and pbar
                 with lock:
                     # Loop the regions and write population to df_gadm
-                    for i in range(len(df_pop_count)):
-                        gadm_id, pop_count = df_pop_count.iloc[i]
-                        # Select the row with the same "GADM_ID" and set the population count
-                        df_gadm.loc[df_gadm["GADM_ID"] == gadm_id, "pop"] += pop_count
-
-                    # update bar
+                    pop_series = df_pop_count.groupby("GADM_ID")["pop"].sum()
+                    df_gadm.loc[df_gadm["GADM_ID"].isin(pop_series.index), "pop"] += \
+                        df_gadm.loc[df_gadm["GADM_ID"].isin(pop_series.index), "GADM_ID"].map(pop_series)
                     pbar.update(1)
 
 

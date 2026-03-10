@@ -10,7 +10,7 @@
   "workspaceFolder": "/workspaces",
   "postAttachCommand": "bash .devcontainer/setup.sh",
   "features": {
-    "ghcr.io/devcontainers-contrib/features/bash-command:1": {},
+    "ghcr.io/devcontainers-extra/features/bash-command:1": {},
     "ghcr.io/eliises/devcontainer-features/bash-profile:1": {}
   },
   "customizations": {

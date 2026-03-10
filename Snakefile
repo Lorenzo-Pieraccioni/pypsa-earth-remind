@@ -34,7 +34,7 @@ from pathlib import Path
 copy_default_files()
 
 # this fails when submitted to slurm - unclear why
-localrules: build_shapes
+localrules: build_shapes, download_osm_data, retrieve_databundle_light, add_electricity, build_powerplants
 
 configfile: "config.default.yaml"
 configfile: "configs/bundle_config.yaml"
