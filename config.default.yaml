@@ -46,7 +46,7 @@ run:
 scenario:
   simpl: [""]
   ll: ["copt"]
-  clusters: [137]
+  clusters: [250]
   opts: [Co2L-3h]
   planning_horizons: # investment years for myopic and perfect; or costs year for overnight
   - 2030
@@ -57,7 +57,7 @@ scenario:
 
 snapshots:
   start: "2013-01-01"
-  end: "2013-01-08"
+  end: "2014-01-01"
   inclusive: "left" # end is not inclusive
 
 # definition of the Coordinate Reference Systems
@@ -97,7 +97,7 @@ cluster_options:
     algorithm: kmeans
     feature: solar+onwind-time
     exclude_carriers: []
-  alternative_clustering: false # "False" use Voronoi shapes, "True" use GADM shapes
+  alternative_clustering: true # "False" use Voronoi shapes, "True" use GADM shapes
   distribute_cluster: ["load"] # Distributes cluster nodes per country according to ['load'],['pop'] or ['gdp']
   out_logging: true # When "True", logging is printed to console
   aggregation_strategies:
@@ -164,7 +164,7 @@ base_network:
 load_options:
   ssp: "ssp2-2.6" # shared socio-economic pathway (GDP and population growth) scenario to consider
   weather_year: 2013 # Load scenarios available with different weather year (different renewable potentials)
-  prediction_year: 2030 # Load scenarios available with different prediction year (GDP, population)
+  prediction_year: 2020 # Load scenarios available with different prediction year (GDP, population)
   scale: 1 # scales all load time-series, i.e. 2 = doubles load
 
 co2_budget:
@@ -205,9 +205,9 @@ electricity:
   extendable_carriers:
       # Note: For landlocked countries (e.g., Jordan, Austria, Switzerland), remove 'offwind-ac' and 'offwind-dc'
           # from the Generator list below, as these offshore wind technologies require coastline access.
-    Generator: [solar, onwind, offwind-ac, offwind-dc, OCGT]
+    Generator: [] #[solar, onwind, offwind-ac, offwind-dc, OCGT]
     StorageUnit: [] # battery, H2
-    Store: [battery, H2]
+    Store: [] #[battery, H2]
     Link: [] # H2 pipeline
 
   powerplants_filter: (DateOut >= 2022 or DateOut != DateOut) and (DateIn <= 2023 or DateIn != DateIn)
@@ -218,7 +218,7 @@ electricity:
 
   estimate_renewable_capacities:
     stats: "irena" # False, = greenfield expansion, 'irena' uses IRENA stats to add expansion limits
-    year: 2023 # Reference year, available years for IRENA stats are 2000 to 2023
+    year: 2020 # Reference year, available years for IRENA stats are 2000 to 2023
     p_nom_min: 1 # any float, scales the minimum expansion acquired from stats, i.e. 110% of <years>'s capacities => p_nom_min: 1.1
     p_nom_max: false # sets the expansion constraint, False to deactivate this option and use estimated renewable potentials determine by the workflow, float scales the p_nom_min factor accordingly
     technology_mapping:
