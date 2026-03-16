@@ -1,32 +1,27 @@
 # Write down config entries differing from config.default.yaml
 run: {}
-
 scenario:
   clusters: [250]
   opts: [Co2L-6h]
-
 snapshots:
   start: "2013-01-01"
   end: "2014-01-01"
   inclusive: "left"
-
 load_options:
   ssp: "ssp2-2.6"
   weather_year: 2013
   prediction_year: 2030
-  scale: 1.6818
-
+  scale: 0.7828
 electricity:
   extendable_carriers:
     Generator: []
     StorageUnit: []
     Store: []
     Link: []
-  powerplants_filter: (DateOut >= 2060 or DateOut != DateOut) and (DateIn <= 2060 or DateIn != DateIn)
+  powerplants_filter: (DateOut >= 2020 or DateOut != DateOut) and (DateIn <= 2020 or DateIn != DateIn)
   estimate_renewable_capacities:
     stats: "irena"
-    year: 2023
-
+    year: 2020
 solving:
   solver:
     gurobi_hpc_tunnel:
@@ -40,6 +35,5 @@ solving:
       timeout: "10"
       ssl_cert: "/p/projects/rd3mod/ssl/ca-bundle.pem_2022-02-08"
       grb_cafile: "/p/projects/rd3mod/ssl/ca-bundle.pem_2022-02-08"
-
 cluster_options:
-  alternative_clustering: false
+  alternative_clustering: true

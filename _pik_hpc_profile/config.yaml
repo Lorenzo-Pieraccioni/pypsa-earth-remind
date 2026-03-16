@@ -127,7 +127,7 @@ set-resources:
     threads: 1
     partition: io
     qos: io
-    mem_mb: 32000
+    mem_mb: 16000
 
 
 # GROUPS

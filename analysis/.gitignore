@@ -1,0 +1,4 @@
+# Generated output files - do not track
+**/*.png
+**/*.csv
+**/*.txt
