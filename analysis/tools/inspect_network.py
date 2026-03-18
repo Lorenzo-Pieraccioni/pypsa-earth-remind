@@ -120,7 +120,7 @@ def inspect(network_file):
 
     # Save report
     os.makedirs(BASE_OUTPUT_DIR, exist_ok=True)
-    network_name = os.path.splitext(os.path.basename(network_file))[0]
+    network_name = os.path.basename(os.path.dirname(network_file)) + "_" + os.path.splitext(os.path.basename(network_file))[0]
     report_path = os.path.join(BASE_OUTPUT_DIR, f"{network_name}_inspect.txt")
     with open(report_path, "w") as f:
         f.write("\n".join(lines))
