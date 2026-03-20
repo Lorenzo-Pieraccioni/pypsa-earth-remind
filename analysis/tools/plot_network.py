@@ -46,7 +46,7 @@ if __name__ == "__main__":
 
     # Build title from network metadata
     n_buses = len(n.buses)
-    network_name = os.path.splitext(os.path.basename(args.network))[0]
+    network_name = os.path.basename(os.path.dirname(args.network)) + "_" + os.path.splitext(os.path.basename(args.network))[0]
     title = f"PyPSA-Earth — China network ({n_buses} buses) — {network_name}"
 
     # Map
