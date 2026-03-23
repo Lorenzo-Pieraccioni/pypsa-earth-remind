@@ -22,7 +22,7 @@ import os
 
 # ── PARAMETERS ────────────────────────────────────────────────────────────────
 DEMAND_FILE = "resources/demand_profiles.csv"
-OUTPUT_DIR  = "analysis/clustering/output"
+OUTPUT_DIR  = "analysis/load/output"
 
 # ─────────────────────────────────────────────────────────────────────────────
 

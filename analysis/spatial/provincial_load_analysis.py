@@ -32,7 +32,7 @@ import numpy as np
 NETWORK_FILE = "results/networks/CN2020/elec_s_250_ec_lcopt_Co2L-3h.nc"
 EFC_FILE     = "resources/data/validation/EFC_power_his_data.xlsx"
 GADM_FILE    = "resources/shapes/gadm_shapes.geojson"
-OUTPUT_DIR   = "analysis/validation/output"
+OUTPUT_DIR   = "analysis/spatial/output"
 EFC_YEAR     = 2020
 
 GADM_NAMES = {

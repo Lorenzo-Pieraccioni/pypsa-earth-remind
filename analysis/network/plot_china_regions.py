@@ -31,7 +31,7 @@ import shapely.ops as so
 # ── PARAMETERS ────────────────────────────────────────────────────────────────
 
 GADM_FILE    = "resources/shapes/gadm_shapes.geojson"
-OUTPUT_DIR   = "analysis/tools/output"
+OUTPUT_DIR   = "analysis/network/output"
 OUTPUT_FILE  = "china_regions_map.png"
 EXTENT       = [70, 142, 14, 57]
 

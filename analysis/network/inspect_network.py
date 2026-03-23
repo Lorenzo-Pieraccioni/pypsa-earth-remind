@@ -27,7 +27,7 @@ import pypsa
 
 # ── PARAMETERS ────────────────────────────────────────────────────────────────
 
-BASE_OUTPUT_DIR = "analysis/tools/output"
+BASE_OUTPUT_DIR = "analysis/network/output"
 
 # ─────────────────────────────────────────────────────────────────────────────
 

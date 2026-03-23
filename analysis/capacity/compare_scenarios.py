@@ -63,7 +63,7 @@ SCENARIOS = {
 }
 
 EFC_FILE   = "resources/data/validation/EFC_power_his_data.xlsx"
-OUTPUT_DIR = "analysis/comparison/output"
+OUTPUT_DIR = "analysis/capacity/output"
 
 # Maps PyPSA-Earth carriers to EFC technology categories.
 # Units note: EFC capacity values are in units of 10 MW -> divide by 100 to get GW.

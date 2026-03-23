@@ -31,7 +31,7 @@ import numpy as np
 
 NETWORK_2025 = "results/networks/CN2025_Admin2/elec_s_250_ec_lcopt_Co2L-6h.nc"
 NETWORK_2060 = "results/networks/CN2060_Admin2/elec_s_250_ec_lcopt_Co2L-6h.nc"
-OUTPUT_DIR   = "analysis/comparison/output"
+OUTPUT_DIR   = "analysis/capacity/output"
 
 # ── REFERENCE DATA ────────────────────────────────────────────────────────────
 

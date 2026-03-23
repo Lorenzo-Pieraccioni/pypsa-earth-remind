@@ -35,7 +35,7 @@ import numpy as np
 # ── PARAMETERS ────────────────────────────────────────────────────────────────
 
 NETWORK_CN2020_NOCO2 = "results/networks/CN2020_Admin2_noCO2/elec_s_250_ec_lcopt_6h.nc"
-OUTPUT_DIR           = "analysis/validation/output"
+OUTPUT_DIR           = "analysis/capacity/output"
 
 # ── EMBER 2020 REFERENCE DATA ─────────────────────────────────────────────────
 
