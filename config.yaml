@@ -47,7 +47,7 @@ electricity:
     Generator: [solar, onwind, offwind-ac, offwind-dc, gas]
     StorageUnit: [battery]
     Store: [H2]
-    Link: [bus]
+    Link: []
   powerplants_filter: "(DateOut >= 2060 or DateOut != DateOut) and (DateIn <= 2060 or DateIn != DateIn)"
 
   
