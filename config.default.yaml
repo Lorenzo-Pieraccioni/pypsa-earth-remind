@@ -166,6 +166,12 @@ load_options:
   weather_year: 2013 # Load scenarios available with different weather year (different renewable potentials)
   prediction_year: 2020 # Load scenarios available with different prediction year (GDP, population)
   scale: 1 # scales all load time-series, i.e. 2 = doubles load
+  disaggregation:
+    method: geospatial  # supported values. "default" is based on standard approach, "geospatial" employs a geospatial shape to scale demand
+    geospatial:
+      source: "resources/CN_ALT_GADM1/shapes/gadm_shapes.geojson"  # path to the geospatial file, the column "demand" is needed
+      scaling: "subregional" # "absolute" or "relative" or "subregional": relative means that entries of the geospatial file are scaled to the total load of the country, absolute means that entries represent the total demand
+
 
 co2_budget:
   enable: false
