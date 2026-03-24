@@ -25,16 +25,16 @@ import os
 # ── PARAMETERS ────────────────────────────────────────────────────────────────
 
 SCENARIOS = {
-    "CN2020": {
-        "file":  "results/networks/CN2020/elec_s_250_ec_lcopt_Co2L-3h.nc",
+    "CN2020_Admin2_noCO2": {
+        "file":  "results/networks/CN2020_Admin2_noCO2/elec_s_250_ec_lcopt_6h.nc",
         "color": "#1f77b4",
     },
-    "CN2025": {
-        "file":  "results/networks/CN2025/elec_s_250_ec_lcopt_Co2L-6h.nc",
+    "CN2025_Admin2_noCO2": {
+        "file":  "results/networks/CN2025_Admin2_noCO2/elec_s_250_ec_lcopt_6h.nc",
         "color": "#ff7f0e",
     },
-    "CN2060": {
-        "file":  "results/networks/CN2060/elec_s_250_ec_lcopt_Co2L-6h.nc",
+    "CN2060_Admin2_noCO2": {
+        "file":  "results/networks/CN2060_Admin2_noCO2/elec_s_250_ec_lcopt_6h.nc",
         "color": "#2ca02c",
     },
 }
