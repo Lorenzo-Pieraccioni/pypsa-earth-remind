@@ -12,7 +12,7 @@ Produce tre grafici:
 
 e una tabella testuale con i valori mensili per ogni scenario.
 
-Uso: python analysis/validation/load_temporal_profiles.py
+Uso: python analysis/load/load_temporal_profiles.py
 """
 
 import pypsa

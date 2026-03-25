@@ -16,9 +16,9 @@ Output:
   Stampa a schermo + salva report in analysis/tools/output/<nome_rete>_inspect.txt
 
 Uso:
-  python analysis/tools/inspect_network.py results/networks/CN2020/elec_s_250_ec_lcopt_Co2L-3h.nc
-  python analysis/tools/inspect_network.py results/networks/CN2025/elec_s_250_ec_lcopt_Co2L-6h.nc
-  python analysis/tools/inspect_network.py results/networks/CN2060/elec_s_250_ec_lcopt_Co2L-6h.nc
+  python analysis/network/inspect_network.py results/networks/CN2020/elec_s_250_ec_lcopt_Co2L-3h.nc
+  python analysis/network/inspect_network.py results/networks/CN2025/elec_s_250_ec_lcopt_Co2L-6h.nc
+  python analysis/network/inspect_network.py results/networks/CN2060/elec_s_250_ec_lcopt_Co2L-6h.nc
 """
 
 import argparse
