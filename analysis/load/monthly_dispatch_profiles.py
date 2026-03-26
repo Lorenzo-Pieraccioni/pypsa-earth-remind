@@ -175,6 +175,13 @@ def plot_lines(data, output_dir):
     # One row per scenario, one line per carrier
     fig, axes = plt.subplots(1, 3, figsize=(18, 5), sharey=True)
 
+    # Compute global y-axis maximum across all scenarios and carriers
+    global_max = max(
+        df[carrier].reindex(range(1, 13), fill_value=0).max()
+        for df in data.values()
+        for carrier in [c for c in CARRIER_ORDER if c in df.columns]
+    )
+
     for ax, (name, df) in zip(axes, data.items()):
         x = range(1, 13)
         for carrier in [c for c in CARRIER_ORDER if c in df.columns]:
@@ -186,6 +193,7 @@ def plot_lines(data, output_dir):
         ax.set_xticklabels(MONTH_LABELS, fontsize=8)
         ax.set_ylabel("Generation (TWh/month)", fontsize=10)
         ax.set_title(name, fontsize=11, fontweight="bold")
+        ax.set_ylim(0, global_max * 1.1)
         ax.grid(True, alpha=0.3)
         ax.legend(fontsize=7)
 
