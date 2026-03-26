@@ -24,6 +24,7 @@ Uso:
 import argparse
 import os
 import pypsa
+import pandas as pd
 
 # ── PARAMETERS ────────────────────────────────────────────────────────────────
 
@@ -97,26 +98,69 @@ def inspect(network_file):
         / 1e6
     )
     gen_twh = gen_twh[gen_twh.index != "load shedding"].sort_values(ascending=False)
-    total_gen = gen_twh.sum()
+
+    # Generation from storage units (positive = discharge = generation)
+    if not n.storage_units_t.p.empty:
+        stor_gen_twh = (
+            n.storage_units_t.p
+            .clip(lower=0)
+            .multiply(w, axis=0)
+            .sum()
+            .groupby(n.storage_units.carrier)
+            .sum()
+            / 1e6
+        )
+    else:
+        stor_gen_twh = pd.Series(dtype=float)
+
+    # Generation from links (positive flow on bus1 = generation into the network)
+    if not n.links_t.p1.empty:
+        links_gen_twh = (
+            n.links_t.p1
+            .clip(lower=0)
+            .multiply(w, axis=0)
+            .sum()
+            .groupby(n.links.carrier)
+            .sum()
+            / 1e6
+        )
+    else:
+        links_gen_twh = pd.Series(dtype=float)
+
+    total_gen = gen_twh.sum() + stor_gen_twh.sum()
 
     log("")
     log("=" * 60)
     log("4. GENERATION BY CARRIER (TWh)")
     log("=" * 60)
+    log("  Generators:")
     for carrier, val in gen_twh.items():
         share = val / total_gen * 100 if total_gen > 0 else 0
-        log(f"  {carrier:<18} {val:>8.1f} TWh  ({share:.1f}%)")
+        log(f"    {carrier:<18} {val:>8.1f} TWh  ({share:.1f}%)")
+    log("  Storage units (discharge):")
+    for carrier, val in stor_gen_twh.items():
+        share = val / total_gen * 100 if total_gen > 0 else 0
+        log(f"    {carrier:<18} {val:>8.1f} TWh  ({share:.1f}%)")
+    if not links_gen_twh.empty:
+        log("  Links (transmission only, no share):")
+        for carrier, val in links_gen_twh.items():
+            log(f"    {carrier:<18} {val:>8.1f} TWh")
     log(f"  {'TOTAL':<18} {total_gen:>8.1f} TWh")
 
-    # 5. Energy balance
+        # 5. Energy balance
     balance_err = (total_gen - load_twh) / load_twh * 100 if load_twh > 0 else float("nan")
     log("")
     log("=" * 60)
     log("5. ENERGY BALANCE CHECK")
     log("=" * 60)
-    log(f"  Load:         {load_twh:.1f} TWh")
-    log(f"  Generation:   {total_gen:.1f} TWh")
-    log(f"  Error:        {balance_err:.2f}%")
+    log(f"  Load:             {load_twh:.1f} TWh")
+    log(f"  Gen (generators): {gen_twh.sum():.1f} TWh")
+    log(f"  Gen (storage):    {stor_gen_twh.sum():.1f} TWh")
+    log(f"  Gen (total):      {total_gen:.1f} TWh")
+    log(f"  Error:            {balance_err:.2f}%")
+    log("")
+    log("  Note: links (DC, B2B) are transmission elements, not generation sources.")
+    log(f"  Total power transmitted via links: {links_gen_twh.sum():.1f} TWh")
 
     # Save report
     os.makedirs(BASE_OUTPUT_DIR, exist_ok=True)
