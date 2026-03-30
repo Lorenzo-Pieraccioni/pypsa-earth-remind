@@ -26,7 +26,7 @@ load_options:
   ssp: "ssp2-2.6"
   weather_year: 2013
   prediction_year: 2030
-  scale: 0.7828
+  scale: 1.6818
 
 build_shape_options:
   gadm_layer_id: 2 # GADM level area used for the gadm_shapes. Codes are country-dependent but roughly: 0: country, 1: region/county-like, 2: municipality-like
@@ -44,12 +44,11 @@ build_shape_options:
 
 electricity:
   extendable_carriers:
-    Generator: []
-    StorageUnit: []
+    Generator: [solar, onwind, offwind-ac, offwind-dc, nuclear]
+    StorageUnit: [battery, H2]
     Store: []
     Link: []
-  powerplants_filter: "(DateOut >= 2020 or DateOut != DateOut) and (DateIn <= 2020 or DateIn != DateIn)"
-
+  powerplants_filter: "(DateOut >= 2060 or DateOut != DateOut) and (DateIn <= 2060 or DateIn != DateIn)"
   
   max_hours:
     battery: 4
