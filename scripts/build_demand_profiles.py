@@ -189,6 +189,7 @@ def build_demand_profiles(
     admin_shapes,
     countries,
     scale,
+    load_options,
     start_date,
     end_date,
     out_path,
@@ -351,6 +352,7 @@ if __name__ == "__main__":
     countries = snakemake.params.countries
     admin_shapes = snakemake.input.gadm_shapes
     scale = snakemake.params.load_options.get("scale", 1.0)
+    load_options = snakemake.params.load_options
     start_date = snakemake.params.snapshots["start"]
     end_date = snakemake.params.snapshots["end"]
     out_path = snakemake.output[0]
@@ -362,6 +364,7 @@ if __name__ == "__main__":
         admin_shapes,
         countries,
         scale,
+        load_options,
         start_date,
         end_date,
         out_path,
