@@ -26,7 +26,7 @@ load_options:
   ssp: "ssp2-2.6"
   weather_year: 2013
   prediction_year: 2030
-  scale: 1.6818
+  scale: 1
   disaggregation:
     method: geospatial
     geospatial:
@@ -49,11 +49,11 @@ build_shape_options:
 
 electricity:
   extendable_carriers:
-    Generator: [solar, onwind, offwind-ac, offwind-dc, nuclear]
-    StorageUnit: [battery, H2]
+    Generator: []
+    StorageUnit: []
     Store: []
     Link: []
-  powerplants_filter: "(DateOut >= 2060 or DateOut != DateOut) and (DateIn <= 2060 or DateIn != DateIn)"
+  powerplants_filter: "(DateOut >= 2020 or DateOut != DateOut) and (DateIn <= 2020 or DateIn != DateIn)"
   
   max_hours:
     battery: 4
@@ -62,7 +62,7 @@ electricity:
 
   estimate_renewable_capacities:
     stats: "irena" 
-    year: 2023
+    year: 2020
 
 cluster_options:
   alternative_clustering: true # "False" use Voronoi shapes, "True" use GADM shapes
