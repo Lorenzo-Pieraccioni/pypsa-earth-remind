@@ -1,4 +1,4 @@
-# CN2020 — Dispatch only — Validation against Ember 2020
+# CN2025 — Dispatch only — Comparison against Ember 2024 proxy
 run: {}
 
 scenario:
@@ -14,7 +14,7 @@ load_options:
   ssp: "ssp2-2.6"
   weather_year: 2013
   prediction_year: 2030
-  scale: 0.7828
+  scale: 1.0161
   disaggregation:
     method: geospatial
     geospatial:
@@ -31,14 +31,14 @@ electricity:
     StorageUnit: []
     Store: []
     Link: []
-  powerplants_filter: "(DateOut >= 2020 or DateOut != DateOut) and (DateIn <= 2020 or DateIn != DateIn)"
+  powerplants_filter: "(DateOut >= 2025 or DateOut != DateOut) and (DateIn <= 2025 or DateIn != DateIn)"
   max_hours:
     battery: 4
     H2: 168
     PHS: 10
   estimate_renewable_capacities:
     stats: "irena"
-    year: 2020
+    year: 2023
 
 solving:
   solver:
