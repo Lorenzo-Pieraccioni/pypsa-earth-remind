@@ -30,7 +30,7 @@ load_options:
   disaggregation:
     method: geospatial
     geospatial:
-      source: "resources/shapes/gadm_shapes.geojson"
+      source: "data/gadm_shapes_level1.geojson"
       scaling: "subregional"
 
 build_shape_options:
