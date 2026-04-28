@@ -21,7 +21,7 @@ load_options:
   ssp: "ssp2-2.6"
   weather_year: 2013
   prediction_year: 2030
-  scale: 1.6818
+  scale: 2.1484
   disaggregation:
     method: geospatial
     geospatial:
