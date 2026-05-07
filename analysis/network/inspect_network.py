@@ -39,7 +39,8 @@ from matplotlib.patches import Patch
 # ── PARAMETERS ────────────────────────────────────────────────────────────────
 
 BASE_OUTPUT_DIR = "analysis/network/output"
-EMBER_FILE      = "data/validation/ember_yearly_full_release.csv"
+EMBER_FILE      = "data/validation/ember_CN_2025.xlsx"
+IRENA_FILE      = "data/validation/irena_CN_2025.xlsx"
 
 CARRIER_COLORS = {
     "coal":         "#4d4d4d",
@@ -83,6 +84,22 @@ PYPSA_TO_EMBER = {
     "PHS":        "Hydro",
 }
 
+PYPSA_TO_DISPLAY_CAP = {
+    "solar":      "Solar",
+    "onwind":     "Wind",
+    "offwind-ac": "Wind",
+    "offwind-dc": "Wind",
+    "hydro":      "Hydro",
+    "ror":        "Hydro",
+    "PHS":        "Hydro",
+    "nuclear":    "Nuclear",
+    "coal":       "Coal",
+    "lignite":    "Coal",
+    "CCGT":       "Gas",
+    "OCGT":       "Gas",
+    "oil":        "Oil",
+}
+
 def get_color(carrier):
     return CARRIER_COLORS.get(carrier, "#aaaaaa")
 
@@ -91,7 +108,7 @@ def infer_year(network_file):
     if match:
         year = int(match.group(1))
         if year == 2025:
-            return 2025, 2024
+            return 2025, 2025
         if year == 2060:
             return 2060, None
         return year, year
@@ -101,7 +118,7 @@ def load_ember(ember_file, ember_year):
     if not os.path.exists(ember_file):
         print(f"[WARNING] Ember file not found: {ember_file}")
         return None, None
-    df = pd.read_csv(ember_file)
+    df = pd.read_excel(ember_file)
     cn = df[(df["ISO 3 code"] == "CHN") & (df["Year"] == ember_year)]
     cap_ember = (
         cn[(cn["Category"] == "Capacity") & (cn["Subcategory"] == "Fuel")]
@@ -116,6 +133,33 @@ def load_ember(ember_file, ember_year):
         .set_index("Variable")["Value"]
     )
     return cap_ember, gen_ember
+def load_irena(irena_file, year):
+    if not os.path.exists(irena_file):
+        print(f"[WARNING] IRENA file not found: {irena_file}")
+        return None
+    df = pd.read_excel(irena_file, header=0)
+    df.columns = ['Country', 'Technology', 'Grid', 'Year', 'Value_MW']
+    df = df.ffill()
+    df = df[(df['Year'] == year) & (df['Grid'] == 'OnGrid')]
+    df['Value_MW'] = pd.to_numeric(df['Value_MW'], errors='coerce')
+    IRENA_TO_DISPLAY = {
+        'Solar photovoltaic':   'Solar',
+        'Onshore wind energy':  'Wind',
+        'Offshore wind energy': 'Wind',
+        'Renewable hydropower': 'Hydro',
+        'Mixed hydropower':     'Hydro',
+        'Pumped Storage':       'Hydro',
+        'Nuclear energy':       'Nuclear',
+        'Coal':                 'Coal',
+        'Natural gas':          'Gas',
+        'Oil':                  'Oil',
+    }
+    result = {}
+    for tech, display_name in IRENA_TO_DISPLAY.items():
+        val = df[df['Technology'] == tech]['Value_MW'].sum()
+        if val > 0:
+            result[display_name] = result.get(display_name, 0) + val / 1e3
+    return pd.Series(result)
 
 def aggregate_to_ember(model_series, mapping):
     result = {}
@@ -151,10 +195,14 @@ def inspect(network_file):
     model_year, ember_year = infer_year(network_file)
     log(f"  Model year:   {model_year}  |  Ember reference year: {ember_year}")
 
-    cap_ember, gen_ember = None, None
+    irena_cap = None
+    gen_ember = None
     if ember_year:
-        cap_ember, gen_ember = load_ember(EMBER_FILE, ember_year)
-        if cap_ember is not None:
+        _, gen_ember = load_ember(EMBER_FILE, ember_year)
+        irena_cap = load_irena(IRENA_FILE, ember_year)
+        if irena_cap is not None:
+            log(f"  Capacity loaded from IRENA for year {ember_year}")
+        if gen_ember is not None:
             log(f"  Ember data loaded for year {ember_year}")
 
     ember_label = f"Ember {ember_year}" if ember_year else "Ember (n/a)"
@@ -254,6 +302,39 @@ def inspect(network_file):
     log(f"  Error:        {balance_err:.2f}%")
     log(f"  Links total:  {links_gen_twh.sum():.1f} TWh")
 
+    # 6. Comparison vs reference data
+    log("")
+    log("=" * 60)
+    log("6. COMPARISON VS REFERENCE DATA")
+    log("=" * 60)
+    if irena_cap is not None:
+        model_cap_display = aggregate_to_ember(all_cap, PYPSA_TO_DISPLAY_CAP)
+        log(f"  Capacity (GW) — model vs IRENA {ember_year}")
+        log(f"  {'Carrier':<20} {'Model':>10} {'IRENA':>10} {'Error':>8}")
+        log("  " + "-" * 52)
+        for c in sorted(set(model_cap_display.index) | set(irena_cap.index)):
+            m = model_cap_display.get(c, 0.0)
+            r = irena_cap.get(c, 0.0)
+            if r > 0:
+                err = (m - r) / r * 100
+                log(f"  {c:<20} {m:>10.1f} {r:>10.1f} {err:>+8.1f}%")
+            elif m > 0:
+                log(f"  {c:<20} {m:>10.1f} {'n/a':>10} {'n/a':>8}")
+    if gen_ember is not None:
+        model_gen_agg2 = aggregate_to_ember(all_gen, PYPSA_TO_EMBER)
+        log("")
+        log(f"  Generation (TWh) — model vs Ember {ember_year}")
+        log(f"  {'Carrier':<20} {'Model':>10} {'Ember':>10} {'Error':>8}")
+        log("  " + "-" * 52)
+        for c in sorted(set(model_gen_agg2.index) | set(gen_ember.index)):
+            m = model_gen_agg2.get(c, 0.0)
+            r = gen_ember.get(c, 0.0)
+            if r > 0:
+                err = (m - r) / r * 100
+                log(f"  {c:<20} {m:>10.1f} {r:>10.1f} {err:>+8.1f}%")
+            elif m > 0:
+                log(f"  {c:<20} {m:>10.1f} {'n/a':>10} {'n/a':>8}")
+
     report_path = os.path.join(BASE_OUTPUT_DIR, f"{network_name}_inspect.txt")
     with open(report_path, "w") as f:
         f.write("\n".join(lines))
@@ -261,15 +342,16 @@ def inspect(network_file):
 
     # ── GRAFICI ───────────────────────────────────────────────────────────────
 
-    model_cap_agg = aggregate_to_ember(all_cap, PYPSA_TO_EMBER)
+    model_cap_agg = aggregate_to_ember(all_cap, PYPSA_TO_DISPLAY_CAP)
     model_gen_agg = aggregate_to_ember(all_gen, PYPSA_TO_EMBER)
 
-    # ── PLOT 1: Capacità modello vs Ember ─────────────────────────────────────
-    carriers_cap = sorted(set(model_cap_agg.index) | (set(cap_ember.index) if cap_ember is not None else set()))
+    # ── PLOT 1: Capacità modello vs IRENA ─────────────────────────────────────
+    irena_label = f"IRENA {ember_year}" if ember_year else "IRENA (n/a)"
+    carriers_cap = sorted(set(model_cap_agg.index) | (set(irena_cap.index) if irena_cap is not None else set()))
     x = np.arange(len(carriers_cap))
     width = 0.35
     mv = [model_cap_agg.get(c, 0) for c in carriers_cap]
-    ev = [cap_ember.get(c, 0) if cap_ember is not None else 0 for c in carriers_cap]
+    ev = [irena_cap.get(c, 0) if irena_cap is not None else 0 for c in carriers_cap]
     colors_c = [get_color(c) for c in carriers_cap]
 
     err_cap = [(m - e) / e * 100 if e > 0 else None for m, e in zip(mv, ev)]
@@ -282,14 +364,13 @@ def inspect(network_file):
     ax_top.bar(x - width/2, mv, width, color=colors_c, alpha=0.9,
                edgecolor="white", label="Model")
     ax_top.bar(x + width/2, ev, width, color=colors_c, alpha=0.45,
-               edgecolor="black", linewidth=0.8, label=ember_label, hatch="///")
+               edgecolor="black", linewidth=0.8, label=irena_label, hatch="///")
     for i, m in enumerate(mv):
         if m > 0:
             ax_top.text(x[i] - width/2, m * 1.15, f"{m:.0f} GW",
                         ha="center", va="bottom", fontsize=8, fontweight="bold")
-    ax_top.set_yscale("log")
-    ax_top.set_ylabel("GW (log scale)", fontsize=11)
-    ax_top.set_title(f"Installed capacity: model vs {ember_label}\n{network_name}",
+    ax_top.set_ylabel("GW", fontsize=11)
+    ax_top.set_title(f"Installed capacity: model vs {irena_label}\n{network_name}",
                      fontsize=12, fontweight="bold")
     ax_top.legend(fontsize=10)
     ax_top.grid(True, axis="y", alpha=0.2, which="both")
@@ -354,8 +435,7 @@ def inspect(network_file):
                         f"{m:.0f} TWh\n({share:.0f}%)",
                         ha="center", va="bottom", fontsize=7.5, fontweight="bold")
 
-    ax_top.set_yscale("log")
-    ax_top.set_ylabel("TWh (log scale)", fontsize=11)
+    ax_top.set_ylabel("TWh", fontsize=11)
     ax_top.set_title(f"Generation: model vs {ember_label}\n{network_name}",
                      fontsize=12, fontweight="bold")
     ax_top.legend(fontsize=10)
