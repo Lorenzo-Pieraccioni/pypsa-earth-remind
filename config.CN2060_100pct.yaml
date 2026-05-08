@@ -9,7 +9,7 @@ run: {}
 
 scenario:
   clusters: [250]
-  opts: [6h, Co2L0.0]
+  opts: [3h, Co2L0.0]
 
 snapshots:
   start: "2013-01-01"
