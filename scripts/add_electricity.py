@@ -526,14 +526,14 @@ def attach_hydro(n, costs, ppl):
     supported_techs = ["Run-Of-River", "Pumped Storage", "Reservoir"]
     invalid_techs = ppl.loc[~ppl.technology.isin(supported_techs)]
 
-    # Current fix, NaN technologies set to ROR
+    # Current fix, NaN technologies set to Reservoir
     if not invalid_techs.empty:
         n_invalid = invalid_techs.shape[0]
         logger.warning(
             f"Identified {n_invalid} hydro powerplants with unknown technology.\n"
-            "Initialized to 'Run-Of-River'"
+            "Initialized to 'Reservoir'"
         )
-        ppl.loc[invalid_techs.index, "technology"] = "Run-Of-River"
+        ppl.loc[invalid_techs.index, "technology"] = "Reservoir"
 
     ror = ppl.query('technology == "Run-Of-River"')
     phs = ppl.query('technology == "Pumped Storage"')
@@ -836,11 +836,8 @@ def estimate_renewable_capacities_irena(
         )
         tech_i = n.generators.query("carrier in @techs").index
         n.generators.loc[tech_i, "p_nom"] = (
-            (
-                n.generators_t.p_max_pu[tech_i].mean()
-                * n.generators.loc[tech_i, "p_nom_max"]
-            )
-            # maximal yearly generation
+            n.generators.loc[tech_i, "p_nom_max"]
+            # distribute by available area only, no CF bias
             .groupby(n.generators.bus.map(n.buses.country))
             .transform(lambda s: normed(s) * tech_capacities.at[s.name])
             .where(lambda s: s > 0.1, 0.0)
