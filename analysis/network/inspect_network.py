@@ -231,9 +231,9 @@ def inspect(network_file):
     log(f"  Model total:  {load_twh:.1f} TWh")
 
     # 3. Installed capacity
-    cap = n.generators.groupby("carrier")["p_nom"].sum() / 1e3
+    cap = n.generators.groupby("carrier")["p_nom_opt"].sum() / 1e3
     cap = cap[cap.index != "load shedding"].sort_values(ascending=False)
-    stor = n.storage_units.groupby("carrier")["p_nom"].sum() / 1e3
+    stor = n.storage_units.groupby("carrier")["p_nom_opt"].sum() / 1e3
     all_cap = pd.concat([cap, stor]).sort_values(ascending=False)
 
     log("")
