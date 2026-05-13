@@ -69,7 +69,7 @@ set-resources:
     mem_mb: 32000
     time: 30
   solve_network:
-    mem_mb: 90000
+    mem_mb: 180000
     time : 80
     threads: 6
   build_cutout:

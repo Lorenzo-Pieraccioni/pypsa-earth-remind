@@ -29,10 +29,10 @@
 
 # # ── PARAMETERS ────────────────────────────────────────────────────────────────
 
-# NETWORK_FILE = "results/networks/fix-hydro/CN2020_Admin2/elec_s_250_ec_lcopt_6h.nc"
+# NETWORK_FILE = "results/networks/geospatial_v2_approccio1/CN2020_Admin2/elec_s_250_ec_lcopt_3h.nc"
 # EFC_FILE     = "resources/data/validation/EFC_power_his_data.xlsx"
 # GADM_FILE    = "resources/shapes/gadm_shapes.geojson"
-# OUTPUT_DIR   = "analysis/spatial/output/fix-hydro"
+# OUTPUT_DIR   = "analysis/spatial/output/approccio1"
 # EFC_YEAR     = 2020
 
 # GADM_NAMES = {
@@ -179,10 +179,10 @@ import numpy as np
 
 # ── PARAMETERS ────────────────────────────────────────────────────────────────
 
-NETWORK_FILE = "results/networks/fix-hydro/CN2020_Admin2/elec_s_250_ec_lcopt_6h.nc"
+NETWORK_FILE = "results/networks/geospatial_v2_approccio1/CN2020_Admin2/elec_s_250_ec_lcopt_3h.nc"
 EFC_FILE     = "resources/data/validation/EFC_power_his_data.xlsx"
 GADM_FILE    = "resources/shapes/gadm_shapes.geojson"
-OUTPUT_DIR   = "analysis/spatial/output/fix-hydro"
+OUTPUT_DIR   = "analysis/spatial/output/approccio1"
 EFC_YEAR     = 2020
 
 GADM_NAMES = {

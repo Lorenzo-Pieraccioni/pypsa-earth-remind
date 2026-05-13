@@ -3,7 +3,7 @@ run: {}
 
 scenario:
   clusters: [250]
-  opts: [6h]
+  opts: [3h]
 
 snapshots:
   start: "2013-01-01"
@@ -38,7 +38,7 @@ electricity:
     PHS: 10
   estimate_renewable_capacities:
     stats: "irena"
-    year: 2023
+    year: 2024
 
 solving:
   solver:
