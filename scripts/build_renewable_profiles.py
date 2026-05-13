@@ -557,6 +557,11 @@ if __name__ == "__main__":
         hydro_ppls = pd.DataFrame(
             hgdf.loc[temp_gdf.index_right.dropna().index].drop(columns="geometry")
         )
+        
+        # Current fix, NaN technologies set to Reservoir    
+        supported_techs = ["Run-Of-River", "Pumped Storage", "Reservoir"] 
+        invalid_techs = hydro_ppls.loc[~hydro_ppls.technology.isin(supported_techs)]
+        hydro_ppls.loc[invalid_techs.index, "technology"] = "Reservoir" 
 
         bus_notin_hydrobasins = list(
             set(inflow_ppls.index).difference(set(hydro_ppls.index))
