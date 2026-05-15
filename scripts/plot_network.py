@@ -98,7 +98,7 @@ def set_plot_style():
     plt.style.use(
         [
             "classic",
-            "seaborn-white",
+            "seaborn-v0_8-white",
             {
                 "axes.grid": False,
                 "grid.linestyle": "--",
@@ -174,7 +174,7 @@ def plot_map(n, ax=None, attribute="p_nom", opts={}):
         bus_sizes=0,
         # boundaries=map_boundaries,
         color_geomap=True,
-        geomap=False,
+        geomap=True,
         ax=ax,
     )
     ax.set_aspect("equal")
@@ -1066,7 +1066,7 @@ if __name__ == "__main__":
             )
         )
 
-        fig.savefig(snakemake.output.ext, transparent=True, bbox_inches="tight")
+        fig.savefig(snakemake.output.ext, transparent=False, facecolor="white", bbox_inches="tight")
 
     if snakemake.rule == "plot_sector_network":
 

@@ -135,7 +135,7 @@ def plot_costs(infn, snmk, fn=None):
     fig_costs.tight_layout()
 
     if fn is not None:
-        fig_costs.savefig(fn, transparent=True)
+        fig_costs.savefig(fn, transparent=False, facecolor="white")
 
 
 def plot_energy(infn, snmk, fn=None):
@@ -212,7 +212,7 @@ def plot_energy(infn, snmk, fn=None):
     fig_energy.tight_layout()
 
     if fn is not None:
-        fig_energy.savefig(fn, transparent=True)
+        fig_energy.savefig(fn, transparent=False, facecolor="white")
 
 
 if __name__ == "__main__":
