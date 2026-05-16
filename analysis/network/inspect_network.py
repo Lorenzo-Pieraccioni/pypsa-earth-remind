@@ -81,7 +81,7 @@ PYPSA_TO_EMBER = {
     "solar":      "Solar",
     "hydro":      "Hydro",
     "ror":        "Hydro",
-    "PHS":        "Hydro",
+    "PHS":        "PHS",
 }
 
 PYPSA_TO_DISPLAY_CAP = {
@@ -91,7 +91,7 @@ PYPSA_TO_DISPLAY_CAP = {
     "offwind-dc": "Wind",
     "hydro":      "Hydro",
     "ror":        "Hydro",
-    "PHS":        "Hydro",
+    "PHS":        "PHS",
     "nuclear":    "Nuclear",
     "coal":       "Coal",
     "lignite":    "Coal",
@@ -148,7 +148,7 @@ def load_irena(irena_file, year):
         'Offshore wind energy': 'Wind',
         'Renewable hydropower': 'Hydro',
         'Mixed hydropower':     'Hydro',
-        'Pumped Storage':       'Hydro',
+        'Pumped hydro':          'PHS',
         'Nuclear energy':       'Nuclear',
         'Coal':                 'Coal',
         'Natural gas':          'Gas',
