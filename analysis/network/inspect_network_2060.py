@@ -107,7 +107,7 @@ PYPSA_TO_CETO_GEN = {
     "offwind-dc":  "wind_total",
     "hydro":       "hydro",
     "ror":         "hydro",
-    "PHS":         "hydro",
+    "PHS":         "pumped_hydro",
     "nuclear":     "nuclear",
     "coal":        "coal",
     "lignite":     "coal",
