@@ -38,7 +38,7 @@ from matplotlib.patches import Patch
 
 # ── PARAMETERS ────────────────────────────────────────────────────────────────
 
-BASE_OUTPUT_DIR = "analysis/network/output"
+BASE_OUTPUT_DIR = os.environ.get("PYPSA_OUTPUT_DIR", "analysis/network/output")
 EMBER_FILE      = "data/validation/ember_CN_2025.xlsx"
 IRENA_FILE      = "data/validation/irena_CN_2025.xlsx"
 

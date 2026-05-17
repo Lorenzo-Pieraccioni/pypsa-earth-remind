@@ -44,7 +44,7 @@ import matplotlib.pyplot as plt
 
 # ── PARAMETERS ────────────────────────────────────────────────────────────────
 
-BASE_OUTPUT_DIR = "analysis/network/output"
+BASE_OUTPUT_DIR = os.environ.get("PYPSA_OUTPUT_DIR", "analysis/network/output")
 CETO_FILE       = "data/validation/ceto_2025_reference.csv"
 
 # CETO 2025 total electricity demand projection for 2060 (TWh)

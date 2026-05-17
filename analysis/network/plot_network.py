@@ -28,7 +28,7 @@ import geopandas as gpd
 # ── PARAMETERS ────────────────────────────────────────────────────────────────
 
 GADM_FILE       = "resources/shapes/gadm_shapes.geojson"
-BASE_OUTPUT_DIR = "analysis/network/output"
+BASE_OUTPUT_DIR = os.environ.get("PYPSA_OUTPUT_DIR", "analysis/network/output")
 
 # ─────────────────────────────────────────────────────────────────────────────
 

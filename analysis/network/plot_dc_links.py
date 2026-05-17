@@ -40,7 +40,7 @@ import cartopy.crs as ccrs
 # ── PARAMETERS ────────────────────────────────────────────────────────────────
 
 GADM_FILE       = "resources/shapes/gadm_shapes.geojson"
-BASE_OUTPUT_DIR = "analysis/network/output"
+BASE_OUTPUT_DIR = os.environ.get("PYPSA_OUTPUT_DIR", "analysis/network/output")
 
 # Line width scaling for DC links
 LW_MIN_DC = 0.8
