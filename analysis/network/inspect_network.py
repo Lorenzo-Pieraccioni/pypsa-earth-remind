@@ -553,6 +553,46 @@ def inspect(network_file):
     plt.close()
     print(f"Saved: {out}")
 
+# ── CO2 emissions ─────────────────────────────────────────────────────────
+    dt_co2 = (n.snapshots[1] - n.snapshots[0]).total_seconds() / 3600.0
+    co2_factors = n.carriers["co2_emissions"]
+    co2_rows = []
+    for carrier in n.generators.carrier.unique():
+        factor = float(co2_factors.get(carrier, 0.0))
+        if factor == 0.0:
+            continue
+        gens         = n.generators[n.generators.carrier == carrier]
+        dispatch_twh = (
+            n.generators_t.p
+            .reindex(columns=gens.index, fill_value=0.0)
+            .sum().sum() * dt_co2 / 1e6
+        )
+        eff      = float(gens["efficiency"].mean())
+        co2_mt   = dispatch_twh * 1e6 / eff * factor / 1e6  # MtCO2
+        co2_rows.append({
+            "carrier":      carrier,
+            "dispatch_twh": round(dispatch_twh, 1),
+            "efficiency":   round(eff, 3),
+            "co2_MtCO2":    round(co2_mt, 1),
+        })
+
+    co2_df      = pd.DataFrame(co2_rows).sort_values("co2_MtCO2", ascending=False)
+    total_co2   = co2_df["co2_MtCO2"].sum()
+    total_co2_gt = total_co2 / 1e3
+
+    print(f"\n{'─'*55}")
+    print(f"CO2 EMISSIONS — {network_name}")
+    print(f"{'─'*55}")
+    print(co2_df.to_string(index=False))
+    print(f"{'─'*55}")
+    print(f"  Total: {total_co2:.0f} MtCO2  ({total_co2_gt:.2f} GtCO2)")
+    print(f"  Reference: China power sector 2020 ~4.7 GtCO2 (IEA)")
+    print(f"{'─'*55}\n")
+
+    co2_path = os.path.join(BASE_OUTPUT_DIR, f"{network_name}_co2_emissions.csv")
+    co2_df.to_csv(co2_path, index=False)
+    print(f"Saved: {co2_path}")
+
 
 # ── MAIN ──────────────────────────────────────────────────────────────────────
 

@@ -58,17 +58,17 @@ GADM_PROVINCE = {
     31: "Zhejiang",
 }
 
-MUNICIPALITY_NUMS = {2, 27, 24, 3}
-
+# Zone sincrone ufficiali cinesi — fonte: grids.csv PyPSA-China-PIK (Ivan Ramirez)
+# Colori: palette colorblind-safe (Wong 2011)
+# Inner Mongolia (CN.19) assegnata a NC (connessione prevalente).
 REGIONAL_GROUPS = {
-    "MC": ("Municipalities",  "#e41a1c", [2, 27, 24, 3]),
-    "NC": ("North China",     "#4393c3", [10, 25, 19, 12]),
-    "NE": ("Northeast",       "#4daf4a", [18, 17, 11]),
-    "NW": ("Northwest",       "#f4a620", [22, 5, 21, 20, 28]),
-    "EC": ("East Coast",      "#7b4fa6", [15, 31, 1, 4, 23]),
-    "CC": ("Central China",   "#8c6d3f", [13, 14, 16]),
-    "SW": ("Southwest",       "#f781bf", [26, 30, 8, 29]),
-    "SC": ("South China",     "#888888", [6, 7, 9]),
+    "NC": ("North China Sync Zone",     "#0072B2", [2,  10, 19, 23, 25, 27]),
+    "NE": ("Northeast China Sync Zone", "#D55E00", [11, 17, 18]),
+    "EC": ("East China Sync Zone",      "#009E73", [1,  4,  15, 24, 31]),
+    "CC": ("Central China Sync Zone",   "#E69F00", [3,  12, 13, 14, 16, 26]),
+    "NW": ("Northwest China Sync Zone", "#CC79A7", [5,  20, 21, 22, 28]),
+    "SC": ("South China Sync Zone",     "#56B4E9", [6,  7,  8,  9,  30]),
+    "TB": ("Tibet  (DC connected)",     "#999999", [29]),
 }
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -102,7 +102,6 @@ if __name__ == "__main__":
     # Dissolve to province level
     provinces = china.dissolve(by="prov_num").reset_index()
     provinces["prov_name"] = provinces["prov_num"].map(GADM_PROVINCE)
-    provinces["is_muni"] = provinces["prov_num"].isin(MUNICIPALITY_NUMS)
     china_outer = china.dissolve()
 
     # ── Geometric extraction of internal prefecture borders ───────────────────
@@ -191,19 +190,12 @@ if __name__ == "__main__":
         zorder=5,
     )
 
-    # z=6: provincial boundaries (thick black)
-    for _, row in provinces[~provinces["is_muni"]].iterrows():
+    # z=6: provincial boundaries (thick black, uniform)
+    for _, row in provinces.iterrows():
         ax.add_geometries([row.geometry], crs=proj,
                           facecolor="none",
                           edgecolor="#111111", linewidth=1.9,
                           zorder=6)
-
-    # z=7: municipality boundaries (extra thick)
-    for _, row in provinces[provinces["is_muni"]].iterrows():
-        ax.add_geometries([row.geometry], crs=proj,
-                          facecolor="none",
-                          edgecolor="#111111", linewidth=3.4,
-                          zorder=7)
 
     # z=8: China outer boundary
     for _, row in china_outer.iterrows():
@@ -250,9 +242,9 @@ if __name__ == "__main__":
               handlelength=1.6, borderpad=1.0, labelspacing=0.75)
 
     ax.set_title(
-        "China — Administrative Map\n"
+        "China — Synchronous Grid Zones\n"
         "GADM2 prefectures (grey borders) + GADM1 provinces (thick black borders)\n"
-        "Colored by regional energy group  |  Extra-thick borders = municipalities",
+        "Source: grids.csv PyPSA-China-PIK (Ivan Ramirez)",
         fontsize=12, pad=14)
 
     plt.tight_layout()

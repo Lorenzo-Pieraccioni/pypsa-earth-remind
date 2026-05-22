@@ -88,10 +88,10 @@ cluster_options:
     algorithm: kmeans # choose from: [hac, kmeans]
     feature: solar+onwind-time # only for hac. choose from: [solar+onwind-time, solar+onwind-cap, solar-time, solar-cap, solar+offwind-cap] etc.
     exclude_carriers: []
-    remove_stubs: true
+    remove_stubs: false
     remove_stubs_across_borders: false
-    p_threshold_drop_isolated: 20 # [MW] isolated (sub)networks or nodes are being discarded if total mean power is below the specified threshold
-    p_threshold_merge_isolated: 300 # [MW] isolated (sub)networks or nodes are being merged into a single isolated bus if total mean power is below the specified threshold
+    p_threshold_drop_isolated: 1. # [MW] isolated (sub)networks or nodes are being discarded if total mean power is below the specified threshold
+    p_threshold_merge_isolated: 2. # [MW] isolated (sub)networks or nodes are being merged into a single isolated bus if total mean power is below the specified threshold
     s_threshold_fetch_isolated: false # [-] a share of the national load for merging an isolated network into a backbone network
   cluster_network:
     algorithm: kmeans
@@ -152,7 +152,7 @@ clean_osm_data_options: # osm = OpenStreetMap
 
 build_osm_network: # Options of the build_osm_network script; osm = OpenStreetMap
   group_close_buses: true # When "True", close buses are merged and guarantee the voltage matching among line endings
-  group_tolerance_buses: 20000 # [m] (default 5000) Tolerance in meters of the close buses to merge
+  group_tolerance_buses: 5000 # [m] (default 5000) Tolerance in meters of the close buses to merge
   split_overpassing_lines: true # When True, lines overpassing buses are splitted and connected to the bueses
   overpassing_lines_tolerance: 1 # [m] (default 1) Tolerance to identify lines overpassing buses
   force_ac: false # When true, it forces all components (lines and substation) to be AC-only. To be used if DC assets create problem.
