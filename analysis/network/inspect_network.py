@@ -171,7 +171,7 @@ def aggregate_to_ember(model_series, mapping):
 
 # ─────────────────────────────────────────────────────────────────────────────
 
-def inspect(network_file):
+def inspect(network_file, year_override=None):
     if not os.path.exists(network_file):
         print(f"[ERROR] File not found: {network_file}")
         raise SystemExit(1)
@@ -193,6 +193,9 @@ def inspect(network_file):
     os.makedirs(BASE_OUTPUT_DIR, exist_ok=True)
 
     model_year, ember_year = infer_year(network_file)
+    if year_override is not None:
+        model_year = year_override
+        ember_year = year_override if year_override != 2060 else None
     log(f"  Model year:   {model_year}  |  Ember reference year: {ember_year}")
 
     irena_cap = None
@@ -601,5 +604,6 @@ if __name__ == "__main__":
         description="Quick inspection of a PyPSA-Earth network with Ember comparison"
     )
     parser.add_argument("network", help="Path to the .nc network file")
+    parser.add_argument("--year", type=int, default=None, help="Model year (2020, 2025, 2060). Overrides infer_year.")
     args = parser.parse_args()
-    inspect(args.network)
+    inspect(args.network, year_override=args.year)
