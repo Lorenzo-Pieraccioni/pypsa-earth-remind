@@ -108,7 +108,7 @@ def infer_year(network_file):
     if match:
         year = int(match.group(1))
         if year == 2025:
-            return 2025, 2025
+            return 2025, 2024  # Ember 2024 used as proxy
         if year == 2060:
             return 2060, None
         return year, year
@@ -194,8 +194,9 @@ def inspect(network_file, year_override=None):
 
     model_year, ember_year = infer_year(network_file)
     if year_override is not None:
+        _, ember_year_mapped = infer_year(f"CN{year_override}")
         model_year = year_override
-        ember_year = year_override if year_override != 2060 else None
+        ember_year = ember_year_mapped if ember_year_mapped is not None else (year_override if year_override != 2060 else None)
     log(f"  Model year:   {model_year}  |  Ember reference year: {ember_year}")
 
     irena_cap = None
