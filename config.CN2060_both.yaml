@@ -6,7 +6,8 @@
 # China's carbon neutrality announcement).
 co2base: 4.716e+9
 
-run: {}
+run:
+  name: CN2060
 
 scenario:
   clusters: [250]

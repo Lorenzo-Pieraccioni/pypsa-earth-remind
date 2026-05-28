@@ -1,6 +1,6 @@
-# CN2020 — Dispatch only — Validation against Ember 2020
+# CN2025 — Dispatch only — Comparison against Ember 2024 proxy
 run:
-  name: CN2020
+  name: CN2024
 
 scenario:
   clusters: [250]
@@ -15,7 +15,7 @@ load_options:
   ssp: "ssp2-2.6"
   weather_year: 2013
   prediction_year: 2030
-  scale: 1.0
+  scale: 1.298
   disaggregation:
     method: geospatial
     geospatial:
@@ -32,14 +32,14 @@ electricity:
     StorageUnit: []
     Store: []
     Link: []
-  powerplants_filter: "(DateOut >= 2020 or DateOut != DateOut) and (DateIn <= 2020 or DateIn != DateIn)"
+  powerplants_filter: "(DateOut >= 2024 or DateOut != DateOut) and (DateIn <= 2024 or DateIn != DateIn)"
   max_hours:
     battery: 4
     H2: 168
     PHS: 10
   estimate_renewable_capacities:
     stats: "irena"
-    year: 2020
+    year: 2024
 
 solving:
   solver:
@@ -54,6 +54,4 @@ solving:
       timeout: "10"
       ssl_cert: "/p/projects/rd3mod/ssl/ca-bundle.pem_2022-02-08"
       grb_cafile: "/p/projects/rd3mod/ssl/ca-bundle.pem_2022-02-08"
-
-
 

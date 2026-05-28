@@ -230,9 +230,20 @@ def inspect(network_file, year_override=None):
     load_twh = (n.loads_t.p_set.multiply(w, axis=0)).sum().sum() / 1e6
     log("")
     log("=" * 60)
+    # Reference load data by year
+    LOAD_REFERENCE = {
+        2020: (7511.0, "EFC 2020"),
+        2024: (9850.0, "NEA 2024 (Xinhua, Jan 2025)"),
+        2025: (9850.0, "NEA 2024 proxy"),
+    }
     log("2. TOTAL ELECTRICITY LOAD")
     log("=" * 60)
     log(f"  Model total:  {load_twh:.1f} TWh")
+    if model_year in LOAD_REFERENCE:
+        ref_load, ref_source = LOAD_REFERENCE[model_year]
+        load_err = (load_twh / ref_load - 1) * 100
+        log(f"  Reference:    {ref_load:.1f} TWh ({ref_source})")
+        log(f"  Error:        {load_err:+.1f}%")
 
     # 3. Installed capacity
     cap = n.generators.groupby("carrier")["p_nom_opt"].sum() / 1e3
