@@ -835,13 +835,18 @@ def estimate_renewable_capacities_irena(
             countries, fill_value=0.0
         )
         tech_i = n.generators.query("carrier in @techs").index
+        # Uniform per-province distribution (1/N fix, 28.05.2026)
+        # Each province receives equal share of national IRENA capacity,
+        # distributed equally among its buses.
+        tech_province = n.generators.loc[tech_i, "bus"].map(
+            lambda b: ".".join(b.split(".")[:2])
+        )
+        province_n_buses = tech_province.value_counts()
+        uniform_weight = 1.0 / tech_province.map(province_n_buses)
+        country_key = n.generators.loc[tech_i, "bus"].map(n.buses.country)
         n.generators.loc[tech_i, "p_nom"] = (
-            (
-                n.generators_t.p_max_pu[tech_i].mean()
-                * n.generators.loc[tech_i, "p_nom_max"]
-            )
-            # maximal yearly generation
-            .groupby(n.generators.bus.map(n.buses.country))
+            uniform_weight
+            .groupby(country_key)
             .transform(lambda s: normed(s) * tech_capacities.at[s.name])
             .where(lambda s: s > 0.1, 0.0)
         )  # only capacities above 100kW
