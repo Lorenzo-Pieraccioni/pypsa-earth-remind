@@ -7,7 +7,7 @@
 co2base: 4.716e+9
 
 run:
-  name: CN2060
+  name: CN2060_01_PHSext
 
 scenario:
   clusters: [250]
@@ -36,14 +36,14 @@ build_shape_options:
 electricity:
   extendable_carriers:
     Generator: [solar, onwind, offwind-ac, offwind-dc, OCGT, nuclear]
-    StorageUnit: [battery, H2]
+    StorageUnit: [battery, H2, PHS]
     Store: []
     Link: []
   powerplants_filter: "(DateOut >= 2060 or DateOut != DateOut) and (DateIn <= 2060 or DateIn != DateIn)"
   max_hours:
     battery: 4
     H2: 168
-    PHS: 10
+    PHS: 16
   estimate_renewable_capacities:
     stats: "irena"
     year: 2023

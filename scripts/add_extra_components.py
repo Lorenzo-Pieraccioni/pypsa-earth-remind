@@ -85,8 +85,15 @@ def attach_storageunits(n, costs, config):
 
     lookup_store = {"H2": "electrolysis", "battery": "battery inverter"}
     lookup_dispatch = {"H2": "fuel cell", "battery": "battery inverter"}
-
     for carrier in carriers:
+        # PHS: costs file stores roundtrip efficiency (0.75); split into per-direction
+        if carrier == "PHS":
+            eff_rt = costs.at["PHS", "efficiency"]
+            eff_store = eff_dispatch = eff_rt ** 0.5
+        else:
+            eff_store = costs.at[lookup_store[carrier], "efficiency"]
+            eff_dispatch = costs.at[lookup_dispatch[carrier], "efficiency"]
+        mc = costs.at[carrier, "marginal_cost"] if carrier in costs.index else 0.0
         n.madd(
             "StorageUnit",
             buses_i,
@@ -95,14 +102,12 @@ def attach_storageunits(n, costs, config):
             carrier=carrier,
             p_nom_extendable=True,
             capital_cost=costs.at[carrier, "capital_cost"],
-            marginal_cost=costs.at[carrier, "marginal_cost"],
-            efficiency_store=costs.at[lookup_store[carrier], "efficiency"],
-            efficiency_dispatch=costs.at[lookup_dispatch[carrier], "efficiency"],
+            marginal_cost=mc,
+            efficiency_store=eff_store,
+            efficiency_dispatch=eff_dispatch,
             max_hours=max_hours[carrier],
             cyclic_state_of_charge=True,
         )
-
-
 def attach_stores(n, costs, config):
     elec_opts = config["electricity"]
     carriers = elec_opts["extendable_carriers"]["Store"]
