@@ -1,0 +1,114 @@
+source,scenario,year,carrier,capacity_gw,generation_twh,uncertainty,page_ref,source_type,notes
+CETO_2025,BCNS,2024,wind_total,520,,0.05,p35_text,text_direct,Baseline 2024 condiviso BCNS e ICNS
+CETO_2025,ICNS,2024,wind_total,520,,0.05,p35_text,text_direct,Baseline 2024 condiviso BCNS e ICNS
+CETO_2025,BCNS,2024,solar_pv_total,890,,0.05,p35_text,text_direct,Baseline 2024 condiviso
+CETO_2025,ICNS,2024,solar_pv_total,890,,0.05,p35_text,text_direct,Baseline 2024 condiviso
+CETO_2025,BCNS,2024,distributed_wind_onshore,20,,0.15,p35_text,text_direct,Testo: under 20 GW. Valore conservativo
+CETO_2025,ICNS,2024,distributed_wind_onshore,20,,0.15,p35_text,text_direct,Testo: under 20 GW. Valore conservativo
+CETO_2025,BCNS,2024,distributed_solar_pv,370,,0.05,p35_text,text_direct,Baseline 2024 condiviso
+CETO_2025,ICNS,2024,distributed_solar_pv,370,,0.05,p35_text,text_direct,Baseline 2024 condiviso
+CETO_2025,BCNS,2024,energy_storage_total,138,,0.05,p23_text,text_direct,Totale storage capacity 2024
+CETO_2025,ICNS,2024,energy_storage_total,138,,0.05,p23_text,text_direct,Totale storage capacity 2024
+CETO_2025,BCNS,2024,new_type_energy_storage,73.8,,0.05,p23_text,text_direct,New-type storage 2024 (incl. battery)
+CETO_2025,ICNS,2024,new_type_energy_storage,73.8,,0.05,p23_text,text_direct,New-type storage 2024 (incl. battery)
+CETO_2025,BCNS,2024,total_electricity_demand,,10087,0.05,fig28_p24,text_direct,Total societal electricity consumption 2024
+CETO_2025,ICNS,2024,total_electricity_demand,,10087,0.05,fig28_p24,text_direct,Total societal electricity consumption 2024
+CETO_2025,BCNS,2030,wind_total,1040,,0.10,p34_text,text_derived,Testo: by 2030 wind+PV capacity is expected to double vs 2024 (520*2)
+CETO_2025,ICNS,2030,wind_total,1040,,0.10,p34_text,text_derived,Testo: by 2030 wind+PV capacity is expected to double vs 2024 (520*2)
+CETO_2025,BCNS,2030,solar_pv_total,1780,,0.10,p34_text,text_derived,Testo: by 2030 solar PV doubled vs 2024 (890*2)
+CETO_2025,ICNS,2030,solar_pv_total,1780,,0.10,p34_text,text_derived,Testo: by 2030 solar PV doubled vs 2024 (890*2)
+CETO_2025,BCNS,2030,distributed_wind_onshore,100,,0.05,p36_text,text_direct,Range 100-110 GW. Convenzione: lower bound BCNS
+CETO_2025,ICNS,2030,distributed_wind_onshore,110,,0.05,p36_text,text_direct,Range 100-110 GW. Convenzione: upper bound ICNS
+CETO_2025,BCNS,2030,distributed_solar_pv,810,,0.05,p36_text,text_direct,Range 810-990 GW. Convenzione lower BCNS
+CETO_2025,ICNS,2030,distributed_solar_pv,990,,0.05,p36_text,text_direct,Range 810-990 GW. Convenzione upper ICNS
+CETO_2025,BCNS,2030,total_regulation_capacity,2300,,0.05,p37_text,text_direct,Total power system regulation 2030
+CETO_2025,ICNS,2030,total_regulation_capacity,2500,,0.05,p37_text,text_direct,Total power system regulation 2030
+CETO_2025,BCNS,2030,thermal_regulation_coal_gas,1600,,0.05,p37_text,text_direct,Coal+gas regulation capacity ~1600 GW
+CETO_2025,ICNS,2030,thermal_regulation_coal_gas,1600,,0.05,p37_text,text_direct,Coal+gas regulation capacity ~1600 GW
+CETO_2025,BCNS,2030,chemical_storage,200,,0.05,p37_text,text_direct,Battery/chemical storage ~200 GW
+CETO_2025,ICNS,2030,chemical_storage,200,,0.05,p37_text,text_direct,Battery/chemical storage ~200 GW
+CETO_2025,BCNS,2030,hydrogen_efuel_electrolysis,140,,0.05,p37_text,text_direct,H2+e-fuel electrolysers regulation. Range 140-230
+CETO_2025,ICNS,2030,hydrogen_efuel_electrolysis,230,,0.05,p37_text,text_direct,H2+e-fuel electrolysers regulation. Range 140-230
+CETO_2025,BCNS,2030,pumped_hydro,140,,0.05,p37_text,text_direct,Pumped hydro 2030. Range 140-180
+CETO_2025,ICNS,2030,pumped_hydro,180,,0.05,p37_text,text_direct,Pumped hydro 2030. Range 140-180
+CETO_2025,BCNS,2030,v2g_ev_grid,60,,0.05,p37_text,text_direct,V2G regulation. Range 60-70
+CETO_2025,ICNS,2030,v2g_ev_grid,70,,0.05,p37_text,text_direct,V2G regulation. Range 60-70
+CETO_2025,BCNS,2030,ccus_deployment_mt,5.1,,0.05,p29_text,text_direct,CCUS energy system 2030 in MtCO2/year (capacity_gw column repurposed)
+CETO_2025,ICNS,2030,ccus_deployment_mt,7.3,,0.05,p29_text,text_direct,CCUS energy system 2030 in MtCO2/year
+CETO_2025,BCNS,2030,green_hydrogen_demand_mt,1.5,,0.05,p32_text,text_direct,Green H2 end-use demand 2030 in Mt (capacity_gw column repurposed)
+CETO_2025,ICNS,2030,green_hydrogen_demand_mt,2.2,,0.05,p32_text,text_direct,Green H2 end-use demand 2030 in Mt
+CETO_2025,BCNS,2060,total_installed_capacity,10450,,0.05,p34_text,text_direct,Total generation capacity 2060
+CETO_2025,ICNS,2060,total_installed_capacity,11040,,0.05,p34_text,text_direct,Total generation capacity 2060
+CETO_2025,BCNS,2060,wind_total,3340,10300,0.05,p33_p34_text,text_direct,Wind installed and generation
+CETO_2025,ICNS,2060,wind_total,3220,10600,0.05,p33_p34_text,text_direct,Wind installed and generation
+CETO_2025,BCNS,2060,wind_onshore_utility_scale,2071,,0.07,fig9_p9part01,text_derived,62% of 3340 GW wind. Percentage da Fig 9
+CETO_2025,ICNS,2060,wind_onshore_utility_scale,1803,,0.07,fig9_p9part01,text_derived,56% of 3220 GW wind
+CETO_2025,BCNS,2060,wind_onshore_distributed,935,,0.07,fig9_p9part01,text_derived,28% of 3340. Testo conferma ~920 GW
+CETO_2025,ICNS,2060,wind_onshore_distributed,934,,0.07,fig9_p9part01,text_derived,29% of 3220. Testo conferma ~920 GW
+CETO_2025,BCNS,2060,wind_offshore,334,,0.07,fig9_p9part01,text_derived,10% of 3340 GW wind
+CETO_2025,ICNS,2060,wind_offshore,515,,0.07,fig9_p9part01,text_derived,16% of 3220 GW wind
+CETO_2025,BCNS,2060,solar_pv_total,5500,5900,0.05,p33_p34_text,text_direct,Solar PV installed and generation
+CETO_2025,ICNS,2060,solar_pv_total,6500,7100,0.05,p33_p34_text,text_direct,Solar PV installed and generation
+CETO_2025,BCNS,2060,solar_pv_utility_scale,2475,,0.07,fig10_p9part01,text_derived,45% of 5500 GW solar
+CETO_2025,ICNS,2060,solar_pv_utility_scale,3250,,0.07,fig10_p9part01,text_derived,50% of 6500 GW solar
+CETO_2025,BCNS,2060,solar_pv_distributed,3025,,0.05,p35_text,text_direct,Range 3040-3280 GW total distributed. 55% of 5500
+CETO_2025,ICNS,2060,solar_pv_distributed,3250,,0.05,p35_text,text_direct,Range 3040-3280 GW total distributed. 50% of 6500
+CETO_2025,BCNS,2060,hydro_conventional,550,2100,0.05,p33_p34_text,text_direct,Conventional hydropower (no pumped)
+CETO_2025,ICNS,2060,hydro_conventional,590,2200,0.05,p33_p34_text,text_direct,Conventional hydropower (no pumped)
+CETO_2025,BCNS,2060,nuclear,200,1600,0.05,p33_p34_text,text_direct,Nuclear capacity ~200 GW entrambi scenari
+CETO_2025,ICNS,2060,nuclear,200,1600,0.05,p33_p34_text,text_direct,Nuclear capacity ~200 GW entrambi scenari
+CETO_2025,BCNS,2060,biomass_incl_beccs,220,1200,0.05,p34_text,text_direct,Biomass incl. BECCS. Range 220-230 lower=BCNS
+CETO_2025,ICNS,2060,biomass_incl_beccs,230,1200,0.05,p34_text,text_direct,Biomass incl. BECCS. Range 220-230 upper=ICNS
+CETO_2025,BCNS,2060,total_generation,,21200,0.05,p33_text,text_direct,Total power generation 2060
+CETO_2025,ICNS,2060,total_generation,,22600,0.05,p33_text,text_direct,Total power generation 2060
+CETO_2025,BCNS,2060,total_electricity_demand,,21200,0.05,p30_p31_text,text_direct,Society-wide electricity consumption 2060
+CETO_2025,ICNS,2060,total_electricity_demand,,22600,0.05,p30_p31_text,text_direct,Society-wide electricity consumption 2060
+CETO_2025,BCNS,2060,total_regulation_capacity,4970,,0.05,p10part01_p36_text,text_direct,Total power system regulation 2060
+CETO_2025,ICNS,2060,total_regulation_capacity,5810,,0.05,p10part01_p36_text,text_direct,Total power system regulation 2060
+CETO_2025,BCNS,2060,hydrogen_efuel_electrolysis,1740,,0.05,p36_text,text_direct,H2+e-fuel electrolyser regulation capacity
+CETO_2025,ICNS,2060,hydrogen_efuel_electrolysis,2180,,0.05,p36_text,text_direct,H2+e-fuel electrolyser regulation capacity
+CETO_2025,BCNS,2060,chemical_storage,800,,0.05,p36_text,text_direct,Chemical storage (incl. battery). Range 800-1000
+CETO_2025,ICNS,2060,chemical_storage,1000,,0.05,p36_text,text_direct,Chemical storage (incl. battery). Range 800-1000
+CETO_2025,BCNS,2060,v2g_ev_grid,750,,0.05,p36_text,text_direct,V2G regulation capacity 2060
+CETO_2025,ICNS,2060,v2g_ev_grid,920,,0.05,p36_text,text_direct,V2G regulation capacity 2060
+CETO_2025,BCNS,2060,pumped_hydro,400,,0.05,p36_text,text_direct,Pumped hydro 2060. Range 400-500
+CETO_2025,ICNS,2060,pumped_hydro,500,,0.05,p36_text,text_direct,Pumped hydro 2060. Range 400-500
+CETO_2025,BCNS,2060,flexible_power_generation_units,696,,0.10,fig11_p10part01,text_derived,14% of 4970 GW. Coal/gas restanti come flexible
+CETO_2025,ICNS,2060,flexible_power_generation_units,349,,0.10,fig11_p10part01,text_derived,6% of 5810 GW
+CETO_2025,BCNS,2060,electrified_district_heating,497,,0.10,fig11_p10part01,text_derived,10% of 4970 GW
+CETO_2025,ICNS,2060,electrified_district_heating,291,,0.10,fig11_p10part01,text_derived,5% of 5810 GW
+CETO_2025,BCNS,2060,demand_side_response,99,,0.10,fig11_p10part01,text_derived,2% of 4970 GW
+CETO_2025,ICNS,2060,demand_side_response,581,,0.10,fig11_p10part01,text_derived,10% of 5810 GW
+CETO_2025,BCNS,2060,ev_fleet_million,480,,0.05,p36_text,text_direct,EV fleet in milioni di veicoli. Range 480-540
+CETO_2025,ICNS,2060,ev_fleet_million,540,,0.05,p36_text,text_direct,EV fleet in milioni di veicoli. Range 480-540
+CETO_2025,BCNS,2060,ccus_deployment_mt,1240,,0.05,p29_text,text_direct,CCUS energy system 2060 in MtCO2/year (capacity_gw column repurposed)
+CETO_2025,ICNS,2060,ccus_deployment_mt,1410,,0.05,p29_text,text_direct,CCUS energy system 2060 in MtCO2/year. ICNS: 54% CCUS + 46% DAC
+CETO_2025,BCNS,2060,cross_regional_transmission,,4700,0.05,p11part01_p38_text,text_direct,Inter-provincial cross-regional power transmission demand. Range 4700-5400
+CETO_2025,ICNS,2060,cross_regional_transmission,,5400,0.05,p11part01_p38_text,text_direct,Inter-provincial cross-regional power transmission demand. Range 4700-5400
+CETO_2025,BCNS,2060,direct_electrification_rate_pct,64,,0.05,p7part01_text,text_direct,Direct electrification rate 2060 in percent (capacity_gw column repurposed)
+CETO_2025,ICNS,2060,direct_electrification_rate_pct,67,,0.05,p7part01_text,text_direct,Direct electrification rate 2060 in percent
+CETO_2025,BCNS,2060,broad_electrification_rate_pct,78,,0.05,p7part01_text,text_direct,Broad electrification rate (incl. e-fuels and electric heat)
+CETO_2025,ICNS,2060,broad_electrification_rate_pct,83,,0.05,p7part01_text,text_direct,Broad electrification rate (incl. e-fuels and electric heat)
+CETO_2025,BCNS,2060,hydrogen_share_final_pct,10,,0.05,p31_text,text_direct,Hydrogen share in total final energy 2060
+CETO_2025,ICNS,2060,hydrogen_share_final_pct,12,,0.05,p31_text,text_direct,Hydrogen share in total final energy 2060
+CETO_2025,BCNS,2060,nonfossil_share_primary_coalsubst_pct,90.2,,0.05,p28_text,text_direct,Non-fossil share primary energy. Coal-substitution method
+CETO_2025,ICNS,2060,nonfossil_share_primary_coalsubst_pct,91.5,,0.05,p28_text,text_direct,Non-fossil share primary energy. Coal-substitution method
+CETO_2025,BCNS,2060,nonfossil_share_primary_direct_pct,85.4,,0.05,p28_text,text_direct,Non-fossil share primary energy. Direct equivalent method
+CETO_2025,ICNS,2060,nonfossil_share_primary_direct_pct,87.8,,0.05,p28_text,text_direct,Non-fossil share primary energy. Direct equivalent method
+CETO_2025,BCNS,2060,net_zero_year,2058,,0.05,p29_text,text_direct,Year of net-zero CO2 energy system (range 2058-2059)
+CETO_2025,ICNS,2060,net_zero_year,2052,,0.05,p29_text,text_direct,Year of net-zero CO2 energy system (range 2052-2053)
+ZHU_2026,S1,2060,solar_pv_total,5178,7100,0.05,sec2.2_fig3,text_direct,Zhu et al. 2026 EES DOI:10.1039/D5EE05948H Scenario I base
+ZHU_2026,S1,2060,wind_total,2727,7800,0.05,sec2.2_fig3,text_direct,Zhu et al. 2026 EES Scenario I
+ZHU_2026,S1,2060,hydro_conventional,690,3190,0.05,sec2.2_fig3,text_direct,Zhu et al. 2026 EES Scenario I
+ZHU_2026,S1,2060,biomass_incl_beccs,181,840,0.05,sec2.2_fig3,text_direct,Zhu et al. 2026 EES Scenario I
+ZHU_2026,S1,2060,pumped_hydro,573,,0.05,sec2.1,text_direct,Zhu et al. 2026: closed-loop 368 + open-loop 205 GW
+ZHU_2026,S1,2060,chemical_storage,626,,0.05,sec2.1,text_direct,Zhu et al. 2026 battery storage
+ZHU_2026,S1,2060,total_electricity_demand,,20000,0.05,sec1,text_direct,Zhu et al. 2026 total demand 2060
+ZHANGDA_2025,BASE,2060,solar_pv_total,3848,5300,0.07,sec2.3_fig1A,text_direct,Zhang Da et al. 2025 EES DOI:10.1039/d5ee00355e base scenario UPV+DPV
+ZHANGDA_2025,BASE,2060,wind_total,2100,6300,0.07,sec2.1_fig1A,text_direct,Zhang Da et al. 2025 EES base scenario
+ZHANGDA_2025,BASE,2060,hydro_conventional,600,2200,0.05,sec2.1,text_direct,Zhang Da et al. 2025 EES base scenario
+ZHANGDA_2025,BASE,2060,nuclear,230,1700,0.05,sec2.1,text_direct,Zhang Da et al. 2025 EES base scenario
+ZHANGDA_2025,BASE,2060,biomass_incl_beccs,181,773,0.05,sec2.1_sec2.2,text_direct,Zhang Da et al. 2025 EES incl. BECCS
+ZHANGDA_2025,BASE,2060,pumped_hydro,437,,0.05,sec2.1,text_direct,Zhang Da et al. 2025 EES PHS
+ZHANGDA_2025,BASE,2060,chemical_storage,572,,0.05,sec2.1,text_direct,Zhang Da et al. 2025 EES battery
+ZHANGDA_2025,BASE,2060,total_electricity_demand,,16000,0.05,sec4.3,text_direct,Zhang Da et al. 2025 EES total demand 2060

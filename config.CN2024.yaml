@@ -1,6 +1,6 @@
 # CN2025 — Dispatch only — Comparison against Ember 2024 proxy
 run:
-  name: CN2024
+  name: CN2024_01_hydro_solar1N
 
 scenario:
   clusters: [250]
