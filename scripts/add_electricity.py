@@ -835,14 +835,19 @@ def estimate_renewable_capacities_irena(
             countries, fill_value=0.0
         )
         tech_i = n.generators.query("carrier in @techs").index
-        # Solar: uniform per-province distribution (1/N fix, 28.05.2026)
+        # Solar: load x CF distribution (Ivan, 08.06.2026)
         # Other carriers: original CF_ERA5 x p_nom_max weighting
         if "solar" in techs:
+            cf = n.generators_t.p_max_pu[tech_i].mean()
+            bus_load = n.loads_t.p_set.mean()
+            bus_province = n.loads.bus.map(
+                lambda b: ".".join(b.split(".")[:2])
+            )
+            province_load = bus_load.groupby(bus_province).sum()
             tech_province = n.generators.loc[tech_i, "bus"].map(
                 lambda b: ".".join(b.split(".")[:2])
             )
-            province_n_buses = tech_province.value_counts()
-            weight = 1.0 / tech_province.map(province_n_buses)
+            weight = cf * tech_province.map(province_load)
         else:
             weight = (
                 n.generators_t.p_max_pu[tech_i].mean()
