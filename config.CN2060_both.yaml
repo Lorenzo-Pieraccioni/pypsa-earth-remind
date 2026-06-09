@@ -62,3 +62,10 @@ solving:
       ssl_cert: "/p/projects/rd3mod/ssl/ca-bundle.pem_2022-02-08"
       grb_cafile: "/p/projects/rd3mod/ssl/ca-bundle.pem_2022-02-08"
 
+
+costs:
+  # Nuclear CAPEX override: Hualong One China-specific cost
+  # Source: CNNC investor disclosures 2022 via WNISR 2025 (no independent verification)
+  # CNY16000/kW = ~USD2375/kW = ~EUR2200/kW; replaces Lazard Vogtle (USD15000/kW)
+  investment:
+    nuclear: 2200000
