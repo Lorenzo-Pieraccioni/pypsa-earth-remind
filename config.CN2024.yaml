@@ -1,6 +1,6 @@
 # CN2025 — Dispatch only — Comparison against Ember 2024 proxy
 run:
-  name: validation_loadCF_and_nuclearCAPEX/cn2024_validation_loadCF
+  name: CN2024_loadCF
 
 scenario:
   clusters: [250]

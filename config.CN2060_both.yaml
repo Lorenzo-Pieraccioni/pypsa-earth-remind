@@ -7,7 +7,7 @@
 co2base: 4.716e+9
 
 run:
-  name: validation_loadCF_and_nuclearCAPEX/cn2060_validation_loadCF
+  name: CN2060_loadCF
 
 scenario:
   clusters: [250]

@@ -1,6 +1,6 @@
 # CN2020 — Dispatch only — Validation against Ember 2020
 run:
-  name: validation_loadCF_and_nuclearCAPEX/cn2020_validation_loadCF
+  name: CN2020_loadCF
 
 scenario:
   clusters: [250]
