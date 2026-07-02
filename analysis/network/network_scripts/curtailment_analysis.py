@@ -29,6 +29,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import geopandas as gpd
+from province_utils import overlay_admin_boundaries
 import matplotlib.colors as mcolors
 import numpy as np
 import pandas as pd
@@ -40,7 +41,7 @@ warnings.filterwarnings("ignore")
 # ── PARAMETERS ────────────────────────────────────────────────────────────────
 
 GADM_FILE  = "resources/shapes/gadm_shapes.geojson"
-OUTPUT_DIR = os.environ.get("PYPSA_OUTPUT_DIR", "analysis/network/curtailment")
+OUTPUT_DIR = os.path.join(os.environ.get("PYPSA_OUTPUT_DIR", "analysis/network/output"), "curtailment_analysis")
 
 PROVINCE_NAMES = {
     1: "Anhui",        2: "Beijing",      3: "Chongqing",    4: "Fujian",
@@ -128,12 +129,13 @@ def choropleth(gdf, col, title, cbar_label, cmap, filename, vmin=0, vmax=None):
     gdf.plot(
         column=col, ax=ax, cmap=cmap,
         vmin=vmin, vmax=_vmax,
-        edgecolor="black", linewidth=0.6,
+        edgecolor="none", linewidth=0.0,
         legend=True,
         legend_kwds={"label": cbar_label, "orientation": "vertical",
                      "shrink": 0.6, "pad": 0.02},
         missing_kwds={"color": "lightgray", "label": "No data"},
     )
+    overlay_admin_boundaries(ax, linewidth=0.6, edgecolor="black")
     ax.set_title(title, fontsize=13, fontweight="bold", pad=12)
     ax.set_xlabel("Longitude")
     ax.set_ylabel("Latitude")
@@ -163,7 +165,11 @@ def main():
         "savefig.facecolor": "white", "font.size": 11,
     })
 
-    print(f"Loading: {args.network}")
+    # Extract year label from network path (e.g. CN2020, CN2024)
+    import re
+    match = re.search(r'CN(\d{4})', args.network)
+    year_label = f"CN{match.group(1)}" if match else os.path.basename(os.path.dirname(os.path.dirname(args.network)))
+    print(f"Loading: {args.network} (label: {year_label})")
     n = pypsa.Network(args.network)
     print(f"  Buses:     {len(n.buses)}")
     print(f"  Snapshots: {len(n.snapshots)}")
@@ -234,13 +240,14 @@ def main():
         on="admin1", how="left"
     )
     nat_solar_rate = solar_df["curtailment_twh"].sum() / solar_df["available_twh"].sum()
+    vmax_solar = max(round(solar_df["curtailment_rate"].max() * 1.1, 3), 0.01)
     choropleth(gdf_solar,
         col="curtailment_rate",
-        title=f"Solar curtailment rate per province — CN2020  |  National: {nat_solar_rate:.1%}",
+        title=f"Solar curtailment rate per province — {year_label}  |  National: {nat_solar_rate:.1%}",
         cbar_label="Curtailment rate  (curtailed / available)",
         cmap="YlOrRd",
         filename="map_curtailment_solar.png",
-        vmax=1.0,
+        vmax=vmax_solar,
     )
 
     # ── Map: wind curtailment rate ────────────────────────────────────────────
@@ -249,13 +256,14 @@ def main():
         on="admin1", how="left"
     )
     nat_wind_rate = wind_df["curtailment_twh"].sum() / wind_df["available_twh"].sum()
+    vmax_wind = max(round(wind_df["curtailment_rate"].max() * 1.1, 3), 0.01)
     choropleth(gdf_wind,
         col="curtailment_rate",
-        title=f"Wind curtailment rate per province — CN2020  |  National: {nat_wind_rate:.1%}",
+        title=f"Wind curtailment rate per province — {year_label}  |  National: {nat_wind_rate:.1%}",
         cbar_label="Curtailment rate  (curtailed / available)",
         cmap="YlOrRd",
         filename="map_curtailment_wind.png",
-        vmax=1.0,
+        vmax=vmax_wind,
     )
 
     # ── Bar chart: absolute curtailment TWh per province ─────────────────────
@@ -286,7 +294,7 @@ def main():
     ax.set_yticklabels(labels, fontsize=9)
     ax.set_xlabel("Curtailment  (TWh)", fontsize=11)
     ax.set_title(
-        "VRE curtailment by province — CN2020\n"
+        "VRE curtailment by province — " + year_label + "\n"
         f"Solar: {solar_df['curtailment_twh'].sum():.1f} TWh  |  "
         f"Wind: {wind_df['curtailment_twh'].sum():.1f} TWh",
         fontsize=12, fontweight="bold",

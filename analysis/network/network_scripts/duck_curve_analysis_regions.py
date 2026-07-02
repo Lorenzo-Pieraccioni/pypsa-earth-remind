@@ -59,10 +59,7 @@ warnings.filterwarnings("ignore")
 
 # ── PARAMETERS ────────────────────────────────────────────────────────────────
 
-OUTPUT_DIR = os.environ.get(
-    "PYPSA_OUTPUT_DIR",
-    "/p/tmp/lorenzop/pypsa-earth-ivan/analysis/network/duck_curve_regions",
-)
+OUTPUT_DIR = os.path.join(os.environ.get("PYPSA_OUTPUT_DIR", "analysis/network/output"), "duck_curve_analysis_regions")
 UTC_OFFSET = 8  # China Standard Time
 
 SEASONS = {

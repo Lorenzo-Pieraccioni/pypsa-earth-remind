@@ -11,7 +11,7 @@ run:
 
 scenario:
   clusters: [250]
-  opts: [Co2L0.05-3h, Co2L0.0-3h]
+  opts: [NUCAP-BIOCAP-Co2L0.05-3h, NUCAP-BIOCAP-Co2L0.0-3h]
 
 snapshots:
   start: "2013-01-01"
@@ -35,11 +35,12 @@ build_shape_options:
 
 electricity:
   extendable_carriers:
-    Generator: [solar, onwind, offwind-ac, offwind-dc, OCGT, nuclear]
+    Generator: [solar, onwind, offwind-ac, offwind-dc, OCGT, nuclear, biomass]
     StorageUnit: [battery, H2, PHS]
     Store: []
     Link: []
-  powerplants_filter: "(DateOut >= 2060 or DateOut != DateOut) and (DateIn <= 2060 or DateIn != DateIn)"
+  powerplants_filter: "(DateOut >= 2060 or DateOut != DateOut) and (DateIn <= 2060 or DateIn != DateIn) and ((Fueltype != 'Nuclear') or (Capacity > 100))"
+  custom_powerplants: merge
   max_hours:
     battery: 4
     H2: 168
@@ -64,8 +65,7 @@ solving:
 
 
 costs:
-  # Nuclear CAPEX override: Hualong One China-specific cost
-  # Source: CNNC investor disclosures 2022 via WNISR 2025 (no independent verification)
-  # CNY16000/kW = ~USD2375/kW = ~EUR2200/kW; replaces Lazard Vogtle (USD15000/kW)
-  investment:
-    nuclear: 2200000
+  year: 2060
+
+enable:
+  download_osm_data: false

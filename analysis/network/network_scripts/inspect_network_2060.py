@@ -34,13 +34,9 @@ Normalisation method:
   ref_bar_GW   = mean(norm_i) * model_demand_TWh
 
 Usage:
-  PYPSA_OUTPUT_DIR="analysis/network/output/CN2060_95_01_PHSext" \\
-    python analysis/network/inspect_network_2060.py \\
-      results/CN2060_01_PHSext/networks/elec_s_250_ec_lcopt_Co2L0.05-3h.nc
+  PYPSA_OUTPUT_DIR="analysis/network/output/CN2060_95_01_PHSext" python analysis/network/inspect_network_2060.py results/CN2060_01_PHSext/networks/elec_s_250_ec_lcopt_Co2L0.05-3h.nc
 
-  PYPSA_OUTPUT_DIR="analysis/network/output/CN2060_100_01_PHSext" \\
-    python analysis/network/inspect_network_2060.py \\
-      results/CN2060_01_PHSext/networks/elec_s_250_ec_lcopt_Co2L0.0-3h.nc
+  PYPSA_OUTPUT_DIR="analysis/network/output/CN2060_100_01_PHSext" python analysis/network/inspect_network_2060.py results/CN2060_01_PHSext/networks/elec_s_250_ec_lcopt_Co2L0.0-3h.nc
 """
 
 import argparse
@@ -225,26 +221,17 @@ def safe_get_ref(df, carrier, col):
 
 def compute_aggregated_ref(refs, carrier, col, model_demand_twh):
     """
-    Compute aggregated reference bar: mean(normalised × model_demand),
-    with min and max for error bars.
-
-    Each source value is normalised by its own demand, then rescaled to
-    model_demand_twh so all bars are in comparable absolute units.
-
+    Collect absolute values from all reference sources (no demand scaling).
     Returns (mean_abs, min_abs, max_abs) or (None, None, None).
+    Note: reference demands range from 16,000 to 22,600 TWh vs model 16,301 TWh.
     """
     abs_values = []
     for source, scenarios in refs.items():
         for scenario, df in scenarios.items():
-            src_demand = SOURCE_DEMAND.get(source, {}).get(scenario)
-            if src_demand is None:
-                continue
             val = safe_get_ref(df, carrier, col)
             if val is None or val <= 0:
                 continue
-            norm = val / src_demand          # value per TWh of demand
-            abs_val = norm * model_demand_twh  # rescaled to model demand
-            abs_values.append(abs_val)
+            abs_values.append(float(val))
     if not abs_values:
         return None, None, None
     return float(np.mean(abs_values)), float(min(abs_values)), float(max(abs_values))
@@ -526,8 +513,12 @@ def inspect(network_file):
     # ── 9. NORMALISED MULTI-MODEL COMPARISON ─────────────────────────────────
     log("")
     log("=" * 60)
-    log("9. NORMALISED MULTI-MODEL COMPARISON")
-    log("   Metric: GW installed per 1000 TWh of annual demand")
+    log("9. NOTE ON COMPARISON METHODOLOGY")
+    log("  Reference bars in plots show absolute GW/TWh values (no demand scaling).")
+    log("  Bar = arithmetic mean of available sources. Error bars = min-max range.")
+    log(f"  Model demand: {load_twh:.0f} TWh.")
+    log("  Literature demands: CETO BCNS 21,200 / CETO ICNS 22,600 / Zhu 2026 20,000 / ZhangDa 16,000 TWh.")
+    log("  Values are not comparable on an equal-demand basis.")
     log("   Sources: CETO 2025 BCNS/ICNS, Zhu et al. 2026, Zhang Da et al. 2025")
     log("=" * 60)
     log(f"  Model demand: {load_twh:.0f} TWh")
@@ -580,9 +571,57 @@ def inspect(network_file):
     log("  Solar ABOVE range: model has no sectoral flexibility (V2G, heating,")
     log("  demand response). Solver substitutes all flexibility with solar+battery.")
     log("  Battery ABOVE range: replaces V2G (750-920 GW CETO) and demand response.")
-    log("  Nuclear BELOW range: merit order gives nuclear low CF when solar ~0 EUR/MWh.")
+    log("  Nuclear ABOVE range: low CAPEX override (2200 EUR/kW, single unverified source) + absence of seasonal storage make nuclear the solver's main lever for the nocturnal/seasonal gap (reasoned interpretation, not verified).")
     log("  Hydro BELOW range: powerplantmatching underestimates Chinese hydro capacity.")
 
+
+    # ── 10. ELECTRICITY PRICE AND CURTAILMENT ────────────────────────────────
+    log("")
+    log("=" * 60)
+    log("10. ELECTRICITY PRICE AND CURTAILMENT")
+    log("=" * 60)
+
+    if not n.buses_t.marginal_price.empty:
+        load_p = n.loads_t.p_set.reindex(columns=n.loads.index)
+        missing_load_p = load_p.columns[load_p.isna().all()]
+        if len(missing_load_p) > 0:
+            log(f"  WARNING: {len(missing_load_p)} loads have no time-varying p_set, using static value.")
+        for col in missing_load_p:
+            load_p[col] = n.loads.loc[col, "p_set"]
+        bus_price = n.buses_t.marginal_price
+        weighted_num = 0.0
+        weighted_den = 0.0
+        for load_name, bus in n.loads.bus.items():
+            if bus in bus_price.columns and load_name in load_p.columns:
+                p = load_p[load_name] * w
+                pr = bus_price[bus]
+                weighted_num += (p * pr).sum()
+                weighted_den += p.sum()
+        avg_price = weighted_num / weighted_den if weighted_den > 0 else float("nan")
+        log(f"  Load-weighted average electricity price: {avg_price:.2f} EUR/MWh")
+    else:
+        log("  WARNING: n.buses_t.marginal_price not available (no dual values exported).")
+
+    log("")
+    log("  Curtailment by carrier (available - dispatched):")
+    renewable_carriers = ["solar", "onwind", "offwind-ac", "offwind-dc"]
+    curt_total = 0.0
+    for c in renewable_carriers:
+        gens = n.generators[n.generators.carrier == c]
+        if gens.empty:
+            continue
+        missing_pmpu = gens.index.difference(n.generators_t.p_max_pu.columns)
+        if len(missing_pmpu) > 0:
+            log(f"    WARNING: {len(missing_pmpu)} {c} generators have no time-varying p_max_pu, using static value.")
+        pmpu = n.generators_t.p_max_pu.reindex(columns=gens.index)
+        pmpu = pmpu.apply(lambda col: col.fillna(gens.loc[col.name, "p_max_pu"]) if col.isna().any() else col)
+        avail = pmpu.multiply(gens.p_nom_opt, axis=1).multiply(w, axis=0).sum().sum() / 1e6
+        dispatched = n.generators_t.p[gens.index].multiply(w, axis=0).sum().sum() / 1e6
+        curt = avail - dispatched
+        curt_pct = curt / avail * 100 if avail > 0 else 0
+        curt_total += curt
+        log(f"    {c:<14} available {avail:>8.1f} TWh  dispatched {dispatched:>8.1f} TWh  curtailed {curt:>7.1f} TWh ({curt_pct:.1f}%)")
+    log(f"    {'TOTAL':<14} curtailed {curt_total:>7.1f} TWh")
     # ── SAVE REPORT ──────────────────────────────────────────────────────────
     report_path = os.path.join(BASE_OUTPUT_DIR, f"{network_name}_2060_inspect.txt")
     with open(report_path, "w") as f:
@@ -612,7 +651,7 @@ def inspect(network_file):
     ax.bar(x - w_bar / 2, mv_l, w_bar, color=colors_c, alpha=0.90,
            edgecolor="white", label="Model")
     ax.bar(x + w_bar / 2, rv_l, w_bar, color=colors_c, alpha=0.40,
-           edgecolor="#333", linewidth=0.8, label="Literature mean (scaled)", hatch="///")
+           edgecolor="#333", linewidth=0.8, label="Literature", hatch="///")
     for i, (lo_err, hi_err, rv) in enumerate(zip(rmin_l, rmax_l, rv_l)):
         if rv > 0:
             ax.errorbar(x[i] + w_bar / 2, rv, yerr=[[lo_err], [hi_err]],
@@ -623,14 +662,8 @@ def inspect(network_file):
                     ha="center", va="bottom", fontsize=8, fontweight="bold")
     ax.set_xticks(x)
     ax.set_xticklabels(c_list, fontsize=11)
-    ax.set_ylabel("GW (reference bars scaled to model demand)", fontsize=11)
-    ax.set_title(
-        f"Installed capacity: Model vs literature range\n"
-        f"{scenario_label}  —  {network_name}\n"
-        f"Reference bar = mean of 4 sources normalised to model demand ({load_twh:.0f} TWh). "
-        f"Error bars = min–max range.",
-        fontsize=10, fontweight="bold"
-    )
+    ax.set_ylabel("GW", fontsize=11)
+    ax.set_title(f"Installed capacity — {scenario_label}", fontsize=11, fontweight="bold")
     ax.legend(fontsize=10)
     ax.grid(True, axis="y", alpha=0.2)
     ax.spines["top"].set_visible(False)
@@ -669,7 +702,7 @@ def inspect(network_file):
            edgecolor="white", label="Model")
     ref_bars = ax.bar(xg + w_bar / 2, rg_l, w_bar, color=colors_g, alpha=0.40,
                       edgecolor="#333", linewidth=0.8,
-                      label="Literature mean (scaled)", hatch="///")
+                      label="Literature", hatch="///")
     # Hide reference bars for carriers without reference
     for bar, has_ref in zip(ref_bars, has_ref_l):
         if not has_ref:
@@ -687,14 +720,8 @@ def inspect(network_file):
                     ha="center", va="bottom", fontsize=7, fontweight="bold")
     ax.set_xticks(xg)
     ax.set_xticklabels(cg_list, fontsize=10)
-    ax.set_ylabel("TWh (reference bars scaled to model demand)", fontsize=11)
-    ax.set_title(
-        f"Generation: Model vs literature range — ALL carriers\n"
-        f"{scenario_label}  —  {network_name}\n"
-        f"Reference bar = mean of sources with data, scaled to model demand. "
-        f"Error bars = min–max.",
-        fontsize=10, fontweight="bold"
-    )
+    ax.set_ylabel("TWh", fontsize=11)
+    ax.set_title(f"Generation — {scenario_label}", fontsize=11, fontweight="bold")
     ax.legend(fontsize=10)
     ax.grid(True, axis="y", alpha=0.2)
     ax.spines["top"].set_visible(False)

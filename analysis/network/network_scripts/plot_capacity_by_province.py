@@ -8,6 +8,7 @@ Reusable across runs and carriers: edit NETWORK_PATH, REGIONS_PATH, CARRIER belo
 import os
 import pypsa
 import geopandas as gpd
+from province_utils import overlay_admin_boundaries
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -70,12 +71,13 @@ fig, ax = plt.subplots(figsize=(10, 8))
 province_gdf.plot(
     column="capacity_gw",
     cmap="YlOrRd",
-    edgecolor="black",
-    linewidth=0.5,
+    edgecolor="none",
+    linewidth=0.0,
     legend=True,
     legend_kwds={"label": f"{CARRIER.capitalize()} capacity (GW)", "shrink": 0.6},
     ax=ax,
 )
+overlay_admin_boundaries(ax, linewidth=0.6, edgecolor="black")
 ax.set_title(f"{CARRIER.capitalize()} installed capacity by province")
 ax.axis("off")
 plt.tight_layout()

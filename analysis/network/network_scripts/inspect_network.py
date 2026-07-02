@@ -350,10 +350,6 @@ def inspect(network_file, year_override=None):
             elif m > 0:
                 log(f"  {c:<20} {m:>10.1f} {'n/a':>10} {'n/a':>8}")
 
-    report_path = os.path.join(BASE_OUTPUT_DIR, f"{network_name}_inspect.txt")
-    with open(report_path, "w") as f:
-        f.write("\n".join(lines))
-    print(f"\nReport saved: {report_path}")
 
     # ── GRAFICI ───────────────────────────────────────────────────────────────
 
@@ -595,18 +591,22 @@ def inspect(network_file, year_override=None):
     total_co2   = co2_df["co2_MtCO2"].sum()
     total_co2_gt = total_co2 / 1e3
 
-    print(f"\n{'─'*55}")
-    print(f"CO2 EMISSIONS — {network_name}")
-    print(f"{'─'*55}")
-    print(co2_df.to_string(index=False))
-    print(f"{'─'*55}")
-    print(f"  Total: {total_co2:.0f} MtCO2  ({total_co2_gt:.2f} GtCO2)")
-    print(f"  Reference: China power sector 2020 ~4.7 GtCO2 (IEA)")
-    print(f"{'─'*55}\n")
+    log(f"\n{'─'*55}")
+    log(f"CO2 EMISSIONS — {network_name}")
+    log(f"{'─'*55}")
+    log(co2_df.to_string(index=False))
+    log(f"{'─'*55}")
+    log(f"  Total: {total_co2:.0f} MtCO2  ({total_co2_gt:.2f} GtCO2)")
+    log(f"  Reference: China power sector 2020 ~4.7 GtCO2 (IEA)")
+    log(f"{'─'*55}\n")
 
     co2_path = os.path.join(BASE_OUTPUT_DIR, f"{network_name}_co2_emissions.csv")
     co2_df.to_csv(co2_path, index=False)
     print(f"Saved: {co2_path}")
+    report_path = os.path.join(BASE_OUTPUT_DIR, f"{network_name}_inspect.txt")
+    with open(report_path, "w") as f:
+        f.write("\n".join(lines))
+    print(f"\nReport saved: {report_path}")
 
 
 # ── MAIN ──────────────────────────────────────────────────────────────────────

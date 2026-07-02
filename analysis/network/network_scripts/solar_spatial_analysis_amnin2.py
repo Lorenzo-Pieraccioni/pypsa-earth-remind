@@ -46,7 +46,7 @@ warnings.filterwarnings("ignore")
 # ── PARAMETERS ────────────────────────────────────────────────────────────────
 
 GADM_FILE   = "resources/shapes/gadm_shapes.geojson"
-OUTPUT_DIR  = os.environ.get("PYPSA_OUTPUT_DIR", "analysis/network/solar_spatial")
+OUTPUT_DIR  = os.path.join(os.environ.get("PYPSA_OUTPUT_DIR", "analysis/network/output"), "solar_spatial_analysis_amnin2")
 
 # ── STYLE ─────────────────────────────────────────────────────────────────────
 
@@ -67,13 +67,19 @@ def save(fig, filename):
     print(f"Saved: {path}")
 
 
+ADMIN2_FILE = "/p/tmp/ivanra/PyPSA-China-PIK/resources/data/regions/admin2_shapes.geojson"
+
 def add_china_boundaries(ax, proj):
-    if os.path.exists(GADM_FILE):
+    if os.path.exists(ADMIN2_FILE):
+        admin = gpd.read_file(ADMIN2_FILE)
+        admin.boundary.plot(ax=ax, color="black", linewidth=0.3, alpha=0.5, transform=proj)
+        admin.dissolve("NAME_1").boundary.plot(ax=ax, color="black", linewidth=0.8, transform=proj)
+    elif os.path.exists(GADM_FILE):
         gadm = gpd.read_file(GADM_FILE)
         china = gadm[gadm["country"] == "CN"]
         china.boundary.plot(ax=ax, color="black", linewidth=0.5, transform=proj)
     else:
-        print(f"[WARNING] GADM file not found: {GADM_FILE} — skipping boundaries")
+        print(f"[WARNING] No boundary file found — skipping boundaries")
 
 
 def bubble_map(df, col, title, cbar_label, cmap, filename,

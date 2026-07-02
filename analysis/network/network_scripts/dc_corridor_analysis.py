@@ -29,6 +29,7 @@ import matplotlib.cm as cm
 import matplotlib.lines as mlines
 import matplotlib.patches as mpatches
 import geopandas as gpd
+from province_utils import overlay_admin2_only
 import numpy as np
 import pandas as pd
 import pypsa
@@ -39,7 +40,7 @@ warnings.filterwarnings("ignore")
 # ── PARAMETERS ────────────────────────────────────────────────────────────────
 
 GADM_FILE  = "resources/shapes/gadm_shapes.geojson"
-OUTPUT_DIR = os.environ.get("PYPSA_OUTPUT_DIR", "analysis/network/dc_spatial")
+OUTPUT_DIR = os.path.join(os.environ.get("PYPSA_OUTPUT_DIR", "analysis/network/output"), "dc_corridor_analysis")
 
 PROVINCE_NAMES = {
     1: "Anhui",        2: "Beijing",      3: "Chongqing",    4: "Fujian",
@@ -261,6 +262,7 @@ def main():
     # Admin1 fill + borders only (no Admin2 artifacts)
     admin1_geo.plot(ax=ax, color="white", edgecolor="#444444",
                     linewidth=0.8, zorder=1)
+    overlay_admin2_only(ax, linewidth=0.3, edgecolor="black", alpha=0.5)
 
     # DC links: colore = utilization, larghezza fissa
     for _, row in df.iterrows():

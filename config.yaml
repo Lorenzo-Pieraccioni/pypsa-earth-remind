@@ -1,8 +1,9 @@
-# CN2025 — Dispatch only — Comparison against Ember 2024 proxy
-run: {}
+# CN2024 — Dispatch only — Comparison against Ember 2024 proxy
+run:
+  name: CN2024_loadCF
 
 scenario:
-  clusters: [250]
+  clusters: [425]
   opts: [3h]
 
 snapshots:
@@ -31,7 +32,7 @@ electricity:
     StorageUnit: []
     Store: []
     Link: []
-  powerplants_filter: "(DateOut >= 2025 or DateOut != DateOut) and (DateIn <= 2025 or DateIn != DateIn)"
+  powerplants_filter: "(DateOut >= 2024 or DateOut != DateOut) and (DateIn <= 2024 or DateIn != DateIn) and ((Fueltype != 'Nuclear') or (Capacity > 100))"
   max_hours:
     battery: 4
     H2: 168
@@ -54,3 +55,9 @@ solving:
       ssl_cert: "/p/projects/rd3mod/ssl/ca-bundle.pem_2022-02-08"
       grb_cafile: "/p/projects/rd3mod/ssl/ca-bundle.pem_2022-02-08"
 
+
+enable:
+  download_osm_data: false
+
+costs:
+  year: 2025

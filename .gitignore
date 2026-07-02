@@ -73,3 +73,5 @@ screenlog*
 
 # Exclude specific file paths
 !data/demand/unsd/paths/Energy_Statistics_Database.xlsx
+analysis/old_output_archive_01062026.tar.gz
+analysis/network/output/

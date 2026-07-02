@@ -33,6 +33,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import geopandas as gpd
+from province_utils import overlay_admin_boundaries
 import numpy as np
 import pandas as pd
 import pypsa
@@ -43,7 +44,7 @@ warnings.filterwarnings("ignore")
 # ── PARAMETERS ────────────────────────────────────────────────────────────────
 
 GADM_FILE  = "resources/shapes/gadm_shapes.geojson"
-OUTPUT_DIR = os.environ.get("PYPSA_OUTPUT_DIR", "analysis/network/solar_spatial")
+OUTPUT_DIR = os.path.join(os.environ.get("PYPSA_OUTPUT_DIR", "analysis/network/output"), "solar_spatial_analysis")
 
 # ── STYLE ─────────────────────────────────────────────────────────────────────
 
@@ -83,8 +84,8 @@ def choropleth(gdf, col, title, cbar_label, cmap, filename):
         cmap=cmap,
         vmin=0,
         vmax=gdf[col].max(),
-        edgecolor="black",
-        linewidth=0.6,
+        edgecolor="none",
+        linewidth=0.0,
         legend=True,
         legend_kwds={
             "label": cbar_label,
@@ -94,6 +95,7 @@ def choropleth(gdf, col, title, cbar_label, cmap, filename):
         },
         missing_kwds={"color": "lightgray", "label": "No data"},
     )
+    overlay_admin_boundaries(ax, linewidth=0.6, edgecolor="black")
 
     ax.set_title(title, fontsize=13, fontweight="bold", pad=12)
     ax.set_xlabel("Longitude")

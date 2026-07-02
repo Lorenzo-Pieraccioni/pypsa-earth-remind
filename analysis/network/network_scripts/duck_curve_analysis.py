@@ -37,7 +37,7 @@ warnings.filterwarnings("ignore")
 
 # ── PARAMETERS ────────────────────────────────────────────────────────────────
 
-OUTPUT_DIR   = os.environ.get("PYPSA_OUTPUT_DIR", "analysis/network/duck_curve")
+OUTPUT_DIR   = os.path.join(os.environ.get("PYPSA_OUTPUT_DIR", "analysis/network/output"), "duck_curve_analysis")
 UTC_OFFSET   = 8   # China Standard Time (CST)
 
 SEASONS = {

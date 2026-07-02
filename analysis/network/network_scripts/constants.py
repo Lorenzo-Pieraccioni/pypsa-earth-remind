@@ -1,0 +1,236 @@
+"""
+Soft coded centalized `constants`
+"""
+
+# ======= CONVERSIONS =======
+PLOT_COST_UNITS = 1e9  # bnEur
+PLOT_CAP_UNITS = 1e3  # MW->GW
+PLOT_CAP_LABEL = "GW"
+PLOT_SUPPLY_UNITS = 1e6  # MWh->TWh
+PLOT_SUPPLY_LABEL = "TWh"
+PLOT_CO2_UNITS = 1e6  # tCO2->MtCO2
+PLOT_CO2_LABEL = "Mt CO2"
+COST_UNIT = 1
+
+CURRENCY = "€"  # 2015
+COST_YEAR = 2015
+YUAN_TO_EUR = 0.14  # average 2015
+
+# ======= LP NUMERICS =======
+# Biomass store rescaling factor: 1 LP biomass unit = BIOMASS_SCALE MWh_th.
+# Dividing the store e_nom/e_initial by BIOMASS_SCALE and multiplying all
+# downstream Link efficiencies and costs by the same factor is an exact
+# equivalence transformation that brings the largest biomass fix-e RHS from
+# ~2.3e8 down to ~2.3e6 MWh, improving the LP coefficient range for Gurobi.
+BIOMASS_SCALE = 100.0
+
+# ==== data inputs ====
+# TODO move to config
+YEARBOOK_DATA2POP = 1e4
+POP_YEAR = "2020"
+
+# ========= SETUP REGIONS ==========
+# problem section due to pytests and snakemake not integrating well (snakmekae is as subprocess)
+
+TIMEZONE = "Asia/Shanghai"
+# THIS is used to heating demand and is a bit of a problem since currently all are set to
+# the administrative timezone and not the geo timezoones
+
+PROV_RENAME_MAP = {
+    "Inner Mongolia": "InnerMongolia",
+    "Inner-Mongolia": "InnerMongolia",
+    "Ningxia Hui": "Ningxia",
+    "Xizang": "Tibet",
+}
+
+
+REGIONAL_GEO_TIMEZONES_DEFAULT = {
+    "Anhui": TIMEZONE,
+    "Beijing": TIMEZONE,
+    "Chongqing": TIMEZONE,
+    "Fujian": TIMEZONE,
+    "Gansu": TIMEZONE,
+    "Guangdong": TIMEZONE,
+    "Guangxi": TIMEZONE,
+    "Guizhou": TIMEZONE,
+    "Hainan": TIMEZONE,
+    "Hebei": TIMEZONE,
+    "Heilongjiang": TIMEZONE,
+    "Henan": TIMEZONE,
+    "Hubei": TIMEZONE,
+    "Hunan": TIMEZONE,
+    "InnerMongolia": TIMEZONE,
+    "Jiangsu": TIMEZONE,
+    "Jiangxi": TIMEZONE,
+    "Jilin": TIMEZONE,
+    "Liaoning": TIMEZONE,
+    "Ningxia": TIMEZONE,
+    "Qinghai": TIMEZONE,
+    "Shaanxi": TIMEZONE,
+    "Shandong": TIMEZONE,
+    "Shanghai": TIMEZONE,
+    "Shanxi": TIMEZONE,
+    "Sichuan": TIMEZONE,
+    "Tianjin": TIMEZONE,
+    "Tibet": TIMEZONE,
+    "Xinjiang": TIMEZONE,
+    "Yunnan": TIMEZONE,
+    "Zhejiang": TIMEZONE,
+}
+
+PROV_NAMES = list(REGIONAL_GEO_TIMEZONES_DEFAULT)
+
+
+def filter_buses(names) -> list:
+    """Filter bus names to include only those in PROV_NAMES.
+
+    Args:
+        names: Iterable of bus names to filter
+
+    Returns:
+        list: List of names that are present in PROV_NAMES
+    """
+    return [name for name in names if name in PROV_NAMES]
+
+
+REGIONAL_GEO_TIMEZONES = {
+    k: v for k, v in REGIONAL_GEO_TIMEZONES_DEFAULT.items() if k in PROV_NAMES
+}
+
+NUCLEAR_EXTENDABLE_DEFAULT = [
+    "Liaoning",
+    "Shandong",
+    "Jiangsu",
+    "Zhejiang",
+    "Fujian",
+    "Guangdong",
+    "Hainan",
+    "Guangxi",
+]
+NUCLEAR_EXTENDABLE = filter_buses(NUCLEAR_EXTENDABLE_DEFAULT)
+
+OFFSHORE_WIND_NODES_DEFAULT = [
+    "Fujian",
+    "Guangdong",
+    "Guangxi",
+    "Hainan",
+    "Hebei",
+    "Jiangsu",
+    "Liaoning",
+    "Shandong",
+    "Shanghai",
+    "Tianjin",
+    "Zhejiang",
+]
+OFFSHORE_WIND_NODES = filter_buses(OFFSHORE_WIND_NODES_DEFAULT)
+
+# TIMES
+INFLOW_DATA_YR = 2016
+
+# TIME RANGE
+YEAR_HRS = 8760
+DEFAULT_REF_YEAR = 2020  # alias used by mga scripts
+START_YEAR = 2020
+END_YEAR = 2060
+
+# geographical
+CRS = 4326  # WGS84
+DISTANCE_CRS = 3035
+COUNTRY_NAME = "China"
+COUNTRY_ISO = "CN"
+EEZ_PREFIX = "chinese"
+
+# ===== CHINA ======
+# 791 TWh extra space heating demand + 286 Twh extra hot water demand
+# 60% CHP efficiency 0.468 40% coal boiler efficiency 0.97
+# (((791+286) * 0.6 /0.468) + ((791+286) * 0.4 /0.97))  * 0.34 * 1e6 = 0.62 * 1e9
+CO2_EL_2020 = 4.716 * 1e9  # tCO2, Ember https://ember-energy.org/countries-and-regions/china/
+CO2_EL_2025 = 5.65 * 1e9  # tCO2
+CO2_EL_2020 = 5.288987673 * 1e9  # tCO2
+CO2_HEATING_2020 = 0.628275682 * 1e9  # tCO2
+CO2_BASEYEAR_EM = CO2_EL_2020 + CO2_HEATING_2020  # tCO2
+
+# FACTORS
+LOAD_CONVERSION_FACTOR = 1
+DEFAULT_OFFSHORE_WIND_CORR_FACTOR = 1.0
+
+# ====== Line COSTS =======
+# cannot take straightest path due to property and terrain
+NON_LIN_PATH_SCALING = 1.25
+LINE_SECURITY_MARGIN = 1.45
+FOM_LINES = 1.02  # of cap costs
+ECON_LIFETIME_LINES = 40  # years
+
+
+# ==== technologies
+
+CARRIERS = [
+    "coal",
+    "CHP coal",
+    "CHP gas",
+    "OCGT",
+    "solar",
+    "solar thermal",
+    "onwind",
+    "offwind",
+    "coal boiler",
+    "ground heat pump",
+    "nuclear",
+]
+
+NICE_NAMES_DEFAULT = {
+    "solar": "solar PV",
+    "Sabatier": "methanation",
+    "offwind": "offshore wind",
+    "offwind-ac": "offshore wind (AC)",
+    "offwind-dc": "offshore wind (DC)",
+    "offwind-float": "offshore wind (Float)",
+    "onwind": "onshore wind",
+    "ror": "hydroelectricity",
+    "hydro": "hydroelectricity",
+    "PHS": "hydroelectricity",
+    "NH3": "ammonia",
+    "co2 Store": "DAC",
+    "co2 stored": "CO2 sequestration",
+    "AC": "transmission lines",
+    "DC": "transmission lines",
+    "B2B": "transmission lines",
+}
+
+# ========= CARRIER HIERARCHY =========
+# Maps parent carriers to their subcarriers for transparent aggregation in plotting.
+# After expand_heat_carriers() runs, buses with carrier="heat" are split into
+# "central heat" and "decentral heat". Use this dict to resolve parent carriers
+# to their subcarriers when querying statistics.
+#
+# Usage: CARRIER_HIERARCHY.get(carrier, [carrier])
+#   - Returns subcarriers if carrier is a parent (e.g., "heat" → ["central heat", "decentral heat"])
+#   - Returns [carrier] otherwise (e.g., "AC" → ["AC"])
+CARRIER_HIERARCHY = {
+    "heat": ["central heat", "decentral heat"],
+    # Future extensions:
+    # "H2": ["blue H2", "green H2"],
+    # "gas": ["natural gas", "biogas"],
+}
+
+# tests
+TESTS_RUNNAME = "automated_test_run"
+TESTS_CUTOUT = "China-tests-cutout"
+
+# world bank data
+CHINA_INFLATION = {
+    2011: 5.55,
+    2012: 2.62,
+    2013: 2.62,
+    2014: 1.92,
+    2015: 1.44,
+    2016: 2.00,
+    2017: 1.59,
+    2018: 2.07,
+    2019: 2.90,
+    2020: 2.42,
+    2021: 0.98,
+    2022: 1.97,
+    2023: 0.23,
+    2024: 0.22,
+}

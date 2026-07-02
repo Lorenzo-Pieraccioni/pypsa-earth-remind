@@ -1,1 +1,550 @@
-Name,Fueltype,Technology,Set,Country,Capacity,Efficiency,Duration,Volume_Mm3,DamHeight_m,StorageCapacity_MWh,DateIn,DateRetrofit,DateOut,lat,lon,EIC,projectID,bus
+Name,Fueltype,Technology,Set,Country,Capacity,Efficiency,DateIn,DateRetrofit,DateOut,lat,lon,Duration,Volume_Mm3,DamHeight_m,StorageCapacity_MWh,EIC,projectID
+Anhui Anqing (Huatai) power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2012,,,30.5526,117.2059,,,,,,GEM_biomass_58
+Anhui Bozhou power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2018,,,33.7704,115.7386,,,,,,GEM_biomass_59
+Anhui Changfeng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,32.3995,117.2453,,,,,,GEM_biomass_60
+Anhui Chaohu power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2018,,,31.7995,117.7628,,,,,,GEM_biomass_61
+Anhui Dangshan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2011,,,34.4144,116.4146,,,,,,GEM_biomass_62
+Anhui Dingyuan (Jinxuan) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,32.5828,117.2782,,,,,,GEM_biomass_63
+Anhui Dingyuan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2016,,,32.3084,117.6105,,,,,,GEM_biomass_64
+Anhui Feidong power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2021,,,31.7957,117.5671,,,,,,GEM_biomass_65
+Anhui Feidong power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2021,,,31.7957,117.5671,,,,,,GEM_biomass_66
+Anhui Fengtai power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,32.8997,116.4206,,,,,,GEM_biomass_67
+Anhui Fengyang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2017,,,32.9194,117.6822,,,,,,GEM_biomass_68
+Anhui Funan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2016,,,32.6468,115.6476,,,,,,GEM_biomass_69
+Anhui Fuyang (Guozhen) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2017,,,32.8684,115.8609,,,,,,GEM_biomass_70
+Anhui Guoyang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,33.445,116.1465,,,,,,GEM_biomass_71
+Anhui Guzhen power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2010,,,33.2331,117.3372,,,,,,GEM_biomass_72
+Anhui Hanshan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2014,,,31.5124,118.0854,,,,,,GEM_biomass_73
+Anhui Huaiyuan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2016,,,32.9874,117.1134,,,,,,GEM_biomass_74
+Anhui Huoqiu power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2013,,,32.3901,116.2721,,,,,,GEM_biomass_75
+Anhui Huoshan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2013,,,31.4277,116.3726,,,,,,GEM_biomass_76
+Anhui Jinzhai power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2013,,,31.7549,115.9382,,,,,,GEM_biomass_77
+Anhui Langxi power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2016,,,31.0045,119.109,,,,,,GEM_biomass_78
+Anhui Lingbi (Guozhen) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,33.6094,117.5601,,,,,,GEM_biomass_79
+Anhui Lingbi power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2017,,,33.7702,117.4556,,,,,,GEM_biomass_80
+Anhui Linquan power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2021,,,33.0183,115.3415,,,,,,GEM_biomass_81
+Anhui Lixin power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2022,,,33.2428,116.0563,,,,,,GEM_biomass_82
+Anhui Lu'An Shucheng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2015,,,31.3832,116.9812,,,,,,GEM_biomass_83
+Anhui Lujiang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2013,,,31.2499,117.2283,,,,,,GEM_biomass_84
+Anhui Maanshan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2022,,,31.7369,118.4895,,,,,,GEM_biomass_85
+Anhui Mengcheng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2015,,,33.2717,116.508,,,,,,GEM_biomass_86
+Anhui Mingguang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,32.8582,118.0843,,,,,,GEM_biomass_87
+Anhui Nanling power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2012,,,30.9186,118.2692,,,,,,GEM_biomass_88
+Anhui Nanqiao power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2017,,,32.4524,118.292,,,,,,GEM_biomass_89
+Anhui Ningguo (Kaidi) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2018,,,30.697,118.9249,,,,,,GEM_biomass_90
+Anhui Shou County power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2013,,,32.4928,116.7235,,,,,,GEM_biomass_91
+Anhui Si County power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2020,,,33.5684,117.8978,,,,,,GEM_biomass_92
+Anhui Suixi power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,33.5301,116.8807,,,,,,GEM_biomass_93
+Anhui Suixi Pufa power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2018,,,33.8416,116.7081,,,,,,GEM_biomass_94
+Anhui Suzhou Yongqiao District (Everbright) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,33.5705,117.0746,,,,,,GEM_biomass_95
+Anhui Tianchang (Shanghai Electric) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2018,,,32.7275,119.0283,,,,,,GEM_biomass_96
+Anhui Tianchang power station,Bioenergy,Steam Turbine,PP,CN,38.0,0.47,2021,,,32.7331,118.7906,,,,,,GEM_biomass_97
+Anhui Xiao County power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2017,,,34.1056,116.8863,,,,,,GEM_biomass_98
+Anhui Yeji power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2018,,,31.884,115.9369,,,,,,GEM_biomass_99
+Anhui Yingshang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,32.7297,116.27,,,,,,GEM_biomass_100
+Anhui Yu'an power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2018,,,31.8082,116.4235,,,,,,GEM_biomass_101
+Asia Symbol captive power station,Bioenergy,Steam Turbine,PP,CN,97.0,0.47,2023,,,35.374797,119.50857,,,,,,GEM_biomass_102
+Beihai Mill power station,Bioenergy,Steam Turbine,PP,CN,100.0,0.47,2016,,,21.53862,109.534681,,,,,,GEM_biomass_103
+Beijing Anding power station,Bioenergy,Steam Turbine,PP,CN,45.0,0.47,2023,,,39.6286,116.5181,,,,,,GEM_biomass_104
+Beijing Anding power station,Bioenergy,Steam Turbine,PP,CN,45.0,0.47,2023,,,39.6286,116.5181,,,,,,GEM_biomass_105
+Beijing Anding power station,Bioenergy,Steam Turbine,PP,CN,45.0,0.47,2023,,,39.6286,116.5181,,,,,,GEM_biomass_106
+Beijing Baishan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,40.1616,116.344,,,,,,GEM_biomass_107
+Beijing Baishan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,40.1616,116.344,,,,,,GEM_biomass_108
+Beijing Mengtougou power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2014,,,39.8503,116.0404,,,,,,GEM_biomass_109
+Beijing Mengtougou power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2014,,,39.8503,116.0404,,,,,,GEM_biomass_110
+Chenming Mill Shouguang Meilun Paper Mill captive power station,Bioenergy,Steam Turbine,PP,CN,70.0,0.47,2019,,,36.859677,118.699591,,,,,,GEM_biomass_111
+Chenming Mill Shouguang Meilun Paper Mill captive power station,Bioenergy,Steam Turbine,PP,CN,165.0,0.47,2019,,,36.859677,118.699591,,,,,,GEM_biomass_112
+Chongqing Jiangjin District power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2018,,,29.1738,106.3968,,,,,,GEM_biomass_113
+Chongqing Jiangjin District power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2018,,,29.1738,106.3968,,,,,,GEM_biomass_114
+Chongqing Jiangjin District power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2018,,,29.1738,106.3968,,,,,,GEM_biomass_115
+Chongqing Kaidi Fengdu power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2013,,,29.9103,107.783,,,,,,GEM_biomass_116
+Chongqing Luoqi power station,Bioenergy,Steam Turbine,PP,CN,45.0,0.47,2021,,,29.6809,106.8825,,,,,,GEM_biomass_117
+Chongqing Luoqi power station,Bioenergy,Steam Turbine,PP,CN,45.0,0.47,2021,,,29.6809,106.8825,,,,,,GEM_biomass_118
+Fujian Jinjiang power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2020,,,24.7781,118.5288,,,,,,GEM_biomass_119
+Fujian Longhai power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2018,,,24.489,117.8629,,,,,,GEM_biomass_120
+Fujian Nan'An power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2021,,,24.9309,118.3874,,,,,,GEM_biomass_121
+Fujian Pucheng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2014,,,27.9074,118.5513,,,,,,GEM_biomass_122
+Fujian Xiamen power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2023,,,24.724117,118.276747,,,,,,GEM_biomass_123
+Gansu Tianshui power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2014,,,34.5448,106.0028,,,,,,GEM_biomass_124
+Guangdong Chaozhou power station,Bioenergy,Steam Turbine,PP,CN,32.0,0.47,2020,,,23.6592,116.7725,,,,,,GEM_biomass_125
+Guangdong Conghua power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2022,,,23.6464,113.503,,,,,,GEM_biomass_126
+Guangdong Conghua power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2022,,,23.6464,113.503,,,,,,GEM_biomass_127
+Guangdong Dongguan Haixinsha power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2021,,,23.0099,113.5909,,,,,,GEM_biomass_128
+Guangdong Dongguan Haixinsha power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2021,,,23.0099,113.5909,,,,,,GEM_biomass_129
+Guangdong Dongguan Houjie power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,22.898064,113.676344,,,,,,GEM_biomass_130
+Guangdong Foshan power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2021,,,22.8005,112.681,,,,,,GEM_biomass_131
+Guangdong Foshan power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2021,,,22.8005,112.681,,,,,,GEM_biomass_132
+Guangdong Guangzhou Huangpu District power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2023,,,23.2868,113.5063,,,,,,GEM_biomass_133
+Guangdong Guangzhou Huangpu District power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2023,,,23.2868,113.5063,,,,,,GEM_biomass_134
+Guangdong Guangzhou Huangpu District power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2023,,,23.2868,113.5063,,,,,,GEM_biomass_135
+Guangdong Huadu power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2021,,,23.3933,113.0225,,,,,,GEM_biomass_136
+Guangdong Huadu power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2021,,,23.3933,113.0225,,,,,,GEM_biomass_137
+Guangdong Huizhou Huicheng District power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2023,,,23.0793,114.2246,,,,,,GEM_biomass_138
+Guangdong Huizhou power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2021,,,22.854,114.512,,,,,,GEM_biomass_139
+Guangdong Huizhou power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2021,,,22.854,114.512,,,,,,GEM_biomass_140
+Guangdong Huizhou power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2021,,,22.8534,114.5122,,,,,,GEM_biomass_141
+Guangdong Jiangmen Pengjiang District power station,Bioenergy,Steam Turbine,PP,CN,45.0,0.47,2023,,,22.6578,113.0076,,,,,,GEM_biomass_142
+Guangdong Likeng power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2013,,,23.2938,113.3554,,,,,,GEM_biomass_143
+Guangdong Nansha power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2021,,,22.759,113.4598,,,,,,GEM_biomass_144
+Guangdong Nansha power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2021,,,22.759,113.4598,,,,,,GEM_biomass_145
+Guangdong Shantou Chaoyang power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2019,,,23.3055,116.4969,,,,,,GEM_biomass_146
+Guangdong Shantou power station,Bioenergy,Steam Turbine,PP,CN,45.0,0.47,2023,,,23.4466,116.5963,,,,,,GEM_biomass_147
+Guangdong Shaoguan (Shaoneng) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2014,,,24.7252,113.5723,,,,,,GEM_biomass_148
+Guangdong Shaoguan (Shaoneng) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2014,,,24.7252,113.5723,,,,,,GEM_biomass_149
+Guangdong Shenzhen Bao'an power station,Bioenergy,Steam Turbine,PP,CN,32.0,0.47,2012,,,22.831,113.8454,,,,,,GEM_biomass_150
+Guangdong Shenzhen Bao'an power station,Bioenergy,Steam Turbine,PP,CN,32.0,0.47,2012,,,22.831,113.8454,,,,,,GEM_biomass_151
+Guangdong Shenzhen Bao'an power station,Bioenergy,Steam Turbine,PP,CN,45.0,0.47,2019,,,22.831,113.8454,,,,,,GEM_biomass_152
+Guangdong Shenzhen Bao'an power station,Bioenergy,Steam Turbine,PP,CN,45.0,0.47,2019,,,22.831,113.8454,,,,,,GEM_biomass_153
+Guangdong Shenzhen Bao'an power station,Bioenergy,Steam Turbine,PP,CN,45.0,0.47,2019,,,22.831,113.8454,,,,,,GEM_biomass_154
+Guangdong Shenzhen East power station,Bioenergy,Steam Turbine,PP,CN,60.0,0.47,2019,,,22.7498,114.3187,,,,,,GEM_biomass_155
+Guangdong Shenzhen East power station,Bioenergy,Steam Turbine,PP,CN,60.0,0.47,2019,,,22.7498,114.3187,,,,,,GEM_biomass_156
+Guangdong Shenzhen East power station,Bioenergy,Steam Turbine,PP,CN,60.0,0.47,2019,,,22.7498,114.3187,,,,,,GEM_biomass_157
+Guangdong Shunde power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2018,,,22.7867,113.0767,,,,,,GEM_biomass_158
+Guangdong Shunde power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2018,,,22.7867,113.0767,,,,,,GEM_biomass_159
+Guangdong Wengyuan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,24.3061,113.9082,,,,,,GEM_biomass_160
+Guangdong Wengyuan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,24.3061,113.9082,,,,,,GEM_biomass_161
+Guangdong Wengyuan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,24.3061,113.9082,,,,,,GEM_biomass_162
+Guangdong Wengyuan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,24.3061,113.9082,,,,,,GEM_biomass_163
+Guangdong Xinfeng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2017,,,24.1345,114.3174,,,,,,GEM_biomass_164
+Guangdong Xinfeng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2017,,,24.1345,114.3174,,,,,,GEM_biomass_165
+Guangdong Xinfeng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,24.1345,114.3174,,,,,,GEM_biomass_166
+Guangdong Xinfeng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,24.1345,114.3174,,,,,,GEM_biomass_167
+Guangdong Xinfeng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,24.1345,114.3174,,,,,,GEM_biomass_168
+Guangdong Xinfeng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,24.1345,114.3174,,,,,,GEM_biomass_169
+Guangdong Yangjiang (Kangheng) power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2023,,,21.858652,111.792853,,,,,,GEM_biomass_170
+Guangdong Zengcheng power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2022,,,23.2108,113.7167,,,,,,GEM_biomass_171
+Guangdong Zengcheng power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2022,,,23.2108,113.7167,,,,,,GEM_biomass_172
+Guangdong Zhanjiang (Chenming) power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2019,,,21.1047,110.1596,,,,,,GEM_biomass_173
+Guangdong Zhanjiang (Chenming) power station,Bioenergy,Steam Turbine,PP,CN,60.0,0.47,2011,,,21.1047,110.1596,,,,,,GEM_biomass_174
+Guangdong Zhanjiang (Chenming) power station,Bioenergy,Steam Turbine,PP,CN,60.0,0.47,2011,,,21.1047,110.1596,,,,,,GEM_biomass_175
+Guangdong Zhanjiang (Chenming) power station,Bioenergy,Steam Turbine,PP,CN,60.0,0.47,2011,,,21.1047,110.1596,,,,,,GEM_biomass_176
+Guangdong Zhanjiang (Yuedian) power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2011,,,21.3414,110.2314,,,,,,GEM_biomass_177
+Guangdong Zhanjiang (Yuedian) power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2011,,,21.3414,110.2314,,,,,,GEM_biomass_178
+Guangdong Zhaoqing power station,Bioenergy,Steam Turbine,PP,CN,45.0,0.47,2020,,,23.2999,112.3266,,,,,,GEM_biomass_179
+Guangdong Zhongshan Nanbu Zutuan power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2021,,,22.3608,113.3248,,,,,,GEM_biomass_180
+Guangdong Zhongshan Nanbu Zutuan power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2021,,,22.3608,113.3248,,,,,,GEM_biomass_181
+Guangdong Zhuhai power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,22.204027,113.119269,,,,,,GEM_biomass_182
+Guangdong Zhuhai power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,22.204027,113.119269,,,,,,GEM_biomass_183
+Guangxi Beihai (Sun Paper) power station,Bioenergy,Steam Turbine,PP,CN,80.0,0.47,2022,,,21.5239,109.5466,,,,,,GEM_biomass_184
+Guangxi Beihai (Sun Paper) power station,Bioenergy,Steam Turbine,PP,CN,80.0,0.47,2022,,,21.5239,109.5466,,,,,,GEM_biomass_185
+Guangxi Beihai power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2022,,,21.7649,109.0339,,,,,,GEM_biomass_186
+Guangxi Beiliu power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2012,,,22.7647,110.4245,,,,,,GEM_biomass_187
+Guangxi Chongzuo Jiangzhou District power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,22.4165,107.4791,,,,,,GEM_biomass_188
+Guangxi Chongzuo power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2018,,,22.4063,107.4459,,,,,,GEM_biomass_189
+Guangxi Funan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2010,,,22.6343,107.8885,,,,,,GEM_biomass_190
+Guangxi Fusui power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2018,,,22.5429,107.8106,,,,,,GEM_biomass_191
+Guangxi Guigang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2015,,,23.1169,109.4667,,,,,,GEM_biomass_192
+Guangxi Guilin power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2018,,,25.3135,110.1188,,,,,,GEM_biomass_193
+Guangxi Laibin power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2022,,,23.5418,108.9369,,,,,,GEM_biomass_194
+Guangxi Liuzhou power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,24.2195,109.4743,,,,,,GEM_biomass_195
+Guangxi Liuzhou power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,24.2195,109.4743,,,,,,GEM_biomass_196
+Guangxi Longan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,23.0718,107.8938,,,,,,GEM_biomass_197
+Guangxi Nanning power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,23.0323,108.0754,,,,,,GEM_biomass_198
+Guangxi Nanning power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,23.0323,108.0754,,,,,,GEM_biomass_199
+Guangxi Ningming power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2015,,,22.1641,107.0685,,,,,,GEM_biomass_200
+Guangxi Qinzhou power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2018,,,22.1328,108.4312,,,,,,GEM_biomass_201
+Guangxi Teng County power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,23.3757,110.9193,,,,,,GEM_biomass_202
+Guangxi Wuzhou power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,23.277911,111.21489,,,,,,GEM_biomass_203
+Guangxi Yangshuo power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,24.766,110.614,,,,,,GEM_biomass_204
+Guangxi Yizhou power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2018,,,24.5253,108.5624,,,,,,GEM_biomass_205
+Guizhou Chishui (Taisheng) power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2023,,,28.6028,105.7358,,,,,,GEM_biomass_206
+Guizhou Chishui power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,28.5547,105.7265,,,,,,GEM_biomass_207
+Guizhou Congjiang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,25.8371,109.0578,,,,,,GEM_biomass_208
+Guizhou Guiyang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2022,,,26.7239,106.5938,,,,,,GEM_biomass_209
+Guizhou Guiyang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2022,,,26.7239,106.5938,,,,,,GEM_biomass_210
+Guizhou Jinsha power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2015,,,27.4942,106.4508,,,,,,GEM_biomass_211
+Guizhou Songtao power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2014,,,28.1671,109.2102,,,,,,GEM_biomass_212
+Hainan Changjiang power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2022,,,19.2302,108.9368,,,,,,GEM_biomass_213
+Hainan Lingao power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2024,,,19.8194,109.6316,,,,,,GEM_biomass_214
+Hainan Sanya power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,18.4233,109.304,,,,,,GEM_biomass_215
+Hebei Anping power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2017,,,38.2309,115.5752,,,,,,GEM_biomass_216
+Hebei Changli power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,39.6842,119.1373,,,,,,GEM_biomass_217
+Hebei Cheng'an power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2007,,,36.4437,114.6866,,,,,,GEM_biomass_218
+Hebei Dacheng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2016,,,38.7987,116.6443,,,,,,GEM_biomass_219
+Hebei Dacheng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2016,,,38.7987,116.6443,,,,,,GEM_biomass_220
+Hebei Dongguang power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2021,,,37.9609,116.8069,,,,,,GEM_biomass_221
+Hebei Gucheng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2017,,,37.3543,115.907,,,,,,GEM_biomass_222
+Hebei Kangbao power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2020,,,41.87,114.6196,,,,,,GEM_biomass_223
+Hebei Linxi power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,36.8631,115.5167,,,,,,GEM_biomass_224
+Hebei Luan County power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,39.7466,118.7098,,,,,,GEM_biomass_225
+Hebei Luannan (Nine Dragons Paper) power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2015,,,39.4823,118.6757,,,,,,GEM_biomass_226
+Hebei Nangong power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2010,,,37.3653,115.397,,,,,,GEM_biomass_227
+Hebei Pingxiang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2017,,,37.0909,114.9675,,,,,,GEM_biomass_228
+Hebei Sanhe power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,39.935,117.0233,,,,,,GEM_biomass_229
+Hebei Sanhe power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,39.935,117.0233,,,,,,GEM_biomass_230
+Hebei Tangshan Caofeidian power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2023,,,39.1354,118.4819,,,,,,GEM_biomass_231
+Hebei Tangshan Fengnan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,39.5487,118.0422,,,,,,GEM_biomass_232
+Hebei Wei County power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2006,,,37.0615,115.2804,,,,,,GEM_biomass_233
+Hebei Wuji power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2015,,,38.1262,114.9727,,,,,,GEM_biomass_234
+Hebei Wuji power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2015,,,38.1262,114.9727,,,,,,GEM_biomass_235
+Hebei Wuqiao power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2010,,,37.6316,116.4377,,,,,,GEM_biomass_236
+Hebei Xinglong power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,40.4006,117.4798,,,,,,GEM_biomass_237
+Hebei Xingtang power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2019,,,38.3864,114.5048,,,,,,GEM_biomass_238
+Hebei Xiong County power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2015,,,38.953,116.2418,,,,,,GEM_biomass_239
+Hebei Xiong County power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2015,,,38.953,116.2418,,,,,,GEM_biomass_240
+Hebei Zhangjiakou power station,Bioenergy,Steam Turbine,PP,CN,36.0,0.47,2021,,,40.7742,114.8819,,,,,,GEM_biomass_241
+Heilongjiang (Harbin Power) Wangkui power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2022,,,46.8434,126.4623,,,,,,GEM_biomass_242
+Heilongjiang Anda power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2017,,,46.457,125.4089,,,,,,GEM_biomass_243
+Heilongjiang Bayan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2011,,,46.0895,127.4051,,,,,,GEM_biomass_244
+Heilongjiang Bayan Xinglong power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,46.4613,127.1058,,,,,,GEM_biomass_245
+Heilongjiang Bei'an power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2018,,,48.0712,126.7247,,,,,,GEM_biomass_246
+Heilongjiang Bin County power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2022,,,45.809,127.1101,,,,,,GEM_biomass_247
+Heilongjiang Boli (Xingfa) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2022,,,45.7626,130.597,,,,,,GEM_biomass_248
+Heilongjiang Dorbod Mongol Autonomous County power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2019,,,46.7856,124.6034,,,,,,GEM_biomass_249
+Heilongjiang Dorbod Mongol Autonomous County power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2019,,,46.7856,124.6034,,,,,,GEM_biomass_250
+Heilongjiang Dorbod Mongol Autonomous County power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2019,,,46.7856,124.6034,,,,,,GEM_biomass_251
+Heilongjiang Fangzheng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,45.8516,128.8249,,,,,,GEM_biomass_252
+Heilongjiang Fuhua Jinhe power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,47.8689,123.7011,,,,,,GEM_biomass_253
+Heilongjiang Fuhua Jinhe power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,47.8689,123.7011,,,,,,GEM_biomass_254
+Heilongjiang Fujin power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,47.321,132.5432,,,,,,GEM_biomass_255
+Heilongjiang Fuyu (Green Energy) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2017,,,47.7719,124.4933,,,,,,GEM_biomass_256
+Heilongjiang Fuyu power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2023,,,47.4794,124.1214,,,,,,GEM_biomass_257
+Heilongjiang Fuyu power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2023,,,47.4794,124.1214,,,,,,GEM_biomass_258
+Heilongjiang Fuyuan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,48.3425,134.3049,,,,,,GEM_biomass_259
+Heilongjiang Hailun (Dishikun) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,47.4437,126.9228,,,,,,GEM_biomass_260
+Heilongjiang Hailun power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,47.4728,126.9755,,,,,,GEM_biomass_261
+Heilongjiang Harbin Acheng District power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,45.5713,126.955,,,,,,GEM_biomass_262
+Heilongjiang Harbin Songbei District power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,45.879,126.4847,,,,,,GEM_biomass_263
+Heilongjiang Harbin Songbei District power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,45.879,126.4847,,,,,,GEM_biomass_264
+Heilongjiang Hegang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,47.332,130.3494,,,,,,GEM_biomass_265
+Heilongjiang Jixian power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,46.7744,131.1244,,,,,,GEM_biomass_266
+Heilongjiang Lanxi power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,46.2295,126.296,,,,,,GEM_biomass_267
+Heilongjiang Lindian power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,47.1782,124.8709,,,,,,GEM_biomass_268
+Heilongjiang Longjiang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2009,,,47.3233,123.2031,,,,,,GEM_biomass_269
+Heilongjiang Luobei power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2016,,,47.4202,130.5838,,,,,,GEM_biomass_270
+Heilongjiang Meilisi power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2021,,,47.3011,123.7424,,,,,,GEM_biomass_271
+Heilongjiang Meilisi power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2021,,,47.3011,123.7424,,,,,,GEM_biomass_272
+Heilongjiang Mishan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,45.5029,131.8232,,,,,,GEM_biomass_273
+Heilongjiang Mudanjiang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,44.5573,129.8245,,,,,,GEM_biomass_274
+Heilongjiang Ning'an power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2014,,,44.1702,129.3443,,,,,,GEM_biomass_275
+Heilongjiang Qing'An (Guoneng) power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2014,,,46.8734,127.5403,,,,,,GEM_biomass_276
+Heilongjiang Qing'An power station,Bioenergy,Steam Turbine,PP,CN,80.0,0.47,2021,,,46.8826,127.4793,,,,,,GEM_biomass_277
+Heilongjiang Qitaihe power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,45.8266,131.1814,,,,,,GEM_biomass_278
+Heilongjiang Shangzhi power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2019,,,45.2128,127.9984,,,,,,GEM_biomass_279
+Heilongjiang Suibin power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,47.281,131.8919,,,,,,GEM_biomass_280
+Heilongjiang Suihua Beilin power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2021,,,46.6152,126.869,,,,,,GEM_biomass_281
+Heilongjiang Suihua Beilin power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2021,,,46.6152,126.869,,,,,,GEM_biomass_282
+Heilongjiang Tailai power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2022,,,46.3498,123.4284,,,,,,GEM_biomass_283
+Heilongjiang Tailai power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2022,,,46.3498,123.4284,,,,,,GEM_biomass_284
+Heilongjiang Tangyuan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2007,,,46.7474,129.9232,,,,,,GEM_biomass_285
+Heilongjiang Tieli power station,Bioenergy,Steam Turbine,PP,CN,80.0,0.47,2021,,,46.9803,128.0661,,,,,,GEM_biomass_286
+Heilongjiang Tongjiang Jiansanjiang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2016,,,47.5652,133.1312,,,,,,GEM_biomass_287
+Heilongjiang Tongjiang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,47.6401,132.5176,,,,,,GEM_biomass_288
+Heilongjiang Wuchang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2015,,,45.397,126.7599,,,,,,GEM_biomass_289
+Heilongjiang Wudalianchi power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,48.4936,126.6379,,,,,,GEM_biomass_290
+Heilongjiang Xunke power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,49.3634,128.0751,,,,,,GEM_biomass_291
+Heilongjiang Yi'An County (Jielong) power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2023,,,47.8905,125.3292,,,,,,GEM_biomass_292
+Heilongjiang Yichun power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,46.9688,127.741,,,,,,GEM_biomass_293
+Heilongjiang Yilan power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2021,,,46.2924,129.6025,,,,,,GEM_biomass_294
+Heilongjiang Youyi power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2010,,,46.7694,131.8118,,,,,,GEM_biomass_295
+Heilongjiang Zhaodong (China Energy Construction Investment) power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2022,,,46.1041,125.8898,,,,,,GEM_biomass_296
+Heilongjiang Zhaodong (China Energy Construction Investment) power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2022,,,46.1041,125.8898,,,,,,GEM_biomass_297
+Heilongjiang Zhaodong (Huaqing) power station,Bioenergy,Steam Turbine,PP,CN,80.0,0.47,2021,,,46.07,126.0299,,,,,,GEM_biomass_298
+Heilongjiang Zhaodong power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2022,,,46.0144,126.0286,,,,,,GEM_biomass_299
+Heilongjiang Zhaoyuan power station,Bioenergy,Steam Turbine,PP,CN,80.0,0.47,2021,,,45.5454,125.0861,,,,,,GEM_biomass_300
+Helongjiang (Guoneng) Wangkui power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2007,,,46.8434,126.4623,,,,,,GEM_biomass_301
+Henan Changyuan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,35.1911,114.5426,,,,,,GEM_biomass_302
+Henan Fengqiu power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,35.0729,114.4019,,,,,,GEM_biomass_303
+Henan Fugou power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,34.0717,114.4099,,,,,,GEM_biomass_304
+Henan Guangshan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,32.1176,114.8816,,,,,,GEM_biomass_305
+Henan Gushi power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2022,,,32.1931,115.6147,,,,,,GEM_biomass_306
+Henan Hua power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2020,,,35.3818,114.6508,,,,,,GEM_biomass_307
+Henan Lingbao power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2019,,,34.5514,110.9363,,,,,,GEM_biomass_308
+Henan Luohe power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2021,,,33.5127,113.9947,,,,,,GEM_biomass_309
+Henan Luoshan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,32.1895,114.547,,,,,,GEM_biomass_310
+Henan Lushan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,33.6142,113.0195,,,,,,GEM_biomass_311
+Henan Luyi power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2014,,,33.8976,115.4777,,,,,,GEM_biomass_312
+Henan Nanle power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,36.0728,115.3491,,,,,,GEM_biomass_313
+Henan Nanzhao power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,33.2872,112.6476,,,,,,GEM_biomass_314
+Henan Qi power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,34.5382,114.8041,,,,,,GEM_biomass_315
+Henan Runan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,32.9663,114.3224,,,,,,GEM_biomass_316
+Henan Shangcai power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2014,,,33.2719,114.3254,,,,,,GEM_biomass_317
+Henan Shangshui power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,33.5443,114.5732,,,,,,GEM_biomass_318
+Henan Sheqi power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,33.02,112.9544,,,,,,GEM_biomass_319
+Henan Sui County power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2017,,,34.4156,115.0383,,,,,,GEM_biomass_320
+Henan Taiqian power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2018,,,35.9357,115.8421,,,,,,GEM_biomass_321
+Henan Wen power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,34.9011,113.068,,,,,,GEM_biomass_322
+Henan Xiayi power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,34.2011,116.1507,,,,,,GEM_biomass_323
+Henan Xinxiang (Shouchuang) power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2020,,,35.2852,114.1317,,,,,,GEM_biomass_324
+Henan Xinyang power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2021,,,32.1967,114.257,,,,,,GEM_biomass_325
+Henan Xinye power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2022,,,32.4908,112.2973,,,,,,GEM_biomass_326
+Henan Xiuwu power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2022,,,35.1829,113.4311,,,,,,GEM_biomass_327
+Henan Xixia power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2022,,,33.3448,111.5016,,,,,,GEM_biomass_328
+Henan Xun power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2007,,,35.6806,114.5506,,,,,,GEM_biomass_329
+Henan Yancheng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2017,,,33.693,113.7891,,,,,,GEM_biomass_330
+Henan Yanjin power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2022,,,35.1908,114.136,,,,,,GEM_biomass_331
+Henan Yanshi power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,34.5756,112.7772,,,,,,GEM_biomass_332
+Henan Yongcheng (Changqing) power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2020,,,33.9664,116.2976,,,,,,GEM_biomass_333
+Henan Yucheng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,34.5431,115.9505,,,,,,GEM_biomass_334
+Henan Zhecheng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,34.14,115.4126,,,,,,GEM_biomass_335
+Henan Zhengyang power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2021,,,32.5607,114.4381,,,,,,GEM_biomass_336
+Henan Zhongmu power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,34.628,113.9644,,,,,,GEM_biomass_337
+Henan Zhongmu power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,34.628,113.9644,,,,,,GEM_biomass_338
+Henan Zhongmu power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,34.628,113.9644,,,,,,GEM_biomass_339
+Huaneng Jiyang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,36.9475,117.1242,,,,,,GEM_biomass_340
+Huanggang Paper Mill Cogen Power Station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2019,,,30.4222,114.9797,,,,,,GEM_biomass_341
+Huanggang Paper Mill Cogen Power Station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2019,,,30.4222,114.9797,,,,,,GEM_biomass_342
+Hubei Chibi power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2013,,,29.8573,113.661,,,,,,GEM_biomass_343
+Hubei Chongyang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2012,,,29.5512,114.0469,,,,,,GEM_biomass_344
+Hubei Fang County power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2015,,,32.0542,110.7681,,,,,,GEM_biomass_345
+Hubei Gucheng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2013,,,32.29,111.5636,,,,,,GEM_biomass_346
+Hubei Jiangling power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2014,,,30.0872,112.3544,,,,,,GEM_biomass_347
+Hubei Jianli (Nine Dragons Paper) power station,Bioenergy,Steam Turbine,PP,CN,80.0,0.47,2022,,,29.6309,113.2633,,,,,,GEM_biomass_348
+Hubei Jianli (Nine Dragons Paper) power station,Bioenergy,Steam Turbine,PP,CN,80.0,0.47,2022,,,29.6309,113.2633,,,,,,GEM_biomass_349
+Hubei Jianli (Nine Dragons Paper) power station,Bioenergy,Steam Turbine,PP,CN,80.0,0.47,2022,,,29.6309,113.2633,,,,,,GEM_biomass_350
+Hubei Laifeng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2011,,,29.3907,109.1079,,,,,,GEM_biomass_351
+Hubei Qianjiang power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2020,,,30.3397,112.8917,,,,,,GEM_biomass_352
+Hubei Shayang power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2019,,,30.7782,112.4885,,,,,,GEM_biomass_353
+Hubei Songzi power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2012,,,29.9792,111.7829,,,,,,GEM_biomass_354
+Hubei Wuhan Caidian power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2023,,,30.4085,114.0337,,,,,,GEM_biomass_355
+Hubei Wuhan Caidian power station,Bioenergy,Steam Turbine,PP,CN,45.0,0.47,2023,,,30.4085,114.0337,,,,,,GEM_biomass_356
+Hubei Wuhan Xinghuo power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2023,,,30.6373,114.5116,,,,,,GEM_biomass_357
+Hubei Wuhan Xingou power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2023,,,30.6796,113.9796,,,,,,GEM_biomass_358
+Hubei Xiaogan power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2021,,,30.925,113.905,,,,,,GEM_biomass_359
+Hubei Yangxin power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2017,,,29.744,115.0334,,,,,,GEM_biomass_360
+Hubei Yichang power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2023,,,30.695,111.5783,,,,,,GEM_biomass_361
+Hubei Zhongxiang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,31.0292,112.6662,,,,,,GEM_biomass_362
+Hunan Anren power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2013,,,26.7108,113.2686,,,,,,GEM_biomass_363
+Hunan Changsha (Junxin) power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2021,,,28.4156,112.9778,,,,,,GEM_biomass_364
+Hunan Changsha (Junxin) power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2021,,,28.4156,112.9778,,,,,,GEM_biomass_365
+Hunan Changsha power station,Bioenergy,Steam Turbine,PP,CN,100.0,0.47,2018,,,28.4096,112.9315,,,,,,GEM_biomass_366
+Hunan Chenzhou power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2018,,,25.8803,112.992,,,,,,GEM_biomass_367
+Hunan Huaihua power station,Bioenergy,Steam Turbine,PP,CN,70.0,0.47,2021,,,27.5246,109.9391,,,,,,GEM_biomass_368
+Hunan Linli power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2012,,,29.4682,111.6371,,,,,,GEM_biomass_369
+Hunan Longhui power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2013,,,27.1311,111.0247,,,,,,GEM_biomass_370
+Hunan Qiyang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2015,,,26.4416,111.9743,,,,,,GEM_biomass_371
+Hunan Shuangfeng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2014,,,27.4371,112.1573,,,,,,GEM_biomass_372
+Hunan Xiangtan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,27.7754,112.8327,,,,,,GEM_biomass_373
+Hunan Yongshun power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2017,,,29.215,109.8233,,,,,,GEM_biomass_374
+Inner Mongolia Arun Banner power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,48.0793,123.4613,,,,,,GEM_biomass_375
+Inner Mongolia Hanggin Rear Banner power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,40.8961,106.8504,,,,,,GEM_biomass_376
+Inner Mongolia Horqin Left Middle Banner power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2022,,,44.1285,123.2953,,,,,,GEM_biomass_377
+Inner Mongolia Horqin Left Rear Banner power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2022,,,43.4465,122.2344,,,,,,GEM_biomass_378
+Inner Mongolia Jalaid Banner power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2022,,,46.6524,122.9667,,,,,,GEM_biomass_379
+Inner Mongolia Moridawa Daur Autonomous Banner power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,48.4652,124.515,,,,,,GEM_biomass_380
+Jiangsu Changshu No.2 power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,31.7476,121.0204,,,,,,GEM_biomass_381
+Jiangsu Funing power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2020,,,33.6021,119.6091,,,,,,GEM_biomass_382
+Jiangsu Gaoyou power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,32.7875,119.7481,,,,,,GEM_biomass_383
+Jiangsu Guanyun power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2018,,,34.2559,119.2502,,,,,,GEM_biomass_384
+Jiangsu Lianshui power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,34.0145,119.161,,,,,,GEM_biomass_385
+Jiangsu Lianyungang power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2021,,,34.6876,119.198,,,,,,GEM_biomass_386
+Jiangsu Pei County power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,34.5367,116.9876,,,,,,GEM_biomass_387
+Jiangsu Pizhou power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2016,,,34.3962,117.9371,,,,,,GEM_biomass_388
+Jiangsu Sheyang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2007,,,33.7688,120.1845,,,,,,GEM_biomass_389
+Jiangsu Suining power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2020,,,34.1182,117.8476,,,,,,GEM_biomass_390
+Jiangsu Suzhou Wuzhong District power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2019,,,31.2445,120.5458,,,,,,GEM_biomass_391
+Jiangsu Suzhou Wuzhong District power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2019,,,31.2445,120.5458,,,,,,GEM_biomass_392
+Jiangsu Taizhou Jiangyan District power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,32.6225,120.1762,,,,,,GEM_biomass_393
+Jiangsu Wujiang power station,Bioenergy,Steam Turbine,PP,CN,60.0,0.47,2021,,,31.0794,120.7107,,,,,,GEM_biomass_394
+Jiangsu Wujiang power station,Bioenergy,Steam Turbine,PP,CN,60.0,0.47,2021,,,31.0794,120.7107,,,,,,GEM_biomass_395
+Jiangsu Xiangshui power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,34.22,119.7481,,,,,,GEM_biomass_396
+Jiangsu Xuyi (Zhengzhao) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2013,,,33.0603,118.556,,,,,,GEM_biomass_397
+Jiangsu Xuyi power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2016,,,32.9653,118.5644,,,,,,GEM_biomass_398
+Jiangsu Xuzhou Tongshan District power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2023,,,34.1415,117.2003,,,,,,GEM_biomass_399
+Jiangsu Xuzhou Tongshan District power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2023,,,34.1415,117.2003,,,,,,GEM_biomass_400
+Jiangsu Yancheng Tinghu power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2019,,,33.4235,120.0059,,,,,,GEM_biomass_401
+Jiangsu Yixing power station,Bioenergy,Steam Turbine,PP,CN,45.0,0.47,2019,,,31.3342,119.6514,,,,,,GEM_biomass_402
+Jiangsu Zhangjiagang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2023,,,31.879,120.6302,,,,,,GEM_biomass_403
+Jiangsu Zhangjiagang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2023,,,31.879,120.6302,,,,,,GEM_biomass_404
+Jiangxi De'an power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2016,,,29.3899,115.7236,,,,,,GEM_biomass_405
+Jiangxi Fengcheng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,28.0692,115.7682,,,,,,GEM_biomass_406
+Jiangxi Fuzhou Linchuan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,28.0175,116.2956,,,,,,GEM_biomass_407
+Jiangxi Gan County power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2012,,,25.984,115.1423,,,,,,GEM_biomass_408
+Jiangxi Ganzhou Nankang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2023,,,25.6684,114.7834,,,,,,GEM_biomass_409
+Jiangxi Guixi power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,28.2432,117.1461,,,,,,GEM_biomass_410
+Jiangxi Hukou (Five Continents Special Paper) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,29.8223,116.3765,,,,,,GEM_biomass_411
+Jiangxi Jiujiang (Taisheng) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2018,,,29.7361,115.8494,,,,,,GEM_biomass_412
+Jiangxi Jiujiang (Taisheng) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2022,,,29.7361,115.8494,,,,,,GEM_biomass_413
+Jiangxi Nanchang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,28.7325,115.7825,,,,,,GEM_biomass_414
+Jiangxi Nanchang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,28.7325,115.7825,,,,,,GEM_biomass_415
+Jiangxi Pengze power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2016,,,29.8485,116.4155,,,,,,GEM_biomass_416
+Jiangxi Quanling County power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2022,,,28.3594,116.0651,,,,,,GEM_biomass_417
+Jiangxi Rugao power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2017,,,32.283,120.563,,,,,,GEM_biomass_418
+Jiangxi Shangrao power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2020,,,28.3878,117.8487,,,,,,GEM_biomass_419
+Jiangxi Shicheng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,26.2296,116.3446,,,,,,GEM_biomass_420
+Jiangxi Yongxin power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2014,,,27.0395,114.3084,,,,,,GEM_biomass_421
+Jilin Changling power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2011,,,44.2174,123.945,,,,,,GEM_biomass_422
+Jilin Da'An Anguang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,45.5944,123.8025,,,,,,GEM_biomass_423
+Jilin Dehui (Guoneng) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2013,,,44.5644,125.7067,,,,,,GEM_biomass_424
+Jilin Dehui (Hengjian) power station,Bioenergy,Steam Turbine,PP,CN,31.5,0.47,2021,,,44.0995,125.3864,,,,,,GEM_biomass_425
+Jilin Dehui (Hengjian) power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2023,,,44.0995,125.3864,,,,,,GEM_biomass_426
+Jilin Dehui power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2021,,,46.8506,126.5322,,,,,,GEM_biomass_427
+Jilin Gongzhuling power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2022,,,43.5321,124.8702,,,,,,GEM_biomass_428
+Jilin Huadian power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2017,,,42.978,126.8546,,,,,,GEM_biomass_429
+Jilin Huadian power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2018,,,42.978,126.8546,,,,,,GEM_biomass_430
+Jilin Huaide power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2015,,,43.8763,124.7551,,,,,,GEM_biomass_431
+Jilin Huinan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2023,,,42.7097,126.0799,,,,,,GEM_biomass_432
+Jilin Jiaohe power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2014,,,43.7325,127.3374,,,,,,GEM_biomass_433
+Jilin Jiaohe power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2015,,,43.7325,127.3374,,,,,,GEM_biomass_434
+Jilin Liaoyuan Longshan District power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2007,,,42.9245,125.2555,,,,,,GEM_biomass_435
+Jilin Lishu power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2022,,,43.3275,124.1437,,,,,,GEM_biomass_436
+Jilin Nong'an power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2011,,,44.4353,125.1734,,,,,,GEM_biomass_437
+Jilin Nong'an power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,44.4353,125.1734,,,,,,GEM_biomass_438
+Jilin Panshi power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,42.9372,126.0068,,,,,,GEM_biomass_439
+Jilin Qian Gorlos power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2022,,,45.0812,124.8799,,,,,,GEM_biomass_440
+Jilin Qian'An power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,44.9158,124.0349,,,,,,GEM_biomass_441
+Jilin Qian'An power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,44.9158,124.0349,,,,,,GEM_biomass_442
+Jilin Shulan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,44.4191,126.9669,,,,,,GEM_biomass_443
+Jilin Siping power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2011,,,43.5165,124.8587,,,,,,GEM_biomass_444
+Jilin Siping Yitong Manchu Autonomous County power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,43.4411,125.2808,,,,,,GEM_biomass_445
+Jilin Siping Yitong Manchu Autonomous County power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,43.4411,125.2808,,,,,,GEM_biomass_446
+Jilin Songyuan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2022,,,45.2544,124.8511,,,,,,GEM_biomass_447
+Jilin Taonan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2022,,,45.2721,122.8168,,,,,,GEM_biomass_448
+Jilin Tongyu (Shanneng) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,44.8384,123.1252,,,,,,GEM_biomass_449
+Jilin Wangqing power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2015,,,43.3005,129.8054,,,,,,GEM_biomass_450
+Jilin Wangqing power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2015,,,43.3005,129.8054,,,,,,GEM_biomass_451
+Jilin Yushu (Xinkai) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2023,,,44.807897,126.18566,,,,,,GEM_biomass_452
+Jilin Zhenlai power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2017,,,45.8502,123.245,,,,,,GEM_biomass_453
+Jinhai Mill power station,Bioenergy,Steam Turbine,PP,CN,120.0,0.47,2015,,,19.772636,109.18408,,,,,,GEM_biomass_454
+Jinhai Mill power station,Bioenergy,Steam Turbine,PP,CN,120.0,0.47,2015,,,19.772636,109.18408,,,,,,GEM_biomass_455
+Leiyang Baiyang power station,Bioenergy,Steam Turbine,PP,CN,45.0,0.47,2022,,,26.459482,112.868107,,,,,,GEM_biomass_456
+Liaoning Beipiao power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2015,,,41.8082,120.7441,,,,,,GEM_biomass_457
+Liaoning Benxi power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2022,,,41.305,124.1196,,,,,,GEM_biomass_458
+Liaoning Benxi power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2022,,,41.305,124.1196,,,,,,GEM_biomass_459
+Liaoning Changtu power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2021,,,42.8329,124.1294,,,,,,GEM_biomass_460
+Liaoning Chaoyang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,41.2854,120.5687,,,,,,GEM_biomass_461
+Liaoning Dalian power station,Bioenergy,Steam Turbine,PP,CN,60.0,0.47,2021,,,39.0672,121.5991,,,,,,GEM_biomass_462
+Liaoning Donggang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2023,,,39.9482,124.1826,,,,,,GEM_biomass_463
+Liaoning Fuxin Mongol Autonomous County power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2017,,,41.8969,121.5487,,,,,,GEM_biomass_464
+Liaoning Haicheng (Sanfeng) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,41.0805,122.791,,,,,,GEM_biomass_465
+Liaoning Haicheng power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2021,,,40.8931,122.6897,,,,,,GEM_biomass_466
+Liaoning Panjin power station,Bioenergy,Steam Turbine,PP,CN,60.0,0.47,2016,,,40.746,122.0617,,,,,,GEM_biomass_467
+Liaoning Qingyuan power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2021,,,41.9918,124.4894,,,,,,GEM_biomass_468
+Liaoning Shenbei New Area power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2021,,,42.0295,123.5925,,,,,,GEM_biomass_469
+Liaoning Shenbei New Area power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2021,,,42.0295,123.5925,,,,,,GEM_biomass_470
+Liaoning Shenyang Daxin power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2019,,,42.0023,123.4243,,,,,,GEM_biomass_471
+Liaoning Shenyang Daxin power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2019,,,42.0023,123.4243,,,,,,GEM_biomass_472
+Liaoning Shenyang Laohuchong power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,41.573,123.5667,,,,,,GEM_biomass_473
+Liaoning Shenyang Laohuchong power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,41.573,123.5667,,,,,,GEM_biomass_474
+Liaoning Tieling power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,42.2322,123.7515,,,,,,GEM_biomass_475
+Liaoning Xifeng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,42.7188,124.3314,,,,,,GEM_biomass_476
+Ningxia Shizuishan Anneng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2022,,,39.1351,106.7125,,,,,,GEM_biomass_477
+Qinghai Xining power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2023,,,36.7666,101.7042,,,,,,GEM_biomass_478
+Qinghai Xining power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2023,,,36.7666,101.7042,,,,,,GEM_biomass_479
+Shaanxi Chengcheng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,35.1581,109.9253,,,,,,GEM_biomass_480
+Shaanxi Dali power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,34.72,109.9326,,,,,,GEM_biomass_481
+Shaanxi Lantian power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,34.1359,109.1938,,,,,,GEM_biomass_482
+Shaanxi Lantian power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,34.1359,109.1938,,,,,,GEM_biomass_483
+Shaanxi Liquan power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2020,,,34.6176,108.5591,,,,,,GEM_biomass_484
+Shaanxi Luochuan power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2018,,,35.7805,109.4004,,,,,,GEM_biomass_485
+Shaanxi Mian County power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2017,,,33.1385,106.7608,,,,,,GEM_biomass_486
+Shaanxi Qian County power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2024,,,34.5225,108.2707,,,,,,GEM_biomass_487
+Shaanxi Xi'an Baqiao power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2022,,,34.2484,109.0904,,,,,,GEM_biomass_488
+Shaanxi Xi'an Baqiao power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2022,,,34.2484,109.0904,,,,,,GEM_biomass_489
+Shaanxi Xixian New Area power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,34.4662,108.8845,,,,,,GEM_biomass_490
+Shaanxi Xixian New Area power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,34.4662,108.8845,,,,,,GEM_biomass_491
+Shandong Chengwu power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2017,,,35.0763,116.0232,,,,,,GEM_biomass_492
+Shandong Dongping power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,35.8091,116.3975,,,,,,GEM_biomass_493
+Shandong Fei County power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,35.317,118.0599,,,,,,GEM_biomass_494
+Shandong Gaotang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2007,,,36.8702,116.2261,,,,,,GEM_biomass_495
+Shandong Haiyang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,37.1116,121.0304,,,,,,GEM_biomass_496
+Shandong Heze power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2016,,,35.2771,115.4035,,,,,,GEM_biomass_497
+Shandong Huimin power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2012,,,37.3594,117.5859,,,,,,GEM_biomass_498
+Shandong Jiaozhou City (Everbright) power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2023,,,36.284727,120.12591,,,,,,GEM_biomass_499
+Shandong Jiaozhou power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,36.289,120.1572,,,,,,GEM_biomass_500
+Shandong Jiaozhou power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,36.289,120.1572,,,,,,GEM_biomass_501
+Shandong Jinan Laiwu District power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,36.1795,117.5729,,,,,,GEM_biomass_502
+Shandong Juancheng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2022,,,35.5771,115.5687,,,,,,GEM_biomass_503
+Shandong Kenli power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2007,,,37.5911,118.5428,,,,,,GEM_biomass_504
+Shandong Laixi power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2017,,,36.7856,120.5195,,,,,,GEM_biomass_505
+Shandong Laizhou power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2018,,,37.1865,119.9899,,,,,,GEM_biomass_506
+Shandong Lanling power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2016,,,34.8444,117.9921,,,,,,GEM_biomass_507
+Shandong Lanling power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2016,,,34.8444,117.9921,,,,,,GEM_biomass_508
+Shandong Liangshan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,35.81,116.0292,,,,,,GEM_biomass_509
+Shandong Linqing power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2015,,,36.7947,115.742,,,,,,GEM_biomass_510
+Shandong Linyi (CECEP) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2018,,,35.1105,118.2322,,,,,,GEM_biomass_511
+Shandong Linyi No.2 power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2021,,,35.3283,118.3094,,,,,,GEM_biomass_512
+Shandong Linyi power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2011,,,35.1073,118.356,,,,,,GEM_biomass_513
+Shandong Linzi power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2018,,,36.9534,118.2977,,,,,,GEM_biomass_514
+Shandong Linzi power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2018,,,36.9534,118.2977,,,,,,GEM_biomass_515
+Shandong Ningyang (Ningyang Luju) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,35.8552,117.2236,,,,,,GEM_biomass_516
+Shandong Ningyang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2010,,,35.7638,116.8068,,,,,,GEM_biomass_517
+Shandong Pingyi power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2015,,,35.5104,117.765,,,,,,GEM_biomass_518
+Shandong Pingyin power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2013,,,36.2783,116.4331,,,,,,GEM_biomass_519
+Shandong Qingdao (Kangheng) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,35.9385,119.96,,,,,,GEM_biomass_520
+Shandong Qingdao (Kangheng) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,35.9385,119.96,,,,,,GEM_biomass_521
+Shandong Qingdao Huangdao District (Hengyuan) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,36.013,120.1319,,,,,,GEM_biomass_522
+Shandong Qingdao Huangdao District (Yitong Thermal Power) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2015,,,35.9405,120.0011,,,,,,GEM_biomass_523
+Shandong Rizhao power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,35.1647,119.2164,,,,,,GEM_biomass_524
+Shandong Rongcheng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,37.3811,122.5905,,,,,,GEM_biomass_525
+Shandong Shan County power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2006,,,34.796,116.0891,,,,,,GEM_biomass_526
+Shandong Shanghe power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2014,,,37.1485,117.1225,,,,,,GEM_biomass_527
+Shandong Sishui power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,35.6509,117.3884,,,,,,GEM_biomass_528
+Shandong Tancheng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2022,,,34.8875,118.4155,,,,,,GEM_biomass_529
+Shandong Tengzhou fuyuan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2016,,,34.935,117.1028,,,,,,GEM_biomass_530
+Shandong Weihai Wendeng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,37.1426,121.8652,,,,,,GEM_biomass_531
+Shandong Wudi power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2017,,,37.9662,117.7751,,,,,,GEM_biomass_532
+Shandong Xintai power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,35.9014,117.7488,,,,,,GEM_biomass_533
+Shandong Yanggu power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2015,,,36.1659,115.8753,,,,,,GEM_biomass_534
+Shandong Yishui power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2011,,,35.7838,118.5969,,,,,,GEM_biomass_535
+Shandong Yiyuan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,36.1939,118.2447,,,,,,GEM_biomass_536
+Shandong Yucheng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2023,,,36.9309,116.6726,,,,,,GEM_biomass_537
+Shandong Yuncheng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2018,,,35.5213,115.8447,,,,,,GEM_biomass_538
+Shandong Yuncheng power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2018,,,35.5213,115.8447,,,,,,GEM_biomass_539
+Shandong Yutai power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2015,,,34.934,116.4698,,,,,,GEM_biomass_540
+Shandong Zaozhuang Shanting power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2022,,,35.1068,117.3605,,,,,,GEM_biomass_541
+Shandong Zaozhuang Xuecheng District power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2014,,,34.7644,117.2502,,,,,,GEM_biomass_542
+Shandong Zhangqiu power station,Bioenergy,Steam Turbine,PP,CN,45.0,0.47,2015,,,36.938241,117.279448,,,,,,GEM_biomass_543
+Shandong Zibo Zichuan District power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2012,,,36.6253,117.8491,,,,,,GEM_biomass_544
+Shanghai Baoshan power station,Bioenergy,Steam Turbine,PP,CN,60.0,0.47,2023,,,31.4684,121.4013,,,,,,GEM_biomass_545
+Shanghai Baoshan power station,Bioenergy,Steam Turbine,PP,CN,60.0,0.47,2023,,,31.4684,121.4013,,,,,,GEM_biomass_546
+Shanghai Fengxian District power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2022,,,30.831318,121.447419,,,,,,GEM_biomass_547
+Shanghai Laogang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2013,,,31.0412,121.8394,,,,,,GEM_biomass_548
+Shanghai Laogang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2013,,,31.0412,121.8394,,,,,,GEM_biomass_549
+Shanghai Laogang power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2019,,,31.0412,121.8394,,,,,,GEM_biomass_550
+Shanghai Laogang power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2019,,,31.0412,121.8394,,,,,,GEM_biomass_551
+Shanghai Laogang power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2019,,,31.0412,121.8394,,,,,,GEM_biomass_552
+Shanghai Pudong New Area power station,Bioenergy,Steam Turbine,PP,CN,65.0,0.47,2023,,,31.0684,121.8709,,,,,,GEM_biomass_553
+Shanghai Pudong New Area power station,Bioenergy,Steam Turbine,PP,CN,65.0,0.47,2023,,,31.0684,121.8709,,,,,,GEM_biomass_554
+Shanghai Tianma power station,Bioenergy,Steam Turbine,PP,CN,60.0,0.47,2021,,,31.0926,121.1044,,,,,,GEM_biomass_555
+Shanxi Hongdong guoyao power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,36.2634,111.6827,,,,,,GEM_biomass_556
+Shanxi Huairen power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,39.796,113.2103,,,,,,GEM_biomass_557
+Shanxi Linyi power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,35.0726,110.863,,,,,,GEM_biomass_558
+Shanxi Qingxu power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2020,,,37.4791,112.3126,,,,,,GEM_biomass_559
+Shanxi Qingxu power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2020,,,37.4791,112.3126,,,,,,GEM_biomass_560
+Shanxi Wuzhai power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,38.9596,111.8631,,,,,,GEM_biomass_561
+Shenzhen Mawan power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2019,,,22.4892,113.8724,,,,,,GEM_biomass_562
+Sichuan Chengdu Longquanyi District power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,30.641433,104.361715,,,,,,GEM_biomass_563
+Sichuan Chengdu Longquanyi District power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,30.641433,104.361715,,,,,,GEM_biomass_564
+Sichuan Hongya power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2016,,,29.8629,103.3985,,,,,,GEM_biomass_565
+Sichuan Mianzhu power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2018,,,31.2066,104.179,,,,,,GEM_biomass_566
+Sichuan Muchuan (Yongfeng) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2015,,,28.9723,103.9056,,,,,,GEM_biomass_567
+Sichuan Nanbu power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,31.3441,105.9764,,,,,,GEM_biomass_568
+Sichuan Xuyong (Yongfeng) power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2018,,,28.4203,105.3426,,,,,,GEM_biomass_569
+Sichuan Yanting power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,31.1759,105.3963,,,,,,GEM_biomass_570
+Sichuan Zhongjiang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,30.8578,104.6161,,,,,,GEM_biomass_571
+Sichuan Zigong power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2022,,,29.1896,104.8828,,,,,,GEM_biomass_572
+Taiyang Mill power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2015,,,35.5453,116.8021,,,,,,GEM_biomass_573
+Tianjin Beichen power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2020,,,39.2419,117.0381,,,,,,GEM_biomass_574
+Tianjin Beichen power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2020,,,39.2419,117.0381,,,,,,GEM_biomass_575
+Tianjin Dongli District power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2021,,,39.2237,117.3308,,,,,,GEM_biomass_576
+Tianjin Dongli District power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2021,,,39.2237,117.3308,,,,,,GEM_biomass_577
+Tianjin Xiqing power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,38.8524,117.3286,,,,,,GEM_biomass_578
+Tianjin Xiqing power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,38.8524,117.3286,,,,,,GEM_biomass_579
+Xinjiang Hutubi power staion,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2020,,,44.5445,86.689,,,,,,GEM_biomass_580
+Xinjiang Urumqi Jinghuan power station,Bioenergy,Steam Turbine,PP,CN,36.0,0.47,2020,,,44.029,87.7874,,,,,,GEM_biomass_581
+Xinjiang Urumqi Jinghuan power station,Bioenergy,Steam Turbine,PP,CN,36.0,0.47,2020,,,44.029,87.7874,,,,,,GEM_biomass_582
+Yunnan Qujing power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2023,,,25.5879,103.8518,,,,,,GEM_biomass_583
+Zhangpu Chihu Industrial Park Cogen power station,Bioenergy,Steam Turbine,PP,CN,150.0,0.47,2015,,,24.0648,117.8901,,,,,,GEM_biomass_584
+Zhangpu Chihu Industrial Park Cogen power station,Bioenergy,Steam Turbine,PP,CN,150.0,0.47,2015,,,24.0648,117.8901,,,,,,GEM_biomass_585
+Zhejiang Cixi power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2023,,,30.152098,121.530087,,,,,,GEM_biomass_586
+Zhejiang Dongyang power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,29.2287,120.3039,,,,,,GEM_biomass_587
+Zhejiang East Wenling power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2019,,,28.4684,121.5971,,,,,,GEM_biomass_588
+Zhejiang Fuyang power station,Bioenergy,Steam Turbine,PP,CN,45.0,0.47,2021,,,29.8779,119.7117,,,,,,GEM_biomass_589
+Zhejiang Haining power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2020,,,30.3129,120.8211,,,,,,GEM_biomass_590
+Zhejiang Haiyan power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2021,,,30.5912,121.0353,,,,,,GEM_biomass_591
+Zhejiang Jiaxing power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2010,,,30.8426,120.7184,,,,,,GEM_biomass_592
+Zhejiang Jinhua Jinyi New Area power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2022,,,29.1474,119.8354,,,,,,GEM_biomass_593
+Zhejiang Jinhua power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2020,,,29.0022,119.7036,,,,,,GEM_biomass_594
+Zhejiang Jinhua power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2015,,,29.0022,119.7036,,,,,,GEM_biomass_595
+Zhejiang Linjiang power station,Bioenergy,Steam Turbine,PP,CN,45.0,0.47,2020,,,30.2477,120.6661,,,,,,GEM_biomass_596
+Zhejiang Linjiang power station,Bioenergy,Steam Turbine,PP,CN,45.0,0.47,2020,,,30.2477,120.6661,,,,,,GEM_biomass_597
+Zhejiang Linjiang power station,Bioenergy,Steam Turbine,PP,CN,45.0,0.47,2020,,,30.2477,120.6661,,,,,,GEM_biomass_598
+Zhejiang Longquan power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2014,,,27.8802,118.9726,,,,,,GEM_biomass_599
+Zhejiang Ningbo Fenghua District power station,Bioenergy,Steam Turbine,PP,CN,30.0,0.47,2021,,,29.695499,121.56168,,,,,,GEM_biomass_600
+Zhejiang Ningbo Haishu District power station,Bioenergy,Steam Turbine,PP,CN,50.0,0.47,2024,,,29.752757,121.387076,,,,,,GEM_biomass_601
+Zhejiang Quzhou power station,Bioenergy,Steam Turbine,PP,CN,40.0,0.47,2019,,,28.8881,118.861,,,,,,GEM_biomass_602
+Zhejiang Shaoxing power station,Bioenergy,Steam Turbine,PP,CN,45.0,0.47,2021,,,30.2591,120.7017,,,,,,GEM_biomass_603
+Zhejiang Taizhou Huangyan power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2021,,,28.685888,121.259441,,,,,,GEM_biomass_604
+Zhejiang Yuhang Jiufeng power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2017,,,30.422,120.2896,,,,,,GEM_biomass_605
+Zhejiang Yuhang Jiufeng power station,Bioenergy,Steam Turbine,PP,CN,35.0,0.47,2017,,,30.2372,119.8661,,,,,,GEM_biomass_606
