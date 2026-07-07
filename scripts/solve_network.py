@@ -293,6 +293,48 @@ def add_CCL_constraints(n, config):
         )
 
 
+def add_nuclear_national_cap(n, cap_mw):
+    """
+    Aggregate national cap on nuclear p_nom (MW), all of China.
+    Standalone, independent of agg_p_nom_limits / planning_horizons.
+
+    Registers a GlobalConstraint slot so PyPSA's dual-value assignment
+    (pypsa/optimization/optimize.py, post_processing) recognizes and
+    stores the shadow price of this constraint after solve, the same
+    way it already does for CO2Limit.
+    """
+    gens = n.generators[(n.generators.carrier == "nuclear") & (n.generators.p_nom_extendable)]
+    if gens.empty:
+        return
+
+    n.add(
+        "GlobalConstraint",
+        "nuclear_national_cap",
+        sense="<=",
+        constant=cap_mw,
+    )
+
+    capacity_variable = n.model["Generator-p_nom"]
+    lhs = capacity_variable.loc[gens.index].sum()
+    n.model.add_constraints(lhs <= cap_mw, name="GlobalConstraint-nuclear_national_cap")
+
+
+def add_biomass_national_cap(n, cap_twh):
+    """
+    Aggregate national cap on biomass generation (TWh/yr), all of China.
+    Standalone, independent of agg_p_nom_limits / planning_horizons.
+    Source: Kang et al. (2020), DOI 10.1016/j.rser.2020.109842, ~426 TWh/yr electricity by 2060.
+    """
+    gens = n.generators[(n.generators.carrier == "biomass") & (n.generators.p_nom_extendable)]
+    if gens.empty:
+        return
+    w = n.snapshot_weightings.generators
+    generation_variable = n.model["Generator-p"]
+    lhs = (generation_variable.loc[:, gens.index] * w).sum()
+    cap_mwh = cap_twh * 1e6
+    n.model.add_constraints(lhs <= cap_mwh, name="biomass_national_gen_cap")
+
+
 def add_EQ_constraints(n, o, scaling=1e-1):
     """
     Add equity constraints to the network.
@@ -1035,6 +1077,10 @@ def extra_functionality(n, snapshots):
         add_SAFE_constraints(n, config)
     if "CCL" in opts and n.generators.p_nom_extendable.any():
         add_CCL_constraints(n, config)
+    if "NUCAP" in opts and n.generators.p_nom_extendable.any():
+        add_nuclear_national_cap(n, 300000)  # 300 GW cap, MW
+    if "BIOCAP" in opts and n.generators.p_nom_extendable.any():
+        add_biomass_national_cap(n, 426)  # 426 TWh/yr cap, Kang et al. (2020) DOI 10.1016/j.rser.2020.109842
     reserve = config["electricity"].get("operational_reserve", {})
     if reserve.get("activate"):
         add_operational_reserve_margin(n, snapshots, config)
