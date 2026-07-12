@@ -1,0 +1,76 @@
+# CN2060 — Capacity expansion — Net-zero (100% decarbonization)
+# TODO: confirm co2base with Ivan before running.
+# Proposed value: 4.716e+9 tCO2 (Ember 2020, Chinese power sector).
+# Current default in config.default.yaml is European: 1.487e+9 tCO2.
+# UPDATE 21.04.2026: Ivan confirmed. Use 4.716e+9 tCO2 (2020, year of 
+# China's carbon neutrality announcement).
+co2base: 4.716e+9
+
+run:
+  name: CN2060_admin1_test
+
+scenario:
+  clusters: [250]
+  opts: [NUCAP-BIOCAP-Co2L0.05-3h, NUCAP-BIOCAP-Co2L0.0-3h]
+
+snapshots:
+  start: "2013-01-01"
+  end: "2014-01-01"
+  inclusive: "left"
+
+load_options:
+  ssp: "ssp2-2.6"
+  weather_year: 2013
+  prediction_year: 2030
+  scale: 2.1484
+  disaggregation:
+    method: geospatial
+    geospatial:
+      source: "data/gadm_shapes_level1.geojson"
+      scaling: "subregional"
+
+build_shape_options:
+  gadm_layer_id: 1
+  year: 2020
+
+electricity:
+  extendable_carriers:
+    Generator: [solar, onwind, offwind-ac, offwind-dc, OCGT, nuclear, biomass]
+    StorageUnit: [battery, H2, PHS]
+    Store: []
+    Link: []
+  powerplants_filter: "(DateOut >= 2060 or DateOut != DateOut) and (DateIn <= 2060 or DateIn != DateIn) and ((Fueltype != 'Nuclear') or (Capacity > 100))"
+  custom_powerplants: merge
+  max_hours:
+    battery: 4
+    H2: 168
+    PHS: 16
+  estimate_renewable_capacities:
+    stats: "irena"
+    year: 2023
+
+conventional:
+  nuclear:
+    p_min_pu: 0.7
+    p_max_pu: 0.88
+
+solving:
+  solver:
+    gurobi_hpc_tunnel:
+      use_tunnel: True
+      tunnel_port: 27000
+      timeout_s: 15
+      login_node: "03"
+      gurobi_home: "/p/projects/rd3mod/gurobi1103/linux64"
+      license_path: "/p/projects/rd3mod/gurobi_rc/gurobi.lic"
+      verbose: "1"
+      timeout: "10"
+      ssl_cert: "/p/projects/rd3mod/ssl/ca-bundle.pem_2022-02-08"
+      grb_cafile: "/p/projects/rd3mod/ssl/ca-bundle.pem_2022-02-08"
+
+
+costs:
+  year: 2060
+
+enable:
+  download_osm_data: false
