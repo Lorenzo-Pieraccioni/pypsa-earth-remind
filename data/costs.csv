@@ -9,7 +9,7 @@ PHS,2030,lifetime,80,years,IEA2010,,
 hydro,2030,lifetime,80,years,IEA2010,,
 ror,2030,lifetime,80,years,IEA2010,,
 OCGT,2030,lifetime,30,years,IEA2010,,
-nuclear,2030,lifetime,45,years,ECF2010 in DIW DataDoc http://hdl.handle.net/10419/80348,,
+nuclear,2030,lifetime,40,years,Lazard LCOE v13,,
 CCGT,2030,lifetime,30,years,IEA2010,,
 coal,2030,lifetime,40,years,IEA2010,,
 lignite,2030,lifetime,40,years,IEA2010,,
@@ -35,7 +35,7 @@ PHS,2030,investment,2000,EUR/kWel,DIW DataDoc http://hdl.handle.net/10419/80348,
 hydro,2030,investment,2000,EUR/kWel,DIW DataDoc http://hdl.handle.net/10419/80348,,2013
 ror,2030,investment,3000,EUR/kWel,DIW DataDoc http://hdl.handle.net/10419/80348,,2013
 OCGT,2030,investment,400,EUR/kWel,DIW DataDoc http://hdl.handle.net/10419/80348,,2013
-nuclear,2030,investment,6000,EUR/kWel,DIW DataDoc http://hdl.handle.net/10419/80348,,2013
+nuclear,2030,investment,2520,USD/kW_e,"Bowen, Ochu, Glynn (2023), The Uncertain Costs of New Nuclear Reactors, Center on Global Energy Policy Columbia SIPA, https://www.energypolicy.columbia.edu/wp-content/uploads/2023/12/QCFNuclearCosts-CGEP_Report_112923.pdf",CHINA NUCLEAR BASELINE - Columbia CGEP 2023 - DO NOT REVERT TO DIW 6000,2023
 CCGT,2030,investment,800,EUR/kWel,DIW DataDoc http://hdl.handle.net/10419/80348,,2013
 oil,2030,investment,400,EUR/kWel,DIW DataDoc http://hdl.handle.net/10419/80348,,2013
 onwind,2030,FOM,2.450549,%/year,DEA https://ens.dk/en/our-services/projections-and-models/technology-data,,2013
@@ -53,6 +53,7 @@ hydro,2030,FOM,1,%/year,DIW DataDoc http://hdl.handle.net/10419/80348,,2013
 ror,2030,FOM,2,%/year,DIW DataDoc http://hdl.handle.net/10419/80348,,2013
 CCGT,2030,FOM,2.5,%/year,DIW DataDoc http://hdl.handle.net/10419/80348,,2013
 OCGT,2030,FOM,3.75,%/year,DIW DataDoc http://hdl.handle.net/10419/80348,,2013
+nuclear,2030,FOM,1.4,%/year,Lazard LCOE v13,,
 onwind,2030,VOM,2.3,EUR/MWhel,DEA https://ens.dk/en/our-services/projections-and-models/technology-data,,2013
 offwind,2030,VOM,2.7,EUR/MWhel,DEA https://ens.dk/en/our-services/projections-and-models/technology-data,,2013
 solar,2030,VOM,0.01,EUR/MWhel,RES costs made up to fix curtailment order,,2013
