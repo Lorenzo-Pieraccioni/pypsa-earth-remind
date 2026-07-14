@@ -12,6 +12,7 @@ run:
 scenario:
   clusters: [250]
   opts: [NUCAP-BIOCAP-Co2L0.05-3h, NUCAP-BIOCAP-Co2L0.0-3h]
+  ll: ["l2.0"]
 
 snapshots:
   start: "2013-01-01"
@@ -53,6 +54,7 @@ conventional:
   nuclear:
     p_min_pu: 0.7
     p_max_pu: 0.88
+    committable: true
 
 solving:
   solver:
@@ -67,6 +69,9 @@ solving:
       timeout: "10"
       ssl_cert: "/p/projects/rd3mod/ssl/ca-bundle.pem_2022-02-08"
       grb_cafile: "/p/projects/rd3mod/ssl/ca-bundle.pem_2022-02-08"
+
+  options:
+    linearized_unit_commitment: true
 
 
 costs:
