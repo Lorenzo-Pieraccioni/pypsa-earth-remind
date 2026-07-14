@@ -1153,6 +1153,7 @@ def solve_network(n, config, solving, **kwargs):
     )
     kwargs["solver_name"] = solving["solver"]["name"]
     kwargs["extra_functionality"] = extra_functionality
+    kwargs["linearized_unit_commitment"] = cf_solving.get("linearized_unit_commitment", False)
 
     skip_iterations = cf_solving.get("skip_iterations", False)
     if not n.lines.s_nom_extendable.any():
