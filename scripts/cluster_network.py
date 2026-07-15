@@ -252,6 +252,7 @@ def distribute_clusters(
 
     if solver_name is None:
         solver_name = snakemake.config["solving"]["solver"]["name"]
+    
 
     if distribution_cluster == ["load"]:
         L = (
@@ -632,6 +633,8 @@ if __name__ == "__main__":
 
     alternative_clustering = snakemake.params.cluster_options["alternative_clustering"]
     distribution_cluster = snakemake.params.cluster_options["distribute_cluster"]
+    if isinstance(distribution_cluster, str):
+        distribution_cluster = [distribution_cluster]
     gadm_layer_id = snakemake.params.build_shape_options["gadm_layer_id"]
     focus_weights = (
         snakemake.params.focus_weights
