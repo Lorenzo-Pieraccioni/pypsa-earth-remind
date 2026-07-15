@@ -483,7 +483,8 @@ if __name__ == "__main__":
     if "snakemake" not in globals():
         from _helpers import mock_snakemake
 
-        snakemake = mock_snakemake("build_renewable_profiles", technology="hydro")
+        snakemake = mock_snakemake("build_renewable_profiles", technology="onwind")
+        
     configure_logging(snakemake)
 
     pgb.streams.wrap_stderr()
@@ -705,13 +706,27 @@ if __name__ == "__main__":
         area = xr.DataArray(
             area.values.reshape(cutout.shape), [cutout.coords["y"], cutout.coords["x"]]
         )
-
+        # availability.to_netcdf("availability_onwind.nc") # debug
         potential = capacity_per_sqkm * availability.sum("bus") * area
 
         capacity_factor = correction_factor * func(capacity_factor=True, **resource)
         layout = capacity_factor * area * capacity_per_sqkm
 
         n_cells_lost = check_cutout_completness(capacity_factor)
+
+        ### pypsa-china (bit different due to additional bin dimension)
+        # collapse [bus, bin, y, x] -> [bus_bin, spatial] for atlite's per-bin aggregation
+        # matrix = (availability * class_masks).stack(bus_bin=["bus", "bin"], spatial=["y", "x"])
+        #layout = capacity_factor * area * capacity_per_sqkm
+        # profile = func(
+        #     matrix=matrix,
+        #     layout=layout,
+        #     index=matrix.indexes["bus_bin"],
+        #     per_unit=True,
+        #     return_capacity=False,
+        #     **resource,
+        # )
+        # profile = profile.unstack("bus_bin")
 
         profile, capacities = func(
             matrix=availability.stack(spatial=["y", "x"]),
@@ -721,6 +736,10 @@ if __name__ == "__main__":
             return_capacity=True,
             **resource,
         )
+
+        # PYPSA-CHINA (for reference)
+        # bin's availability-weighted buildable km², dims [bus, bin] (contracts y,x via @)
+        # eligible_area = (availability * class_masks) @ area
 
         logger.info(f"Calculating maximal capacity per bus (method '{p_nom_max_meth}')")
         if p_nom_max_meth == "simple":
