@@ -55,6 +55,10 @@ conventional:
     p_min_pu: 0.7
     p_max_pu: 0.88
     committable: true
+    min_up_time: 2
+    min_down_time: 4
+    start_up_cost: 1000
+    shut_down_cost: 400
 
 solving:
   solver:
