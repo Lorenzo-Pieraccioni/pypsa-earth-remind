@@ -11,7 +11,7 @@ EPISTEMIC NOTE (read before interpreting plots):
     curtailment    → (ERA5_potential − dispatch) / ERA5_potential
     CF_realised    = generation [TWh] / (capacity [GW] × total_hours [h])
 
-  ERA5 INPUT  (fixed BEFORE the solver, atlite on ERA5 2013):
+  ERA5 INPUT  (fixed BEFORE the solver, atlite on ERA5, weather year varies by run):
     p_max_pu_t     → normalised hourly availability [0–1]
     CF_ERA5        = mean(p_max_pu_t)
                    p_nom cancels out — independent of installed capacity
@@ -319,7 +319,7 @@ def analyse_carrier(n, carrier, dt, total_hours):
 
 # ── PLOTS ─────────────────────────────────────────────────────────────────────
 
-def make_plots(per_bus, carrier_label, prefix, run_tag):
+def make_plots(per_bus, carrier_label, prefix, run_tag, weather_year):
     """
     Produce 4 maps per carrier.
     Every title explicitly declares [SOLVER OUTPUT] or [ERA5 INPUT].
@@ -384,12 +384,12 @@ def make_plots(per_bus, carrier_label, prefix, run_tag):
         col="cf_era5", size_col="gw", size_unit="GW",
         title=(
             f"{carrier_label} CF_ERA5 per bus — {run_tag}\n"
-            f"[ERA5 INPUT: mean(p_max_pu_t), atlite on ERA5 2013]"
+            f"[ERA5 INPUT: mean(p_max_pu_t), atlite on ERA5 {weather_year}]"
             f"   Independent of solver decisions\n"
             f"Bubble size = installed capacity (GW)"
         ),
         cbar_label="CF_ERA5 = mean(p_max_pu_t)  [ERA5 input, independent of solver]",
-        cmap="Blues",
+        cmap="rainbow",
         filename=f"map_{prefix}_cf_era5.png",
         vmax_pct=100,
     )
@@ -429,6 +429,8 @@ def main():
     print(f"  Buses:      {len(n.buses)}")
     print(f"  Generators: {len(n.generators)}")
     print(f"  Snapshots:  {len(n.snapshots)}")
+    weather_year = n.snapshots[0].year
+    print(f"  Weather year: {weather_year}")
 
     # ── Time resolution ───────────────────────────────────────────────────────
     if len(n.snapshots) > 1:
@@ -453,7 +455,7 @@ def main():
         per_bus.to_csv(csv_path, index=False, float_format="%.4f")
         print(f"  CSV saved: {csv_path}")
 
-        make_plots(per_bus, label, prefix, run_tag)
+        make_plots(per_bus, label, prefix, run_tag, weather_year)
 
     print(f"\nDone. All outputs in: {OUTPUT_DIR}")
 
