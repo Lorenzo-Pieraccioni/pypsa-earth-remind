@@ -61,7 +61,15 @@ def save(fig, filename):
 
 def bus_to_admin1(name):
     parts = str(name).split(".")
-    return f"{parts[0]}.{parts[1]}" if len(parts) >= 2 else name
+    if len(parts) == 2:
+        # Bus name, e.g. "CN.10_1_AC" -> "CN.10"
+        province_code = parts[1].split("_")[0]
+        return f"{parts[0]}.{province_code}"
+    elif len(parts) >= 3:
+        # GADM_ID, e.g. "CN.1.10_1" -> "CN.1"
+        return f"{parts[0]}.{parts[1]}"
+    else:
+        return name
 
 
 def extract_year_label(network_path):
@@ -170,6 +178,13 @@ def main():
     china["admin1"] = china[name_col].apply(bus_to_admin1)
     admin1_geo = china.dissolve(by="admin1").reset_index()[["admin1", "geometry"]]
     gdf = admin1_geo.merge(admin1_df, on="admin1", how="left")
+
+    wind_keys = set(admin1_df["admin1"])
+    geo_keys = set(admin1_geo["admin1"])
+    unmatched_wind = sorted(wind_keys - geo_keys)
+    unmatched_geo = sorted(geo_keys - wind_keys)
+    print(f"\nWind data with no matching GADM province (will not be plotted): {unmatched_wind}")
+    print(f"GADM provinces with no wind data (will render as gray, expected if truly zero): {unmatched_geo}")
 
     choropleth(gdf,
         col="wind_gw",
