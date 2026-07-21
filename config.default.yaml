@@ -354,7 +354,7 @@ renewable:
     # power." Applied Energy 135 (2014): 704-720.
     correction_factor: 0.854337
     copernicus:
-      grid_codes: [20, 30, 50, 60, 100]
+      grid_codes: [20, 30, 40, 50, 60, 100]
     natura: true
     potential: simple # or conservative
     clip_p_max_pu: 1.e-2
