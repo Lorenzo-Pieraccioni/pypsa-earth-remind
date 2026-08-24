@@ -4,7 +4,6 @@
 # Current default in config.default.yaml is European: 1.487e+9 tCO2.
 # UPDATE 21.04.2026: Ivan confirmed. Use 4.716e+9 tCO2 (2020, year of 
 # China's carbon neutrality announcement).
-co2base: 4.716e+9
 
 run:
   name: CN2060_loadCF
@@ -34,6 +33,7 @@ build_shape_options:
   year: 2020
 
 electricity:
+  co2base: 4.716e+9
   extendable_carriers:
     Generator: [solar, onwind, offwind-ac, offwind-dc, OCGT, nuclear, biomass]
     StorageUnit: [battery, H2, PHS]
