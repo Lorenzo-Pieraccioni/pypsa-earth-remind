@@ -35,7 +35,7 @@ gadm_shapes.geojson
 doc/*.vscode/settings.json
 logs_slurm/**
 # Untracked folders (and files within)
-bak
+*.bak*
 benchmarks/
 backup*
 cutouts/
