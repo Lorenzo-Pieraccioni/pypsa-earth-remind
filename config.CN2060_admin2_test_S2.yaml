@@ -4,10 +4,9 @@
 # Current default in config.default.yaml is European: 1.487e+9 tCO2.
 # UPDATE 21.04.2026: Ivan confirmed. Use 4.716e+9 tCO2 (2020, year of 
 # China's carbon neutrality announcement).
-co2base: 4.716e+9
 
 run:
-  name: CN2060_admin1_test
+  name: CN2060_admin2_test
 
 scenario:
   clusters: [250]
@@ -27,14 +26,15 @@ load_options:
   disaggregation:
     method: geospatial
     geospatial:
-      source: "data/gadm_shapes_level1.geojson"
+      source: "data/gadm_shapes_level2.geojson"
       scaling: "subregional"
 
 build_shape_options:
-  gadm_layer_id: 1
+  gadm_layer_id: 2
   year: 2020
 
 electricity:
+  co2base: 4.716e+9
   extendable_carriers:
     Generator: [solar, onwind, offwind-ac, offwind-dc, OCGT, nuclear, biomass]
     StorageUnit: [battery, H2, PHS]
@@ -52,13 +52,15 @@ electricity:
 
 conventional:
   nuclear:
-    p_min_pu: 0.7
-    p_max_pu: 0.88
+    p_min_pu: 0.5
+    p_max_pu: 1.0
+    ramp_limit_up: 0.9
+    ramp_limit_down: 0.9
     committable: true
-    min_up_time: 2
-    min_down_time: 4
-    start_up_cost: 1000
-    shut_down_cost: 400
+    min_up_time: 8
+    min_down_time: 8
+    start_up_cost: 140
+    shut_down_cost: 0
 
 solving:
   solver:
