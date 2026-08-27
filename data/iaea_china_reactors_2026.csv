@@ -1,0 +1,96 @@
+name,type,status,location,province,net_mw,gross_mw,grid_connection
+SANAO-1,PWR,Operational,Wenzhou,Zhejiang,1117,1215,2026-03-12
+TAIPINGLING-1,PWR,Operational,HUIZHOU,Guangdong,1116,1202,2026-02-13
+ZHANGZHOU-2,PWR,Operational,ZHANGZHOU,Fujian,1126,1212,2025-11-22
+ZHANGZHOU-1,PWR,Operational,ZHANGZHOU,Fujian,1126,1212,2024-11-28
+FANGCHENGGANG-4,PWR,Operational,Fangchenggang,Guangxi,1000,1180,2024-04-09
+FANGCHENGGANG-3,PWR,Operational,Fangchenggang,Guangxi,1000,1180,2023-01-10
+HONGYANHE-6,PWR,Operational,DALIAN,Liaoning,1061,1119,2022-05-02
+FUQING-6,PWR,Operational,Fuqing,Fujian,1075,1150,2022-01-01
+SHIDAO BAY-1,HTGR,Operational,Weihai,Shandong,150,211,2021-12-14
+HONGYANHE-5,PWR,Operational,DALIAN,Liaoning,1061,1119,2021-06-25
+TIANWAN-6,PWR,Operational,Lianyungang,Jiangsu,1060,1118,2021-05-11
+FUQING-5,PWR,Operational,Fuqing,Fujian,1075,1161,2020-11-27
+TIANWAN-5,PWR,Operational,Lianyungang,Jiangsu,1060,1118,2020-08-08
+YANGJIANG-6,PWR,Operational,Yangjiang,Guangdong,1000,1086,2019-06-29
+TAISHAN-2,PWR,Operational,Taishan,Guangdong,1660,1750,2019-06-23
+TIANWAN-4,PWR,Operational,Lianyungang,Jiangsu,1060,1126,2018-10-27
+HAIYANG-2,PWR,Operational,Haiyang,Shandong,1170,1250,2018-10-13
+SANMEN-2,PWR,Operational,Taizhou,Zhejiang,1157,1251,2018-08-24
+HAIYANG-1,PWR,Operational,Haiyang,Shandong,1170,1250,2018-08-17
+SANMEN-1,PWR,Operational,Taizhou,Zhejiang,1157,1251,2018-06-30
+TAISHAN-1,PWR,Operational,Taishan,Guangdong,1660,1750,2018-06-29
+YANGJIANG-5,PWR,Operational,Yangjiang,Guangdong,1000,1086,2018-05-23
+TIANWAN-3,PWR,Operational,Lianyungang,Jiangsu,1060,1126,2017-12-30
+FUQING-4,PWR,Operational,Fuqing,Fujian,1000,1089,2017-07-29
+YANGJIANG-4,PWR,Operational,Yangjiang,Guangdong,1000,1086,2017-01-08
+FUQING-3,PWR,Operational,Fuqing,Fujian,1000,1089,2016-09-07
+FANGCHENGGANG-2,PWR,Operational,Fangchenggang,Guangxi,1000,1086,2016-07-15
+CHANGJIANG-2,PWR,Operational,Changjiang,Hainan,601,650,2016-06-20
+HONGYANHE-4,PWR,Operational,DALIAN,Liaoning,1061,1119,2016-04-01
+NINGDE-4,PWR,Operational,Ningde,Fujian,1018,1089,2016-03-29
+CHANGJIANG-1,PWR,Operational,Changjiang,Hainan,601,650,2015-11-07
+FANGCHENGGANG-1,PWR,Operational,Fangchenggang,Guangxi,1000,1086,2015-10-25
+YANGJIANG-3,PWR,Operational,Yangjiang,Guangdong,1000,1086,2015-10-18
+FUQING-2,PWR,Operational,Fuqing,Fujian,1000,1089,2015-08-06
+HONGYANHE-3,PWR,Operational,DALIAN,Liaoning,1061,1119,2015-03-23
+NINGDE-3,PWR,Operational,Ningde,Fujian,1018,1089,2015-03-21
+YANGJIANG-2,PWR,Operational,Yangjiang,Guangdong,1000,1086,2015-03-10
+FANGJIASHAN-2,PWR,Operational,Jiaxing,Zhejiang,1012,1089,2015-01-12
+FANGJIASHAN-1,PWR,Operational,Jiaxing,Zhejiang,1012,1089,2014-11-04
+FUQING-1,PWR,Operational,Fuqing,Fujian,1000,1089,2014-08-20
+NINGDE-2,PWR,Operational,Ningde,Fujian,1018,1089,2014-01-04
+YANGJIANG-1,PWR,Operational,Yangjiang,Guangdong,1000,1086,2013-12-31
+HONGYANHE-2,PWR,Operational,DALIAN,Liaoning,1061,1119,2013-11-23
+HONGYANHE-1,PWR,Operational,DALIAN,Liaoning,1061,1119,2013-02-17
+NINGDE-1,PWR,Operational,Ningde,Fujian,1018,1089,2012-12-28
+QINSHAN 2-4,PWR,Operational,Jiaxing,Zhejiang,623,670,2011-11-25
+LING AO-4,PWR,Operational,SHENZEN,Guangdong,1007,1086,2011-05-03
+QINSHAN 2-3,PWR,Operational,Jiaxing,Zhejiang,623,670,2010-08-01
+LING AO-3,PWR,Operational,SHENZEN,Guangdong,1007,1086,2010-07-15
+TIANWAN-2,PWR,Operational,Lianyungang,Jiangsu,1000,1060,2007-05-14
+TIANWAN-1,PWR,Operational,Lianyungang,Jiangsu,1000,1060,2006-05-12
+QINSHAN 2-2,PWR,Operational,Jiaxing,Zhejiang,623,708,2004-03-11
+QINSHAN 3-2,PHWR,Operational,Jiaxing,Zhejiang,677,728,2003-06-12
+QINSHAN 3-1,PHWR,Operational,Jiaxing,Zhejiang,677,728,2002-11-19
+LING AO-2,PWR,Operational,SHENZEN,Guangdong,950,990,2002-09-14
+LING AO-1,PWR,Operational,SHENZEN,Guangdong,950,990,2002-02-26
+QINSHAN 2-1,PWR,Operational,Jiaxing,Zhejiang,623,670,2002-02-06
+DAYA BAY-2,PWR,Operational,SHENZHEN CITY,Guangdong,986,1026,1994-02-07
+DAYA BAY-1,PWR,Operational,SHENZHEN CITY,Guangdong,986,1026,1993-08-31
+QINSHAN-1,PWR,Operational,Jiaxing,Zhejiang,326,330,1991-12-15
+SANAO-3,PWR,Under Construction,Wenzhou,Zhejiang,1208,1215,
+ZHAOYUAN-1,PWR,Under Construction,Yantai City,Shandong,1117,1214,
+SANAO-2,PWR,Under Construction,Wenzhou,Zhejiang,1117,1210,
+CHANGJIANG-3,PWR,Under Construction,Changjiang,Hainan,1000,1198,
+CHANGJIANG-4,PWR,Under Construction,Changjiang,Hainan,1000,1198,
+LINGLONG-1,PWR,Under Construction,Changjiang,Hainan,100,125,
+XIAPU-1,FBR,Under Construction,Xiapu,Fujian,642,682,
+XIAPU-2,FBR,Under Construction,Xiapu,Fujian,642,682,
+BAILONG-1,PWR,Under Construction,Fangchenggang,Guangxi,1160,1254,
+HAIYANG-3,PWR,Under Construction,Haiyang,Shandong,1161,1253,
+HAIYANG-4,PWR,Under Construction,Haiyang,Shandong,1161,1253,
+LIANJIANG-1,PWR,Under Construction,Lianjiang,Fujian,1224,1224,
+LIANJIANG-2,PWR,Under Construction,Lianjiang,Fujian,1224,1224,
+LUFENG-1,PWR,Under Construction,Lufeng,Guangdong,1250,1250,
+LUFENG-2,PWR,Under Construction,Lufeng,Guangdong,1250,1200,
+LUFENG-5,PWR,Under Construction,Lufeng,Guangdong,1116,1200,
+LUFENG-6,PWR,Under Construction,Lufeng,Guangdong,1116,1200,
+JINQIMEN-1,PWR,Under Construction,,Unknown,1233,1233,
+NINGDE-5,PWR,Under Construction,Ningde,Fujian,1200,1200,
+NINGDE-6,PWR,Under Construction,Ningde,Fujian,1117,1221,
+SANMEN-3,PWR,Under Construction,Taizhou,Zhejiang,1163,1251,
+SANMEN-4,PWR,Under Construction,Taizhou,Zhejiang,1163,1251,
+SHIDAOWAN-1,PWR,Under Construction,Weihai,Shandong,1134,1225,
+SHIDAOWAN-2,PWR,Under Construction,Weihai,Shandong,1134,1225,
+TAIPINGLING-2,PWR,Under Construction,HUIZHOU,Guangdong,1116,1202,
+TAIPINGLING-3,PWR,Under Construction,HUIZHOU,Guangdong,1209,1209,
+TIANWAN-7,PWR,Under Construction,Lianyungang,Jiangsu,1171,1265,
+TIANWAN-8,PWR,Under Construction,Lianyungang,Jiangsu,1171,1265,
+XUDAPU-3,PWR,Under Construction,Xingcheng,Liaoning,1200,1274,
+XUDAPU-4,PWR,Under Construction,Xingcheng,Liaoning,1200,1274,
+XUDAPU-1,PWR,Under Construction,Xingcheng,Liaoning,1000,1290,
+XUDAPU-2,PWR,Under Construction,Xingcheng,Liaoning,1000,1290,
+XUWEI-1,PWR,Under Construction,Lianyungang City,Jiangsu,729,1208,
+ZHANGZHOU-3,PWR,Under Construction,ZHANGZHOU,Fujian,1129,1214,
+ZHANGZHOU-4,PWR,Under Construction,ZHANGZHOU,Fujian,1129,1214,
